@@ -151,7 +151,12 @@
               <li>Full access to every feature</li>
               <li>Runs inside Premiere Pro</li>
             </ul>
-            <a class="btn btn-ghost" href="#">Start free trial</a>
+            <form class="trial-form" id="trialForm">
+              <label class="sr-only" for="trial-email">Email address</label>
+              <input type="email" id="trial-email" name="email" placeholder="your@email.com" required />
+              <button type="submit" class="btn btn-ghost" id="trialBtn">Start free trial</button>
+              <p class="trial-status" id="trialStatus" role="status" aria-live="polite"></p>
+            </form>
           </div>
 
           <div class="plate price-plate">
@@ -165,7 +170,7 @@
               <li>Two seats</li>
               <li>All future updates included</li>
             </ul>
-            <a class="btn btn-primary" href="#">Buy now</a>
+            <button type="button" class="btn btn-primary" id="buyBtn">Buy now</button>
           </div>
         </div>
       </div>
@@ -269,6 +274,72 @@
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       });
+    })();
+
+    /* ---- CutMap pricing: Paddle checkout + free-trial form ---- */
+    (function () {
+      // Load Paddle.js and initialise with the public client-side token
+      var pd = document.createElement('script');
+      pd.src = 'https://cdn.paddle.com/paddle/v2/paddle.js';
+      pd.onload = function () {
+        if (window.Paddle) {
+          window.Paddle.Initialize({ token: 'live_07ea7ca3b9a2da9d04e67d08a32' });
+        }
+      };
+      document.head.appendChild(pd);
+
+      // "Buy now" -> open Paddle checkout
+      var buyBtn = document.getElementById('buyBtn');
+      if (buyBtn) {
+        buyBtn.addEventListener('click', function () {
+          if (window.Paddle && window.Paddle.Checkout) {
+            window.Paddle.Checkout.open({
+              items: [{ priceId: 'pri_01knxsfmnbrwxr0ykxx17t5z0c', quantity: 1 }]
+            });
+          }
+        });
+      }
+
+      // Free-trial form -> POST the email to the trial endpoint
+      var trialForm = document.getElementById('trialForm');
+      if (trialForm) {
+        trialForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var input = document.getElementById('trial-email');
+          var btn = document.getElementById('trialBtn');
+          var status = document.getElementById('trialStatus');
+          var email = (input.value || '').trim();
+          if (!email) return;
+          var label = btn.textContent;
+          btn.disabled = true;
+          btn.textContent = 'Sending…';
+          status.textContent = '';
+          status.className = 'trial-status';
+          fetch('https://cutmap.fly.dev/trial', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+          }).then(function (res) {
+            btn.disabled = false;
+            btn.textContent = label;
+            if (res.status === 409) {
+              status.textContent = 'This email already has an active trial.';
+              status.classList.add('is-error');
+            } else if (!res.ok) {
+              status.textContent = 'Something went wrong. Please try again.';
+              status.classList.add('is-error');
+            } else {
+              status.textContent = '✓ Check your inbox — your licence key is on its way.';
+              status.classList.add('is-ok');
+            }
+          }).catch(function () {
+            btn.disabled = false;
+            btn.textContent = label;
+            status.textContent = 'Something went wrong. Please try again.';
+            status.classList.add('is-error');
+          });
+        });
+      }
     })();
   </script>
 

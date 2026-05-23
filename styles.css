@@ -696,6 +696,15 @@ p { color: var(--ink); }
   margin-top: 0.9rem;
   text-align: center;
 }
+.waitlist-form .form-status {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  text-align: center;
+  margin: 0.9rem 0 0;
+}
+.waitlist-form .form-status:empty { display: none; }
+.waitlist-form .form-status.is-ok { color: var(--cream); font-weight: 600; }
+.waitlist-form .form-status.is-error { color: #E6A2A2; }
 
 /* ---------- Pricing ---------- */
 .pricing-grid {
@@ -738,6 +747,22 @@ p { color: var(--ink); }
   color: var(--ink);
 }
 .price-plate .btn { width: 100%; justify-content: center; }
+
+/* Free-trial email form inside the pricing plate */
+.trial-form { display: flex; flex-direction: column; gap: 0.6rem; }
+.trial-form input[type="email"] {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--line-strong);
+  padding: 0.62rem 0.8rem;
+}
+.trial-form input[type="email"]::placeholder { color: var(--light-gray); }
+.trial-status { font-size: 0.85rem; line-height: 1.45; margin: 0; }
+.trial-status.is-ok { color: var(--navy); font-weight: 600; }
+.trial-status.is-error { color: var(--burgundy); }
 
 /* ---------- Document / legal pages ---------- */
 .doc { padding-block: clamp(2.75rem, 5vw, 4rem) clamp(3.5rem, 7vw, 5.5rem); }

@@ -214,8 +214,7 @@
           <span class="eyebrow">Beta access</span>
           <h2>Join the CutBridge beta waitlist.</h2>
           <p>CutBridge is in closed beta with a small group of users. Join the waitlist for early access and updates as the handoff workflow takes shape.</p>
-          <!-- NOTE: static form — the submit endpoint still needs to be wired to the waitlist backend. -->
-          <form class="waitlist-form" action="#" method="post" aria-label="CutBridge beta waitlist">
+          <form class="waitlist-form" id="waitlistForm" aria-label="CutBridge beta waitlist">
             <div class="field">
               <label for="wl-email">Email address</label>
               <input type="email" id="wl-email" name="email" placeholder="you@studio.com" required />
@@ -228,7 +227,8 @@
               <input type="checkbox" id="wl-consent" name="consent" required />
               <label for="wl-consent">I agree to join the CutBridge waitlist and receive updates about beta access by email. See the <a href="privacy.html">Privacy Policy</a> and <a href="beta-terms.html">Beta Terms</a>.</label>
             </div>
-            <button type="submit" class="btn btn-primary">Join the waitlist</button>
+            <button type="submit" class="btn btn-primary" id="waitlistBtn">Join the waitlist</button>
+            <p class="form-status" id="waitlistStatus" role="status" aria-live="polite"></p>
             <p class="form-note">No commitment — leave the waitlist at any time.</p>
           </form>
         </div>
@@ -296,6 +296,70 @@
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    })();
+
+    /* ---- CutBridge beta waitlist -> POST to the waitlist endpoint ---- */
+    (function () {
+      var form = document.getElementById('waitlistForm');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = (document.getElementById('wl-email').value || '').trim();
+        var name = (document.getElementById('wl-name').value || '').trim();
+        var consent = document.getElementById('wl-consent').checked;
+        var btn = document.getElementById('waitlistBtn');
+        var status = document.getElementById('waitlistStatus');
+        status.className = 'form-status';
+        if (!email) {
+          status.textContent = 'Email is required.';
+          status.classList.add('is-error');
+          return;
+        }
+        if (!consent) {
+          status.textContent = 'Please tick the consent box to join.';
+          status.classList.add('is-error');
+          return;
+        }
+        var label = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Joining…';
+        status.textContent = '';
+        var payload = { email: email };
+        if (name) payload.name = name;
+        fetch('https://cutbridge.fly.dev/waitlist/join', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          return res.json().catch(function () { return null; }).then(function (data) {
+            btn.disabled = false;
+            btn.textContent = label;
+            if (!res.ok || !data || !data.ok) {
+              status.textContent = 'Something went wrong. Please try again.';
+              status.classList.add('is-error');
+              return;
+            }
+            if (data.already_registered) {
+              status.textContent = 'This email is already on the waitlist.';
+              status.classList.add('is-ok');
+              return;
+            }
+            if (data.joined) {
+              status.textContent = '✓ You’re on the waitlist — check your inbox for confirmation.';
+              status.classList.add('is-ok');
+              form.reset();
+              return;
+            }
+            status.textContent = 'Something went wrong. Please try again.';
+            status.classList.add('is-error');
+          });
+        }).catch(function () {
+          btn.disabled = false;
+          btn.textContent = label;
+          status.textContent = 'Something went wrong. Please try again.';
+          status.classList.add('is-error');
+        });
       });
     })();
   </script>
