@@ -1,0 +1,5 @@
+# robots.txt for cutatlas.io
+User-agent: *
+Allow: /
+
+Sitemap: https://cutatlas.io/sitemap.xml
