@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CutBridge by CutAtlas — Finishing-ready handoff from Premiere Pro</title>
+  <meta name="description" content="CutBridge automates post-production handoff from Adobe Premiere Pro — generating FCP XML, AAF, EDL, and burn-in references for color, online, and sound teams. Currently in closed beta." />
+  <link rel="canonical" href="https://cutatlas.io/cutbridge" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cutatlas.io/cutbridge" />
+  <meta property="og:title" content="CutBridge by CutAtlas — Finishing-ready handoff from Premiere Pro" />
+  <meta property="og:description" content="Automates the handoff to grade, online, and sound. FCP XML, AAF, EDL, and burn-in references — in a clean, predictable package." />
+  <meta property="og:image" content="https://cutatlas.io/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CutBridge by CutAtlas — Finishing-ready handoff from Premiere Pro" />
+  <meta name="twitter:description" content="Automates the handoff to grade, online, and sound. FCP XML, AAF, EDL, and burn-in references — in a clean, predictable package." />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="CutAtlas — home">
+        <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/>
+          <path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/>
+          <rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.6" opacity="0.55"/>
+          <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text>
+        </svg>
+        <span class="brand-name">CutAtlas</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="cutbridge.html" aria-current="page">CutBridge</a></li>
+        <li><a href="cutmap.html">CutMap</a></li>
+        <li><a href="cutcompose.html">CutCompose</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="#waitlist">Join the beta</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ HERO ============ -->
+    <header class="page-hero">
+      <div class="container">
+        <img class="page-lockup" src="assets/emblem.svg" alt="CutAtlas" />
+        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> CutBridge by CutAtlas</span>
+        <h1>Finishing-ready handoff,<br />straight from Premiere Pro.</h1>
+        <p class="lead">CutBridge automates the handoff of a finished edit to the color, online, and sound teams — turning a slow, manual chore into a few predictable steps.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
+          <a class="btn btn-ghost" href="cutmap.html">See CutMap</a>
+        </div>
+        <p class="hero-note"><span class="dot" aria-hidden="true"></span> Currently in closed beta — public waitlist open.</p>
+      </div>
+    </header>
+
+    <hr class="rule" />
+
+    <!-- ============ THE PROBLEM ============ -->
+    <section class="section statement">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <span class="eyebrow">01 — The problem</span>
+            <h2>Handoff is where editorial time quietly disappears.</h2>
+          </div>
+          <div class="detail">
+            <p>When a cut is locked, the project still isn't ready for anyone downstream. Color, online, and sound each need it rebuilt their way — the right sequences, the right exports, the right names, the right folders. So someone sits down and does it by hand: duplicating timelines, stripping effects, renaming, exporting FCP XML and AAF, rendering reference videos.</p>
+            <p>It is repetitive, easy to get wrong, and the mistakes surface downstream — after the project has already left editorial. CutBridge does this preparation in a structured, repeatable way instead.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEMO VIDEO ============ -->
+    <section class="section section--tight">
+      <div class="container">
+        <figure class="media">
+          <div class="media-frame">
+            <iframe src="https://player.vimeo.com/video/1184351598?title=0&amp;byline=0&amp;portrait=0"
+              title="CutBridge — handoff workflow demo"
+              loading="lazy"
+              allow="fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <figcaption class="media-caption">CutBridge — preparing a Premiere Pro project for handoff</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section--sunk">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">02 — How it works</span>
+          <h2>From locked cut to finishing-ready, in three steps.</h2>
+          <p>CutBridge runs inside Premiere Pro. It reads your project, prepares what each downstream department needs, and packages the result.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">01</span>
+            <h3>Run a timeline check</h3>
+            <p>CutBridge analyzes your project, identifies the role of each sequence, and runs preflight checks — surfacing problems while they are still cheap to fix, before anything leaves editorial.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">02</span>
+            <h3>Prepare the timelines</h3>
+            <p>It generates derivative sequences for each downstream team — grade, online, and sound — built to the form each one expects and ready to export. No manual duplicating or renaming.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">03</span>
+            <h3>Export and package</h3>
+            <p>It packages the deliverables into a clean, predictable folder structure — interchange files and burn-in references together, with a manifest of exactly what is inside.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHAT IT DELIVERS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">03 — What it delivers</span>
+          <h2>The package downstream teams expect.</h2>
+        </div>
+        <div class="feature-grid">
+          <div class="feature">
+            <span class="feature-idx">FORMATS</span>
+            <h3>Interchange files</h3>
+            <p>FCP XML, AAF, and EDL — the formats that carry a timeline cleanly into DaVinci Resolve, Pro Tools, and other finishing tools.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-idx">REFERENCE</span>
+            <h3>Burn-in references</h3>
+            <p>Reference videos with timecode and shot information, so grade, online, and sound are all working from the same cut.</p>
+          </div>
+          <div class="feature">
+            <span class="feature-idx">STRUCTURE</span>
+            <h3>Structured delivery</h3>
+            <p>A predictable folder layout and a written manifest — nothing arrives loose, mislabeled, or open to guesswork.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ASSISTANT ============ -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="callout">
+          <span class="eyebrow">Inside the panel</span>
+          <h2>A guided workflow, not a wall of buttons.</h2>
+          <p>CutBridge includes a built-in assistant that walks you through each stage of the handoff — what a given department needs, why a check failed, what to send and what to leave out. It stays in the Premiere Pro panel, so you are never breaking focus to look something up.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--sunk">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Questions about CutBridge.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>What is CutBridge?</summary>
+            <p>CutBridge is an Adobe Premiere Pro plugin that automates the handoff of a finished edit to post-production departments — color grading, online/conform, and audio post.</p>
+          </details>
+          <details>
+            <summary>Who is it for?</summary>
+            <p>It is built for senior freelance editors and assistant editors, small post-production houses, and online/conform specialists — people who need reliable, finishing-ready exports.</p>
+          </details>
+          <details>
+            <summary>Does it support macOS and Windows?</summary>
+            <p>CutBridge will support both macOS and Windows at release.</p>
+          </details>
+          <details>
+            <summary>How does the assistant work?</summary>
+            <p>The built-in assistant guides you through each step of the workflow and explains what each downstream team needs — directly inside the Premiere Pro panel.</p>
+          </details>
+          <details>
+            <summary>What about data privacy?</summary>
+            <p>Your projects and exports stay local. No footage or media is uploaded to the cloud.</p>
+          </details>
+          <details>
+            <summary>How much will CutBridge cost?</summary>
+            <p>Final pricing will be announced after the beta. The aim is a transparent, flexible set of plans — joining the waitlist is free and carries no commitment.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WAITLIST ============ -->
+    <section class="section" id="waitlist">
+      <div class="container">
+        <div class="cta-plate on-navy">
+          <span class="eyebrow">Beta access</span>
+          <h2>Join the CutBridge beta waitlist.</h2>
+          <p>CutBridge is in closed beta with a small group of users. Join the waitlist for early access and updates as the handoff workflow takes shape.</p>
+          <!-- NOTE: static form — the submit endpoint still needs to be wired to the waitlist backend. -->
+          <form class="waitlist-form" action="#" method="post" aria-label="CutBridge beta waitlist">
+            <div class="field">
+              <label for="wl-email">Email address</label>
+              <input type="email" id="wl-email" name="email" placeholder="you@studio.com" required />
+            </div>
+            <div class="field">
+              <label for="wl-name">Name (optional)</label>
+              <input type="text" id="wl-name" name="name" placeholder="Your name" />
+            </div>
+            <div class="consent">
+              <input type="checkbox" id="wl-consent" name="consent" required />
+              <label for="wl-consent">I agree to join the CutBridge waitlist and receive updates about beta access by email. See the <a href="privacy.html">Privacy Policy</a> and <a href="beta-terms.html">Beta Terms</a>.</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Join the waitlist</button>
+            <p class="form-note">No commitment — leave the waitlist at any time.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="CutAtlas — home">
+            <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#F5F2EB"/>
+              <path d="M60 8 L73 21 L60 21 Z" fill="#1B2843"/>
+              <rect x="10" y="14" width="58" height="73" fill="none" stroke="#1B2843" stroke-width="0.6" opacity="0.55"/>
+              <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#1B2843" text-anchor="middle">CA</text>
+            </svg>
+            <span class="brand-name">CutAtlas</span>
+          </a>
+          <p>Editorial infrastructure for professional video post-production.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="cutbridge.html">CutBridge</a></li>
+            <li><a href="cutmap.html">CutMap</a></li>
+            <li><a href="cutcompose.html">CutCompose</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="cutbridge.html#waitlist">Beta waitlist</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="beta-terms.html">Beta Terms</a></li>
+            <li><a href="cutmap-refund.html">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 CutAtlas — Editorial infrastructure.</span>
+        <a href="mailto:contact@cutatlas.io">contact@cutatlas.io</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('siteNav');
+      var toggle = document.getElementById('navToggle');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    })();
+  </script>
+
+</body>
+</html>

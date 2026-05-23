@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CutAtlas — Editorial infrastructure for post-production</title>
+  <meta name="description" content="CutAtlas builds editorial infrastructure for professional video post-production — CutBridge for finishing-ready handoff and CutMap for visual project versioning, both inside Adobe Premiere Pro." />
+  <link rel="canonical" href="https://cutatlas.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cutatlas.io/" />
+  <meta property="og:title" content="CutAtlas — Editorial infrastructure for post-production" />
+  <meta property="og:description" content="Tools for the work between the cut and the deliverable. CutBridge and CutMap, by CutAtlas." />
+  <meta property="og:image" content="https://cutatlas.io/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CutAtlas — Editorial infrastructure for post-production" />
+  <meta name="twitter:description" content="Tools for the work between the cut and the deliverable. CutBridge and CutMap, by CutAtlas." />
+  <meta name="twitter:image" content="https://cutatlas.io/assets/og-image.png" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="CutAtlas — home">
+        <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/>
+          <path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/>
+          <rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.6" opacity="0.55"/>
+          <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text>
+        </svg>
+        <span class="brand-name">CutAtlas</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="cutbridge.html">CutBridge</a></li>
+        <li><a href="cutmap.html">CutMap</a></li>
+        <li><a href="cutcompose.html">CutCompose</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="cutbridge.html#waitlist">Join the beta</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="tick" aria-hidden="true"></span> CutAtlas — Editorial Infrastructure</span>
+          <h1>Editorial infrastructure<br />for <span class="serif-italic">post-production</span>.</h1>
+          <p class="lead">CutAtlas builds tools for the work between the cut and the deliverable — precise, reliable, and made to fit the pipelines professional editors already trust.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="cutbridge.html">Explore CutBridge</a>
+            <a class="btn btn-ghost" href="cutmap.html">Explore CutMap</a>
+          </div>
+          <p class="hero-note"><span class="dot" aria-hidden="true"></span> CutBridge is in closed beta — public waitlist open.</p>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <!-- Atlas contents plate: CutAtlas as a collection of two tools -->
+          <svg viewBox="0 0 440 520" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="420" height="500" fill="#FBFAF5" stroke="#1B2843" stroke-width="1.5"/>
+            <rect x="30" y="30" width="380" height="460" fill="none" stroke="#1B2843" stroke-width="1" opacity="0.28"/>
+
+            <text x="44" y="53" font-family="'Courier New', monospace" font-size="10" letter-spacing="2" fill="#6B6660">PL. I</text>
+            <rect x="389" y="44" width="7" height="7" fill="#7A1F2F"/>
+
+            <!-- tag emblem stamp -->
+            <g transform="translate(189 58) scale(0.78)">
+              <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/>
+              <path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/>
+              <rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.6" opacity="0.55"/>
+              <text x="39" y="63" font-family="Georgia, 'Liberation Serif', serif" font-size="30" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text>
+            </g>
+
+            <text x="220" y="175" font-family="Georgia, 'Liberation Serif', serif" font-size="32" fill="#1B2843" text-anchor="middle">CutAtlas</text>
+            <text x="220" y="197" font-family="'Courier New', monospace" font-size="9" letter-spacing="2.5" fill="#6B6660" text-anchor="middle">EDITORIAL INFRASTRUCTURE</text>
+
+            <line x1="55" y1="230" x2="385" y2="230" stroke="#1B2843" stroke-width="1" opacity="0.28"/>
+            <text x="55" y="262" font-family="'Courier New', monospace" font-size="10" letter-spacing="3" fill="#6B6660">CONTENTS</text>
+
+            <!-- entry I -->
+            <text x="55" y="305" font-family="'Courier New', monospace" font-size="12" fill="#6B6660">I</text>
+            <text x="86" y="307" font-family="Georgia, 'Liberation Serif', serif" font-size="22" fill="#1B2843">CutBridge</text>
+            <line x1="212" y1="302" x2="300" y2="302" stroke="#1B2843" stroke-width="1" opacity="0.32" stroke-dasharray="1 4"/>
+            <text x="385" y="306" font-family="'Courier New', monospace" font-size="9.5" letter-spacing="1" fill="#6B6660" text-anchor="end">HANDOFF</text>
+
+            <!-- entry II -->
+            <text x="55" y="351" font-family="'Courier New', monospace" font-size="12" fill="#6B6660">II</text>
+            <text x="86" y="353" font-family="Georgia, 'Liberation Serif', serif" font-size="22" fill="#1B2843">CutMap</text>
+            <line x1="190" y1="348" x2="300" y2="348" stroke="#1B2843" stroke-width="1" opacity="0.32" stroke-dasharray="1 4"/>
+            <text x="385" y="352" font-family="'Courier New', monospace" font-size="9.5" letter-spacing="1" fill="#6B6660" text-anchor="end">VERSIONING</text>
+
+            <line x1="55" y1="452" x2="385" y2="452" stroke="#1B2843" stroke-width="1" opacity="0.28"/>
+            <text x="55" y="474" font-family="'Courier New', monospace" font-size="9" letter-spacing="2" fill="#6B6660">CUTATLAS.IO</text>
+            <text x="385" y="474" font-family="'Courier New', monospace" font-size="9" letter-spacing="2" fill="#6B6660" text-anchor="end">EST. 2026</text>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <hr class="rule" />
+
+    <!-- ============ WHAT IS CUTATLAS ============ -->
+    <section class="section statement" id="what">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <span class="eyebrow">01 — What is CutAtlas</span>
+            <h2>Software for the work between the cut and the deliverable.</h2>
+          </div>
+          <div class="detail">
+            <p>Post-production runs on handoffs. An editor locks a cut; then the color, online, and sound departments each need the project rebuilt to their own specification. The work in between — preparing sequences, exports, and folder structures — is repetitive, exacting, and unforgiving of small mistakes.</p>
+            <p>CutAtlas is a small studio building tools for exactly that work. Each one runs inside Adobe Premiere Pro, takes over a task editors currently do by hand, and stays out of the way the rest of the time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section class="section section--sunk" id="products">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">02 — Products</span>
+          <h2>Three tools, one pipeline.</h2>
+          <p>Three tools that follow a Premiere Pro editor's work end to end — CutCompose builds the first assembly, CutMap keeps the project legible, and CutBridge carries the finished cut downstream.</p>
+        </div>
+
+        <div class="products-grid">
+          <!-- CutCompose -->
+          <a class="plate" href="cutcompose.html">
+            <img class="plate-emblem" src="assets/emblem-cc.svg" alt="" />
+            <span class="eyebrow">CutCompose by CutAtlas</span>
+            <h3>CutCompose</h3>
+            <p class="descriptor">Automatic roughcut assembly for Premiere Pro</p>
+            <p class="plate-body">Reads your script, storyboard, and footage and lays out a first assembly inside your Premiere Pro project — so editing begins from a structured starting point, not a blank timeline.</p>
+            <div class="meta-row">
+              <span class="tag">Local processing</span>
+              <span class="tag">Inside Premiere</span>
+              <span class="tag">In development</span>
+            </div>
+            <span class="link-arrow">Explore CutCompose →</span>
+          </a>
+
+          <!-- CutMap -->
+          <a class="plate" href="cutmap.html">
+            <img class="plate-emblem" src="assets/emblem-cm.svg" alt="" />
+            <span class="eyebrow">CutMap by CutAtlas</span>
+            <h3>CutMap</h3>
+            <p class="descriptor">Visual versioning for Premiere Pro</p>
+            <p class="plate-body">Turns a Premiere project into a clear visual map. Organize bins and sequences into a structure you can read at a glance, keep it in sync, and track the status of every cut and version.</p>
+            <div class="meta-row">
+              <span class="tag">Version tree</span>
+              <span class="tag">Two-way sync</span>
+              <span class="tag">Status tracking</span>
+            </div>
+            <span class="link-arrow">Explore CutMap →</span>
+          </a>
+
+          <!-- CutBridge -->
+          <a class="plate" href="cutbridge.html">
+            <img class="plate-emblem" src="assets/emblem-cb.svg" alt="" />
+            <span class="eyebrow">CutBridge by CutAtlas</span>
+            <h3>CutBridge</h3>
+            <p class="descriptor">Finishing-ready handoff from Premiere Pro</p>
+            <p class="plate-body">Automates the handoff to grade, online, and sound — generating FCP XML, AAF, EDL, and burn-in references in a clean, predictable folder structure, so downstream teams receive exactly what they expect.</p>
+            <div class="meta-row">
+              <span class="tag">FCP XML / AAF / EDL</span>
+              <span class="tag">Preflight checks</span>
+              <span class="tag">Burn-in references</span>
+            </div>
+            <span class="link-arrow">Explore CutBridge →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STUDIO ============ -->
+    <section class="section studio">
+      <div class="container">
+        <div class="studio-inner">
+          <span class="eyebrow">03 — The studio</span>
+          <h2>Built by editors.</h2>
+          <p>CutAtlas is a small studio in Poland, run by people who spent years in post and grew tired of the same manual chores. We build the tools we wanted on the timeline — and we would rather ship something dependable than something loud.</p>
+          <a class="link-arrow" href="about.html">About CutAtlas →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="CutAtlas — home">
+            <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#F5F2EB"/>
+              <path d="M60 8 L73 21 L60 21 Z" fill="#1B2843"/>
+              <rect x="10" y="14" width="58" height="73" fill="none" stroke="#1B2843" stroke-width="0.6" opacity="0.55"/>
+              <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#1B2843" text-anchor="middle">CA</text>
+            </svg>
+            <span class="brand-name">CutAtlas</span>
+          </a>
+          <p>Editorial infrastructure for professional video post-production.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="cutbridge.html">CutBridge</a></li>
+            <li><a href="cutmap.html">CutMap</a></li>
+            <li><a href="cutcompose.html">CutCompose</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="cutbridge.html#waitlist">Beta waitlist</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="https://cutatlas.io/privacy">Privacy</a></li>
+            <li><a href="https://cutatlas.io/beta-terms">Beta Terms</a></li>
+            <li><a href="https://cutatlas.io/cutmap-refund">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 CutAtlas — Editorial infrastructure.</span>
+        <a href="mailto:contact@cutatlas.io">contact@cutatlas.io</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('siteNav');
+      var toggle = document.getElementById('navToggle');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    })();
+  </script>
+
+</body>
+</html>

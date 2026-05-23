@@ -1,0 +1,10 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CutAtlas">
+  <!-- Hinge: left panel = opaque source -->
+  <path d="M20 5 L6 10 L6 30 L20 35 Z" fill="#F0F0F2"/>
+  <!-- right panel = translucent output -->
+  <path d="M20 5 L34 10 L34 30 L20 35 Z" fill="#F0F0F2" fill-opacity="0.20"/>
+  <!-- hinge seam -->
+  <line x1="20" y1="5" x2="20" y2="35" stroke="#F0F0F2" stroke-opacity="0.45" stroke-width="1"/>
+  <!-- hinge dot -->
+  <circle cx="20" cy="20" r="3.4" fill="#6C9BFF"/>
+</svg>
