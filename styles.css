@@ -293,6 +293,19 @@ p { color: var(--ink); }
 .hero-visual { display: flex; justify-content: center; }
 .hero-visual svg { width: 100%; max-width: 420px; height: auto; }
 
+/* Clickable contents entries inside the hero plate */
+.hero-visual a.plate-link { cursor: pointer; }
+.hero-visual a.plate-link text { transition: fill 0.15s ease; }
+.hero-visual a.plate-link:hover text,
+.hero-visual a.plate-link:focus-visible text {
+  fill: var(--burgundy);
+  text-decoration: underline;
+}
+.hero-visual a.plate-link:focus-visible {
+  outline: 2px solid var(--burgundy);
+  outline-offset: 3px;
+}
+
 /* ============================================================
    Statement section ("What is CutAtlas")
    ============================================================ */
@@ -410,6 +423,32 @@ p { color: var(--ink); }
   font-size: 1.075rem;
 }
 .cta-plate .hero-actions { justify-content: center; }
+
+/* Tester counter — restrained stat on the waitlist plate */
+.tester-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  margin: -0.7rem auto 2.4rem;
+  max-width: 34ch;
+}
+.tester-count[hidden] { display: none; }
+.tester-count-num {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 6vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--cream);
+}
+.tester-count-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+  line-height: 1.5;
+}
 
 /* ============================================================
    Footer
