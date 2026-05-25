@@ -229,6 +229,12 @@
           <span class="eyebrow">Beta access</span>
           <h2>Join the CutBridge beta waitlist.</h2>
           <p>CutBridge is in closed beta with a small group of users. Join the waitlist for early access and updates as the handoff workflow takes shape.</p>
+
+          <p class="tester-count" id="testerCount" hidden>
+            <span class="tester-count-num" id="testerCountNum">—</span>
+            <span class="tester-count-label">editors are testing CutBridge in the closed beta</span>
+          </p>
+
           <form class="waitlist-form" id="waitlistForm" aria-label="CutBridge beta waitlist">
             <div class="field">
               <label for="wl-email">Email address</label>
@@ -377,6 +383,57 @@
           status.classList.add('is-error');
         });
       });
+    })();
+
+    /* ---- CutBridge tester counter -> live count of issued beta licences ----
+       Fill in the three CONFIG values below to switch the counter on.
+       SUPABASE_URL  : your project URL, e.g. https://abcd1234.supabase.co
+       SUPABASE_ANON : the public anon key (safe to expose in client code)
+       RPC_FUNCTION  : a Postgres function returning the count as an integer.
+
+       Recommended SQL (run once in the Supabase SQL editor — keeps the
+       licences table private, exposes only the number):
+
+         create or replace function public.beta_tester_count()
+         returns integer
+         language sql
+         security definer
+         set search_path = public
+         as $$ select count(*)::int from licenses $$;
+
+         grant execute on function public.beta_tester_count() to anon;
+
+       Until CONFIG is filled in (or if the request fails), the counter
+       stays hidden — the page never shows a wrong or zero number. */
+    (function () {
+      var CONFIG = {
+        SUPABASE_URL: 'https://ikpwodnohabtkiweevmw.supabase.co',
+        SUPABASE_ANON: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlrcHdvZG5vaGFidGtpd2Vldm13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyNjgzODYsImV4cCI6MjA5MTg0NDM4Nn0.Pf2Ao4ngC_nPWdTUE4_SlrduBvFDKjWzzi2HyBlk_NQ',
+        RPC_FUNCTION: 'beta_tester_count'
+      };
+
+      var wrap = document.getElementById('testerCount');
+      var num = document.getElementById('testerCountNum');
+      if (!wrap || !num) return;
+      if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_ANON) return;
+
+      fetch(CONFIG.SUPABASE_URL.replace(/\/$/, '') + '/rest/v1/rpc/' + CONFIG.RPC_FUNCTION, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': CONFIG.SUPABASE_ANON,
+          'Authorization': 'Bearer ' + CONFIG.SUPABASE_ANON
+        },
+        body: '{}'
+      }).then(function (res) {
+        if (!res.ok) return null;
+        return res.json();
+      }).then(function (data) {
+        var count = typeof data === 'number' ? data : (data && Number(data.count));
+        if (typeof count !== 'number' || !isFinite(count) || count < 0) return;
+        num.textContent = count.toLocaleString('en-US');
+        wrap.hidden = false;
+      }).catch(function () { /* leave the counter hidden */ });
     })();
   </script>
 
