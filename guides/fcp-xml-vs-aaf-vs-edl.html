@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FCP XML vs. AAF vs. EDL: Which Interchange Format to Use | CutAtlas</title>
-  <meta name="description" content="A practical comparison of FCP XML, AAF and EDL — what each format carries, which finishing tool needs which, and how to avoid the common breakages when handing off a Premiere Pro edit." />
+  <meta name="description" content="A practical comparison of FCP XML, AAF and EDL, what each format carries, which finishing tool needs which, and how to avoid the common breakages when handing off a Premiere Pro edit." />
   <link rel="canonical" href="https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl" />
 
   <meta property="og:type" content="article" />
@@ -23,7 +23,7 @@
   <link rel="apple-touch-icon" href="/favicon-192.png" />
   <style>
 /* ============================================================
-   CutAtlas — shared stylesheet
+   CutAtlas, shared stylesheet
    Brand: tag-emblem / bookplate. Editorial, flat, navy + cream.
    Source of truth: CUTATLASIDENT/brand-guidelines.md (v0.1)
    ============================================================ */
@@ -31,12 +31,12 @@
 /* ---------- Design tokens ---------- */
 :root {
   /* Brand palette (exact values) */
-  --navy:        #1B2843;  /* primary brand — ~70% of surface */
+  --navy:        #1B2843;  /* primary brand, ~70% of surface */
   --cream:       #F5F2EB;  /* backgrounds, light surfaces */
-  --ink:         #1A1815;  /* warm black — body text on cream */
+  --ink:         #1A1815;  /* warm black, body text on cream */
   --warm-gray:   #6B6660;  /* captions, taglines, secondary */
   --light-gray:  #A0998E;  /* tertiary, dividers, faded */
-  --burgundy:    #7A1F2F;  /* accent ONLY — <=5% of surface */
+  --burgundy:    #7A1F2F;  /* accent ONLY, <=5% of surface */
 
   /* Derived */
   --navy-hover:  #283A5E;
@@ -46,7 +46,7 @@
   --line-strong: rgba(27, 40, 67, 0.26);
   --line-cream:  rgba(245, 242, 235, 0.18); /* hairline on navy */
 
-  /* Typography — per brand guidelines */
+  /* Typography, per brand guidelines */
   --font-serif: Georgia, "Liberation Serif", "Times New Roman", serif;
   --font-sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono:  "Courier New", "Liberation Mono", Consolas, monospace;
@@ -80,11 +80,11 @@ a { color: inherit; text-decoration: none; }
   outline: 2px solid var(--navy);
   outline-offset: 3px;
 }
-/* On navy surfaces a navy outline is invisible — switch to cream */
+/* On navy surfaces a navy outline is invisible, switch to cream */
 .cta-plate :focus-visible,
 .site-footer :focus-visible { outline-color: var(--cream); }
 
-/* Skip-to-content link — visible only on keyboard focus */
+/* Skip-to-content link, visible only on keyboard focus */
 .skip-link {
   position: absolute;
   left: 16px; top: -64px;
@@ -145,7 +145,7 @@ p { color: var(--ink); }
   max-width: 44ch;
 }
 
-/* Mono eyebrow / metadata label — uppercase, letter-spaced */
+/* Mono eyebrow / metadata label, uppercase, letter-spaced */
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.74rem;
@@ -349,7 +349,7 @@ p { color: var(--ink); }
 .statement .detail p + p { margin-top: 1.1rem; }
 
 /* ============================================================
-   Plate cards (product cards) — folded-corner bookplate motif
+   Plate cards (product cards), folded-corner bookplate motif
    ============================================================ */
 .products-grid {
   display: grid;
@@ -411,7 +411,7 @@ p { color: var(--ink); }
 }
 
 /* ============================================================
-   Studio band ("Built by editors") — centered editorial block
+   Studio band ("Built by editors"), centered editorial block
    ============================================================ */
 .studio { text-align: center; }
 .studio .studio-inner { max-width: 54ch; margin-inline: auto; }
@@ -420,7 +420,7 @@ p { color: var(--ink); }
 .studio p { font-size: 1.075rem; color: var(--ink); margin-bottom: 1.8rem; }
 
 /* ============================================================
-   Final CTA — navy plate set within a cream section
+   Final CTA, navy plate set within a cream section
    ============================================================ */
 .cta-plate {
   position: relative;
@@ -448,7 +448,7 @@ p { color: var(--ink); }
 }
 .cta-plate .hero-actions { justify-content: center; }
 
-/* Tester counter — restrained stat on the waitlist plate */
+/* Tester counter, restrained stat on the waitlist plate */
 .tester-count {
   display: flex;
   flex-direction: column;
@@ -598,7 +598,7 @@ p { color: var(--ink); }
 }
 
 /* ============================================================
-   SUBPAGE STYLES — product, about, legal
+   SUBPAGE STYLES, product, about, legal
    ============================================================ */
 
 /* ---------- Page hero (non-home) ---------- */
@@ -614,7 +614,7 @@ p { color: var(--ink); }
 .page-hero .hero-actions { justify-content: center; }
 .page-hero .hero-note { justify-content: center; }
 
-/* ---------- How it works — pipeline steps ---------- */
+/* ---------- How it works, pipeline steps ---------- */
 .steps { border-bottom: 1px solid var(--line); }
 .step {
   display: grid;
@@ -777,7 +777,7 @@ p { color: var(--ink); }
   align-items: start;
 }
 .price-plate { display: flex; flex-direction: column; }
-/* pricing cards are not links — neutralize the .plate hover affordance */
+/* pricing cards are not links, neutralize the .plate hover affordance */
 .price-plate:hover { border-color: var(--line-strong); background: var(--cream-raised); }
 .price-plate .price-head { margin-bottom: 1.4rem; }
 .price-amount {
@@ -916,7 +916,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
 }
 
 /* ============================================================
-   Guides — hub + article
+   Guides, hub + article
    ============================================================ */
 
 /* ---------- Hub: guide card grid ---------- */
@@ -947,7 +947,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
 }
 .guide-card .link-arrow { align-self: flex-start; }
 
-/* Planned (not-yet-published) guide — no link affordance */
+/* Planned (not-yet-published) guide, no link affordance */
 .guide-card--soon { background: transparent; }
 .guide-card--soon:hover { border-color: var(--line-strong); background: transparent; }
 .guide-card--soon h3 { color: var(--warm-gray); }
@@ -1010,7 +1010,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
 .guide-body a { color: var(--navy); text-decoration: underline; }
 .guide-body a:hover { color: var(--burgundy); }
 
-/* Skeleton placeholder — removed once real copy is written */
+/* Skeleton placeholder, removed once real copy is written */
 .guide-placeholder {
   color: var(--warm-gray);
   font-style: italic;
@@ -1047,7 +1047,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "FCP XML vs. AAF vs. EDL: which interchange format to use, and when",
-    "description": "A practical comparison of FCP XML, AAF and EDL — what each format carries, which finishing tool needs which, and how to avoid the common breakages when handing off a Premiere Pro edit.",
+    "description": "A practical comparison of FCP XML, AAF and EDL, what each format carries, which finishing tool needs which, and how to avoid the common breakages when handing off a Premiere Pro edit.",
     "image": "https://cutatlas.io/assets/og-image.png",
     "mainEntityOfPage": "https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl",
     "author": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
@@ -1074,7 +1074,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
   <!-- ============ NAV ============ -->
   <nav class="site-nav" id="siteNav">
     <div class="container">
-      <a class="brand" href="/" aria-label="CutAtlas — home">
+      <a class="brand" href="/" aria-label="CutAtlas, home">
         <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/>
           <path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/>
@@ -1108,9 +1108,9 @@ figure.media { margin: 0 auto; max-width: 940px; }
     <header class="page-hero">
       <div class="container">
         <svg class="page-lockup" role="img" aria-label="CutAtlas" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg"><path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/><path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/><line x1="60" y1="8" x2="60" y2="21" stroke="#1B2843" stroke-width="0.4"/><line x1="60" y1="21" x2="73" y2="21" stroke="#1B2843" stroke-width="0.4"/><rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.4" opacity="0.55"/><text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text></svg>
-        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> Guide — Interchange formats</span>
+        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> Guide, Interchange formats</span>
         <h1>FCP XML vs. AAF vs. EDL.</h1>
-        <p class="lead">Three interchange formats every Premiere Pro editor meets. Each one carries a different slice of your timeline. Pick the wrong one and the cut arrives incomplete — here is what each one holds, and which to send where.</p>
+        <p class="lead">Three interchange formats. Each carries a different slice of your timeline. Pick the wrong one and the cut arrives incomplete. Here is what each one holds, and which to send where.</p>
       </div>
     </header>
 
@@ -1130,27 +1130,27 @@ figure.media { margin: 0 auto; max-width: 940px; }
 
         <div class="guide-body">
 
-          <p>A locked cut isn't ready to leave editorial. The cut lives inside your Premiere Pro project — bound to its sequence, its effects, its render cache. To carry that work cleanly into a colorist's DaVinci Resolve, a mixer's Pro Tools or an online editor's Avid Media Composer, you need a translation layer. That layer is an interchange file.</p>
+          <p>A locked cut isn't ready to leave editorial. It is bound to the Premiere Pro project that produced it, its sequences, its effects, its render cache. To carry that work cleanly into a colorist's DaVinci Resolve, a mixer's Pro Tools or an online editor's Avid Media Composer, you need a translation layer. That layer is an interchange file.</p>
 
-          <p>FCP XML, AAF and EDL are the three interchange formats every Premiere editor eventually meets. They are not interchangeable. Each one preserves a different slice of the timeline, and each one is the right answer for a different downstream tool. Picking the wrong one is one of the most common ways a handoff arrives incomplete.</p>
+          <p>FCP XML, AAF and EDL are the three interchange formats in common use for handoff. They are not interchangeable. Each one preserves a different slice of the timeline, and each is the right format for a different downstream tool. Picking the wrong one is a common way a handoff arrives incomplete.</p>
 
-          <h2>What each format actually carries</h2>
+          <h2>What each format carries</h2>
           <p>At a high level, an interchange file is a text description of your timeline. It does not contain the footage. Instead, it points at the media on your storage and tells the receiving application: place this clip here, with this in-point and this out-point, on this track. The differences between formats are about what gets preserved beyond that basic structure.</p>
 
-          <p>FCP XML is a plain-text XML file. It supports multiple video and audio tracks, transitions, motion (position, scale, rotation), time remapping and clip metadata — the richest of the three in terms of editorial structure. AAF is a binary multimedia container that, unlike FCP XML, can embed the audio media inside the file itself. EDL is the oldest and simplest: one event per line, a single video track, no effects.</p>
+          <p>FCP XML is a plain-text XML file. It supports multiple video and audio tracks, transitions, motion (position, scale, rotation), time remapping and clip metadata, the richest of the three in terms of editorial structure. AAF is a binary multimedia container that, unlike FCP XML, can embed the audio media inside the file itself. EDL is the oldest and simplest: one event per line, a single video track, no effects.</p>
 
-          <h2>FCP XML — strengths and limits</h2>
-          <p>Reach for FCP XML when video is the priority and you are sending the cut to a tool that speaks it — most importantly DaVinci Resolve. Resolve's XML importer is reliable and preserves the editorial structure faithfully enough that a colorist can grade your cut and trust it lines up.</p>
+          <h2>FCP XML, strengths and limits</h2>
+          <p>Reach for FCP XML when video is the priority and you are sending the cut to a tool that speaks it, most importantly DaVinci Resolve. Resolve's XML importer is reliable and preserves the editorial structure faithfully enough that a colorist can grade your cut and trust it lines up.</p>
 
-          <p>What FCP XML does not handle well is Premiere-specific effects. Plugin transitions, Premiere's own Lumetri grades and many warp/stabilization effects will not translate. The accepted practice is to flatten the timeline first — bake in only what needs to survive, strip out what doesn't — before exporting the XML.</p>
+          <p>What FCP XML does not handle well is Premiere-specific effects. Plugin transitions, Premiere's own Lumetri grades and many warp/stabilization effects will not translate. The accepted practice is to flatten the timeline first, bake in only what needs to survive, strip out what doesn't, before exporting the XML.</p>
 
-          <h2>AAF — when audio is the priority</h2>
+          <h2>AAF, when audio is the priority</h2>
           <p>AAF is the format audio post expects. A Pro Tools mixer importing your project wants AAF, not XML, because AAF carries audio cleanly and can embed the audio media inside the file. It is also the format of choice if any part of your pipeline involves Avid Media Composer.</p>
 
-          <p>Premiere's AAF export gives you two important choices. The first is embedded versus linked media: embedded is safer for handoff because nothing can go missing on the way to the mix stage. The second is frame handles — extra frames before and after each clip. More handles means more flexibility for the mixer to slide edits and crossfade audio without coming back to you.</p>
+          <p>Premiere's AAF export gives you two important choices. The first is embedded versus linked media: embedded is safer for handoff because nothing can go missing on the way to the mix stage. The second is frame handles, extra frames before and after each clip. More handles means more flexibility for the mixer to slide edits and crossfade audio without coming back to you.</p>
 
-          <h2>EDL — the lowest common denominator</h2>
-          <p>An EDL is plain text, one cut per line, a single video track. It strips out almost everything — transitions, effects, multi-track structure, audio sync. It survives because it is the only format some legacy systems read, and because when everything else fails you can open an EDL in a text editor and see exactly what is there.</p>
+          <h2>EDL, the simplest of the three</h2>
+          <p>An EDL is plain text, one cut per line, a single video track. It strips out almost everything: transitions, effects, multi-track structure, audio sync. It survives because some legacy systems read only EDL, and because when everything else fails you can open one in a text editor and see exactly what is there.</p>
 
           <p>Reach for EDL when your destination explicitly asks for one, or as a fallback reference when an XML or AAF refuses to import cleanly somewhere downstream.</p>
 
@@ -1162,10 +1162,10 @@ figure.media { margin: 0 auto; max-width: 940px; }
             <li><strong>Avid Media Composer for online or conform:</strong> AAF.</li>
             <li><strong>A finishing system that asks for cuts only:</strong> EDL.</li>
           </ul>
-          <p>When in doubt, send the format the receiving department asks for. Mixing engineers and colorists have strong preferences for a reason — those are the formats their tools handle most cleanly.</p>
+          <p>When in doubt, send the format the receiving department asks for. Mixing engineers and colorists have strong preferences for a reason, those are the formats their tools handle most cleanly.</p>
 
           <h2>Common breakages, and how to avoid them</h2>
-          <p>Three failures show up over and over.</p>
+          <p>Three failures recur.</p>
 
           <h3>Media reconnection</h3>
           <p>The interchange file points at your media on your storage. If the receiving editor or colorist does not have access to the same paths, every clip arrives offline. The fix: send the interchange file alongside the media, or relink in a location both parties can see.</p>
@@ -1182,7 +1182,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
         <div class="callout guide-cta">
           <span class="eyebrow">Related tool</span>
           <h2>CutBridge generates all three, automatically.</h2>
-          <p>CutBridge is an Adobe Premiere Pro plugin that prepares a finished edit for handoff — generating FCP XML, AAF and EDL alongside burn-in references, in a structured package for color, online and sound. Currently in closed beta.</p>
+          <p>CutBridge is an Adobe Premiere Pro plugin that prepares a finished edit for handoff, generating FCP XML, AAF and EDL alongside burn-in references, in a structured package for color, online and sound. Currently in closed beta.</p>
           <p><a class="link-arrow" href="/cutbridge">See how CutBridge works <span aria-hidden="true">&rarr;</span></a></p>
         </div>
 
@@ -1196,7 +1196,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="brand" href="/" aria-label="CutAtlas — home">
+          <a class="brand" href="/" aria-label="CutAtlas, home">
             <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#F5F2EB"/>
               <path d="M60 8 L73 21 L60 21 Z" fill="#1B2843"/>
@@ -1238,7 +1238,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 CutAtlas — Editorial infrastructure.</span>
+        <span>© 2026 CutAtlas · Editorial infrastructure.</span>
         <a href="mailto:contact@cutatlas.io">contact@cutatlas.io</a>
       </div>
     </div>
