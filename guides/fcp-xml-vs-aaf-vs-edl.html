@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FCP XML vs. AAF vs. EDL: Which Interchange Format to Use | CutAtlas</title>
+  <meta name="description" content="A practical comparison of FCP XML, AAF and EDL — what each format carries, which finishing tool needs which, and how to avoid the common breakages when handing off a Premiere Pro edit." />
+  <link rel="canonical" href="https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl" />
+  <meta property="og:title" content="FCP XML vs. AAF vs. EDL: Which Interchange Format to Use" />
+  <meta property="og:description" content="What each interchange format carries, which finishing tool needs which, and how to avoid the common breakages." />
+  <meta property="og:image" content="https://cutatlas.io/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FCP XML vs. AAF vs. EDL: Which Interchange Format to Use" />
+  <meta name="twitter:description" content="What each interchange format carries, which finishing tool needs which, and how to avoid the common breakages." />
+  <meta name="twitter:image" content="https://cutatlas.io/assets/og-image.png" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/favicon-192.png" />
+  <style>
 /* ============================================================
    CutAtlas — shared stylesheet
    Brand: tag-emblem / bookplate. Editorial, flat, navy + cream.
@@ -1015,3 +1039,225 @@ figure.media { margin: 0 auto; max-width: 940px; }
   .guides-grid { grid-template-columns: 1fr; }
 }
 
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "FCP XML vs. AAF vs. EDL: which interchange format to use, and when",
+    "description": "A practical comparison of FCP XML, AAF and EDL — what each format carries, which finishing tool needs which, and how to avoid the common breakages when handing off a Premiere Pro edit.",
+    "image": "https://cutatlas.io/assets/og-image.png",
+    "mainEntityOfPage": "https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl",
+    "author": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
+    "publisher": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
+    "datePublished": "2026-05-25",
+    "dateModified": "2026-05-25"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cutatlas.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://cutatlas.io/guides" },
+      { "@type": "ListItem", "position": 3, "name": "FCP XML vs. AAF vs. EDL", "item": "https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container">
+      <a class="brand" href="/" aria-label="CutAtlas — home">
+        <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/>
+          <path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/>
+          <rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.6" opacity="0.55"/>
+          <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text>
+        </svg>
+        <span class="brand-name">CutAtlas</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/cutbridge">CutBridge</a></li>
+        <li><a href="/cutmap">CutMap</a></li>
+        <li><a href="/cutcompose">CutCompose</a></li>
+        <li><a href="/guides" aria-current="page">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/cutbridge#waitlist">Join the beta</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ HERO ============ -->
+    <header class="page-hero">
+      <div class="container">
+        <svg class="page-lockup" role="img" aria-label="CutAtlas" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg"><path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/><path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/><line x1="60" y1="8" x2="60" y2="21" stroke="#1B2843" stroke-width="0.4"/><line x1="60" y1="21" x2="73" y2="21" stroke="#1B2843" stroke-width="0.4"/><rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.4" opacity="0.55"/><text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text></svg>
+        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> Guide — Interchange formats</span>
+        <h1>FCP XML vs. AAF vs. EDL.</h1>
+        <p class="lead">Three interchange formats every Premiere Pro editor meets. Each one carries a different slice of your timeline. Pick the wrong one and the cut arrives incomplete — here is what each one holds, and which to send where.</p>
+      </div>
+    </header>
+
+    <hr class="rule" />
+
+    <!-- ============ ARTICLE ============ -->
+    <article class="section guide-article">
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/guides">Guides</a></li>
+            <li><span aria-current="page">FCP XML vs. AAF vs. EDL</span></li>
+          </ol>
+        </nav>
+
+        <div class="guide-body">
+
+          <p>A locked cut isn't ready to leave editorial. The cut lives inside your Premiere Pro project — bound to its sequence, its effects, its render cache. To carry that work cleanly into a colorist's DaVinci Resolve, a mixer's Pro Tools or an online editor's Avid Media Composer, you need a translation layer. That layer is an interchange file.</p>
+
+          <p>FCP XML, AAF and EDL are the three interchange formats every Premiere editor eventually meets. They are not interchangeable. Each one preserves a different slice of the timeline, and each one is the right answer for a different downstream tool. Picking the wrong one is one of the most common ways a handoff arrives incomplete.</p>
+
+          <h2>What each format actually carries</h2>
+          <p>At a high level, an interchange file is a text description of your timeline. It does not contain the footage. Instead, it points at the media on your storage and tells the receiving application: place this clip here, with this in-point and this out-point, on this track. The differences between formats are about what gets preserved beyond that basic structure.</p>
+
+          <p>FCP XML is a plain-text XML file. It supports multiple video and audio tracks, transitions, motion (position, scale, rotation), time remapping and clip metadata — the richest of the three in terms of editorial structure. AAF is a binary multimedia container that, unlike FCP XML, can embed the audio media inside the file itself. EDL is the oldest and simplest: one event per line, a single video track, no effects.</p>
+
+          <h2>FCP XML — strengths and limits</h2>
+          <p>Reach for FCP XML when video is the priority and you are sending the cut to a tool that speaks it — most importantly DaVinci Resolve. Resolve's XML importer is reliable and preserves the editorial structure faithfully enough that a colorist can grade your cut and trust it lines up.</p>
+
+          <p>What FCP XML does not handle well is Premiere-specific effects. Plugin transitions, Premiere's own Lumetri grades and many warp/stabilization effects will not translate. The accepted practice is to flatten the timeline first — bake in only what needs to survive, strip out what doesn't — before exporting the XML.</p>
+
+          <h2>AAF — when audio is the priority</h2>
+          <p>AAF is the format audio post expects. A Pro Tools mixer importing your project wants AAF, not XML, because AAF carries audio cleanly and can embed the audio media inside the file. It is also the format of choice if any part of your pipeline involves Avid Media Composer.</p>
+
+          <p>Premiere's AAF export gives you two important choices. The first is embedded versus linked media: embedded is safer for handoff because nothing can go missing on the way to the mix stage. The second is frame handles — extra frames before and after each clip. More handles means more flexibility for the mixer to slide edits and crossfade audio without coming back to you.</p>
+
+          <h2>EDL — the lowest common denominator</h2>
+          <p>An EDL is plain text, one cut per line, a single video track. It strips out almost everything — transitions, effects, multi-track structure, audio sync. It survives because it is the only format some legacy systems read, and because when everything else fails you can open an EDL in a text editor and see exactly what is there.</p>
+
+          <p>Reach for EDL when your destination explicitly asks for one, or as a fallback reference when an XML or AAF refuses to import cleanly somewhere downstream.</p>
+
+          <h2>Which format for which destination</h2>
+          <p>As a working rule:</p>
+          <ul>
+            <li><strong>DaVinci Resolve for color:</strong> FCP XML.</li>
+            <li><strong>Pro Tools for sound mix:</strong> AAF.</li>
+            <li><strong>Avid Media Composer for online or conform:</strong> AAF.</li>
+            <li><strong>A finishing system that asks for cuts only:</strong> EDL.</li>
+          </ul>
+          <p>When in doubt, send the format the receiving department asks for. Mixing engineers and colorists have strong preferences for a reason — those are the formats their tools handle most cleanly.</p>
+
+          <h2>Common breakages, and how to avoid them</h2>
+          <p>Three failures show up over and over.</p>
+
+          <h3>Media reconnection</h3>
+          <p>The interchange file points at your media on your storage. If the receiving editor or colorist does not have access to the same paths, every clip arrives offline. The fix: send the interchange file alongside the media, or relink in a location both parties can see.</p>
+
+          <h3>Frame handles</h3>
+          <p>A colorist or mixer needs extra frames before and after each cut so they can extend transitions or slide edits. A common minimum is twenty-four frames at the head and tail of every clip. Without handles, every refinement downstream becomes a phone call back to editorial.</p>
+
+          <h3>Unsupported effects</h3>
+          <p>Premiere-specific transitions or plugin effects often do not translate at all. The reliable fix is to flatten and bake any effect that needs to survive into the source media before exporting the interchange file.</p>
+
+        </div>
+
+        <!-- End CTA -->
+        <div class="callout guide-cta">
+          <span class="eyebrow">Related tool</span>
+          <h2>CutBridge generates all three, automatically.</h2>
+          <p>CutBridge is an Adobe Premiere Pro plugin that prepares a finished edit for handoff — generating FCP XML, AAF and EDL alongside burn-in references, in a structured package for color, online and sound. Currently in closed beta.</p>
+          <p><a class="link-arrow" href="/cutbridge">See how CutBridge works <span aria-hidden="true">&rarr;</span></a></p>
+        </div>
+
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/" aria-label="CutAtlas — home">
+            <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#F5F2EB"/>
+              <path d="M60 8 L73 21 L60 21 Z" fill="#1B2843"/>
+              <rect x="10" y="14" width="58" height="73" fill="none" stroke="#1B2843" stroke-width="0.6" opacity="0.55"/>
+              <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#1B2843" text-anchor="middle">CA</text>
+            </svg>
+            <span class="brand-name">CutAtlas</span>
+          </a>
+          <p>Editorial infrastructure for professional video post-production.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="/cutbridge">CutBridge</a></li>
+            <li><a href="/cutmap">CutMap</a></li>
+            <li><a href="/cutcompose">CutCompose</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/cutbridge#waitlist">Beta waitlist</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/beta-terms">Beta Terms</a></li>
+            <li><a href="/cutmap-refund">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 CutAtlas — Editorial infrastructure.</span>
+        <a href="mailto:contact@cutatlas.io">contact@cutatlas.io</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('siteNav');
+      var toggle = document.getElementById('navToggle');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    })();
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "44f85e504acd4048890a82f660ed807d"}'></script>
+
+</body>
+</html>
