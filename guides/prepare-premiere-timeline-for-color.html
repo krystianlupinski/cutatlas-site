@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guides, Premiere Pro Handoff &amp; Finishing | CutAtlas</title>
-  <meta name="description" content="Practical guides on handing a finished Adobe Premiere Pro edit to color, online and sound, interchange formats, timeline prep, handoff checklists and roundtrip workflows." />
-  <link rel="canonical" href="https://cutatlas.io/guides" />
+  <title>How to Prepare a Premiere Pro Timeline for Color Grading | CutAtlas</title>
+  <meta name="description" content="Prep a locked Premiere Pro cut for color: flatten the timeline, set frame handles, name the sequence, export the interchange file and render a reference for the colorist." />
+  <link rel="canonical" href="https://cutatlas.io/guides/prepare-premiere-timeline-for-color" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cutatlas.io/guides" />
-  <meta property="og:title" content="Guides, Premiere Pro Handoff &amp; Finishing | CutAtlas" />
-  <meta property="og:description" content="Guides on getting a finished Premiere Pro edit cleanly into color, online and sound." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cutatlas.io/guides/prepare-premiere-timeline-for-color" />
+  <meta property="og:title" content="How to Prepare a Premiere Pro Timeline for Color Grading" />
+  <meta property="og:description" content="The prep steps that turn a locked Premiere Pro cut into something a colorist can open and grade with confidence." />
   <meta property="og:image" content="https://cutatlas.io/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Guides, Premiere Pro Handoff &amp; Finishing | CutAtlas" />
-  <meta name="twitter:description" content="Guides on getting a finished Premiere Pro edit cleanly into color, online and sound." />
+  <meta name="twitter:title" content="How to Prepare a Premiere Pro Timeline for Color Grading" />
+  <meta name="twitter:description" content="The prep steps that turn a locked Premiere Pro cut into something a colorist can open and grade with confidence." />
   <meta name="twitter:image" content="https://cutatlas.io/assets/og-image.png" />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -1045,12 +1045,26 @@ figure.media { margin: 0 auto; max-width: 940px; }
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Guides, Premiere Pro Handoff & Finishing",
-    "url": "https://cutatlas.io/guides",
-    "description": "Practical guides on handing a finished Adobe Premiere Pro edit to color, online and sound.",
-    "isPartOf": { "@type": "WebSite", "name": "CutAtlas", "url": "https://cutatlas.io/" },
-    "publisher": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" }
+    "@type": "Article",
+    "headline": "How to prepare a Premiere Pro timeline for color grading",
+    "description": "Prep a locked Premiere Pro cut for color: flatten the timeline, set frame handles, name the sequence, export the interchange file and render a reference for the colorist.",
+    "image": "https://cutatlas.io/assets/og-image.png",
+    "mainEntityOfPage": "https://cutatlas.io/guides/prepare-premiere-timeline-for-color",
+    "author": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
+    "publisher": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
+    "datePublished": "2026-05-25",
+    "dateModified": "2026-05-25"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cutatlas.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://cutatlas.io/guides" },
+      { "@type": "ListItem", "position": 3, "name": "Prepare a Premiere timeline for color grading", "item": "https://cutatlas.io/guides/prepare-premiere-timeline-for-color" }
+    ]
   }
   </script>
 </head>
@@ -1094,107 +1108,100 @@ figure.media { margin: 0 auto; max-width: 940px; }
     <header class="page-hero">
       <div class="container">
         <svg class="page-lockup" role="img" aria-label="CutAtlas" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg"><path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/><path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/><line x1="60" y1="8" x2="60" y2="21" stroke="#1B2843" stroke-width="0.4"/><line x1="60" y1="21" x2="73" y2="21" stroke="#1B2843" stroke-width="0.4"/><rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.4" opacity="0.55"/><text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text></svg>
-        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> Guides</span>
-        <h1>Premiere&nbsp;Pro handoff,<br /><span class="serif-italic">explained</span>.</h1>
-        <p class="lead">Guides on the handoff from Premiere Pro to color, online and sound. Written for editors and assistant editors.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="/guides/fcp-xml-vs-aaf-vs-edl">Read the first guide</a>
-          <a class="btn btn-ghost" href="/cutbridge">See CutBridge</a>
-        </div>
+        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> Guide, Color prep</span>
+        <h1>How to prepare a Premiere Pro timeline for color grading.</h1>
+        <p class="lead">A locked cut and the Premiere Pro project that produced it are not the same thing. The cut might be ready; the project rarely is. Here is what to do before you hand it off to color.</p>
       </div>
     </header>
 
     <hr class="rule" />
 
-    <!-- ============ LIBRARY ============ -->
-    <section class="section">
+    <!-- ============ ARTICLE ============ -->
+    <article class="section guide-article">
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">The library</span>
-          <h2>Handoff and finishing, in five guides.</h2>
-          <p>Five guides in the works, more added over time. Each one is self-contained. No product knowledge required.</p>
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/guides">Guides</a></li>
+            <li><span aria-current="page">Prepare for color grading</span></li>
+          </ol>
+        </nav>
+
+        <div class="guide-body">
+
+          <p>The cut is locked. Everyone signed off. Now you need to send the project to the colorist, and the Premiere project that produced the cut is the wrong thing to send. It is dense with nested sequences, plugin effects, render cache and Lumetri grades, almost none of which translates into DaVinci Resolve. What the colorist needs is much simpler: the picture content, in the right order, at the right durations, with handles.</p>
+
+          <p>The work is to flatten what you have into that simpler form, export it as an interchange file, and give the colorist enough alongside it that they can verify the conform and start grading. The steps below cover that prep, in the order an assistant editor or senior editor would do them.</p>
+
+          <h2>Why a locked cut is not ready for color</h2>
+          <p>Editorial timelines accumulate complexity. By the time the cut is locked there are usually multiple working sequences, nested timelines from earlier passes, disabled clips kept for reference, temporary text overlays, audio sweeteners, Lumetri grades for the producer screener, and effects that exist only because Premiere ships with them. Most of this is invisible to the audience. All of it gets in the way of color.</p>
+
+          <p>The colorist works from picture only. They need every shot in the cut, in the right place, with enough head and tail to refine an edit if needed, and the source media reconnected at full quality. Anything that does not contribute to that goal is something they will spend time stripping out, or that will silently break the conform.</p>
+
+          <h2>Flatten and clean the timeline</h2>
+          <p>Always work on a copy. Duplicate the locked cut into a new sequence with a clear name (for example <code>Acme_GRADE_v01</code>) and sit it in a dedicated bin. The original stays untouched in case you need to go back.</p>
+
+          <p>On the duplicate, take out anything that is not picture for the colorist:</p>
+          <ul>
+            <li>Disabled clips and hidden video tracks.</li>
+            <li>Title cards and lower thirds you do not want graded with the picture.</li>
+            <li>Audio tracks (audio post handles those separately, in their own AAF).</li>
+            <li>Premiere-specific effects: Lumetri grades, Warp Stabilizer, plugin transitions. These do not survive XML and will be dropped on import.</li>
+          </ul>
+
+          <p>Collapse nested sequences into their content. Flatten multi-cam clips down to their selected angle. The sequence that leaves editorial should read as a single video track of source clips in cut order, with nothing on top of them.</p>
+
+          <h2>Handles: how many frames, and why</h2>
+          <p>A handle is the buffer of source frames before the in-point and after the out-point of each clip in the cut. The colorist needs them so they can slide an edit, extend a dissolve or recover from a slightly late cut without coming back to you for a re-export.</p>
+
+          <p>A common minimum is twenty-four frames at the head and tail of every clip, one second at 24 fps, slightly less at 25 or 30. For projects with potential reframes, longer dissolves or speed ramps, push to forty-eight frames or more. Storage is cheap; another round-trip back to editorial is not.</p>
+
+          <p>Premiere does not add handles automatically. You set the handle length in the XML or AAF export dialog at the moment of export. If the colorist comes back saying "no handles," they came in at zero, not at whatever you intended.</p>
+
+          <h2>Name and organise the sequence</h2>
+          <p>Use a naming convention that reads on its own. <code>Acme_GRADE_v02</code> tells anyone what it is. <code>Sequence 01 copy 2</code> does not. A consistent pattern across departments saves time at every step downstream: <code>[project]_[department]_[version]</code> works for grade, online and sound alike.</p>
+
+          <p>Sit the export sequence in a bin named for the handoff, for example <code>_HANDOFF/GRADE/</code>. Keep the working bins above the line; keep the deliverables below. When the project travels, it is obvious what was sent.</p>
+
+          <p>Check the timecode of the export sequence. If you trimmed the head of the cut at any point, the sequence start may have drifted. Resolve will line up by source timecode, so the export should start at a clean reference (01:00:00:00 is common). Stray timecode offsets are a frequent cause of conforms that look right but are off by frames.</p>
+
+          <h2>Export the interchange file</h2>
+          <p>For color handoff to DaVinci Resolve, the standard is FCP XML. In Premiere: <strong>File → Export → Final Cut Pro XML…</strong>, select the export sequence, name the file to match (<code>Acme_GRADE_v01.xml</code>), and save it inside the handoff folder.</p>
+
+          <p>Premiere's XML is consistent in what it carries: cut points, transitions, basic motion (position, scale, rotation), time remapping, source clip metadata. It is also consistent in what it drops: Lumetri grades, Warp Stabilizer, third-party plugin effects, anything beyond a small set of native transitions. If an effect needs to survive into color, bake it into the source media first, render to a self-contained intermediate and use that clip instead.</p>
+
+          <p>Save the XML alongside a path the colorist can reconnect to. Either drop a copy of the source media into the handoff folder, or confirm the colorist has access to the same storage and the paths will resolve cleanly.</p>
+
+          <h2>Render a reference video for the colorist</h2>
+          <p>The reference is a flat H.264 render of the locked cut, with timecode and clip-name burn-in overlaid on the picture. The colorist uses it to verify that every shot lined up after the XML import, and to refer back to your intent on any clip where the source looks ambiguous.</p>
+
+          <p>Match the reference to the XML: same sequence, same duration. If the reference is 14:32 and the conformed timeline in Resolve is 14:34, something dropped or shifted on import, and the colorist will catch it before they start grading. Render at 1080p in a sensible H.264 bitrate. It is a check file, not a deliverable.</p>
+
+          <h2>Confirm with the colorist before you send</h2>
+          <p>A five-minute call before the package leaves saves a half-day later. Things worth confirming:</p>
+          <ul>
+            <li>Frame rate, timebase, resolution. If they will work in a different working resolution, ask whether they want offline proxies or original media.</li>
+            <li>Codec preferences for source media. Some colorists want camera originals; others want pre-transcoded ProRes.</li>
+            <li>Naming and folder structure they expect.</li>
+            <li>Whether they want anything in addition to the XML, for example a separate sequence flattened to a single mezzanine for reference grading.</li>
+            <li>Where the package should land, drive, server path, share link.</li>
+          </ul>
+
+          <p>None of this is complicated. All of it is the kind of assumption that, when wrong, costs a day of back-and-forth and a frustrated email at the end of it.</p>
+
         </div>
 
-        <div class="products-grid">
-
-          <a class="plate" href="/guides/fcp-xml-vs-aaf-vs-edl">
-            <span class="eyebrow">I: Interchange formats</span>
-            <h3>FCP XML vs. AAF vs. EDL</h3>
-            <p class="descriptor">Which format carries your timeline cleanly into which tool.</p>
-            <p class="plate-body">A practical comparison of FCP XML, AAF and EDL. What each one preserves, which finishing tool expects which, and the failures that surface downstream.</p>
-            <div class="meta-row">
-              <span class="tag">Premiere → Resolve</span>
-              <span class="tag">Premiere → Pro Tools</span>
-            </div>
-            <span class="link-arrow">Read the guide <span aria-hidden="true">&rarr;</span></span>
-          </a>
-
-          <a class="plate" href="/guides/prepare-premiere-timeline-for-color">
-            <span class="eyebrow">II: Color prep</span>
-            <h3>Prepare a Premiere timeline for color grading</h3>
-            <p class="descriptor">Everything a colorist needs before the project leaves editorial.</p>
-            <p class="plate-body">Flattening the timeline, frame handles, sequence naming, the reference video, the prep that turns a locked cut into something a colorist can open and grade.</p>
-            <div class="meta-row">
-              <span class="tag">Color</span>
-              <span class="tag">Resolve</span>
-            </div>
-            <span class="link-arrow">Read the guide <span aria-hidden="true">&rarr;</span></span>
-          </a>
-
-          <article class="plate plate--soon">
-            <span class="eyebrow">III: Handoff</span>
-            <h3>The Premiere Pro handoff checklist</h3>
-            <p class="descriptor">A locked cut, delivered to color, online and sound.</p>
-            <p class="plate-body">What each downstream department needs, packaged in a folder structure that doesn't lose anything in transit. With a printable checklist.</p>
-            <div class="meta-row">
-              <span class="tag">Handoff</span>
-              <span class="tag">Checklist</span>
-              <span class="tag tag--soon">Planned</span>
-            </div>
-          </article>
-
-          <article class="plate plate--soon">
-            <span class="eyebrow">IV: Audio post</span>
-            <h3>Export AAF from Premiere for Pro Tools</h3>
-            <p class="descriptor">Settings, handles and media options for a clean mix handoff.</p>
-            <p class="plate-body">A focused walkthrough of Premiere's AAF export, embedded vs. linked media, handle length, and what the mixer expects on the other end.</p>
-            <div class="meta-row">
-              <span class="tag">AAF</span>
-              <span class="tag">Pro Tools</span>
-              <span class="tag tag--soon">Planned</span>
-            </div>
-          </article>
-
-          <article class="plate plate--soon">
-            <span class="eyebrow">V: Color / Resolve</span>
-            <h3>Premiere to DaVinci Resolve roundtrip</h3>
-            <p class="descriptor">A repeatable roundtrip that doesn't break.</p>
-            <p class="plate-body">Exporting from Premiere, importing into Resolve, grading, and coming back. The version of this workflow that survives revisions.</p>
-            <div class="meta-row">
-              <span class="tag">Roundtrip</span>
-              <span class="tag">Resolve</span>
-              <span class="tag tag--soon">Planned</span>
-            </div>
-          </article>
-
+        <!-- End CTA -->
+        <div class="callout guide-cta">
+          <span class="eyebrow">Related tool</span>
+          <h2>CutBridge generates all three, automatically.</h2>
+          <p>CutBridge is an Adobe Premiere Pro plugin that prepares a finished edit for handoff, generating FCP XML, AAF and EDL alongside burn-in references, in a structured package for color, online and sound. Currently in closed beta.</p>
+          <p><a class="link-arrow" href="/cutbridge">See how CutBridge works <span aria-hidden="true">&rarr;</span></a></p>
         </div>
+
       </div>
-    </section>
-
-    <!-- ============ CTA ============ -->
-    <section class="section">
-      <div class="container">
-        <div class="cta-plate on-navy">
-          <span class="eyebrow">From guides to the tool itself</span>
-          <h2>CutBridge automates the handoff.</h2>
-          <p>CutBridge is an Adobe Premiere Pro plugin that prepares a finished edit for color, online and sound, generating FCP XML, AAF, EDL and burn-in references in a structured package. Currently in closed beta.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="/cutbridge">See how CutBridge works</a>
-            <a class="btn btn-ghost" href="/cutbridge#waitlist">Join the beta</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    </article>
 
   </main>
 
