@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Prepare a Premiere Pro Timeline for Color Grading | CutAtlas</title>
+  <meta name="description" content="Prep a locked Premiere Pro cut for color: flatten the timeline, name the sequence, set up the source media, export the interchange file and render a reference for the colorist." />
+  <link rel="canonical" href="https://cutatlas.io/guides/prepare-premiere-timeline-for-color" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cutatlas.io/guides/prepare-premiere-timeline-for-color" />
+  <meta property="og:title" content="How to Prepare a Premiere Pro Timeline for Color Grading" />
+  <meta property="og:description" content="The prep steps that turn a locked Premiere Pro cut into something a colorist can open and grade with confidence." />
+  <meta property="og:image" content="https://cutatlas.io/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Prepare a Premiere Pro Timeline for Color Grading" />
+  <meta name="twitter:description" content="The prep steps that turn a locked Premiere Pro cut into something a colorist can open and grade with confidence." />
+  <meta name="twitter:image" content="https://cutatlas.io/assets/og-image.png" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/favicon-192.png" />
+  <style>
+/* ============================================================
+   CutAtlas, shared stylesheet
+   Brand: tag-emblem / bookplate. Editorial, flat, navy + cream.
+   Source of truth: CUTATLASIDENT/brand-guidelines.md (v0.1)
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+:root {
+  /* Brand palette (exact values) */
+  --navy:        #1B2843;  /* primary brand, ~70% of surface */
+  --cream:       #F5F2EB;  /* backgrounds, light surfaces */
+  --ink:         #1A1815;  /* warm black, body text on cream */
+  --warm-gray:   #6B6660;  /* captions, taglines, secondary */
+  --light-gray:  #A0998E;  /* tertiary, dividers, faded */
+  --burgundy:    #7A1F2F;  /* accent ONLY, <=5% of surface */
+
+  /* Derived */
+  --navy-hover:  #283A5E;
+  --cream-raised:#FBFAF5;  /* cards / raised surfaces */
+  --cream-sunk:  #EDE9DF;  /* alternating section bg */
+  --line:        rgba(27, 40, 67, 0.14);   /* navy hairline on cream */
+  --line-strong: rgba(27, 40, 67, 0.26);
+  --line-cream:  rgba(245, 242, 235, 0.18); /* hairline on navy */
+
+  /* Typography, per brand guidelines */
+  --font-serif: Georgia, "Liberation Serif", "Times New Roman", serif;
+  --font-sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:  "Courier New", "Liberation Mono", Consolas, monospace;
+
+  /* Layout */
+  --container: 1140px;
+  --nav-h: 70px;
+  --notch: 24px;  /* folded-corner size on plate cards */
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--navy); color: var(--cream); }
+
+:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 3px;
+}
+/* On navy surfaces a navy outline is invisible, switch to cream */
+.cta-plate :focus-visible,
+.site-footer :focus-visible { outline-color: var(--cream); }
+
+/* Skip-to-content link, visible only on keyboard focus */
+.skip-link {
+  position: absolute;
+  left: 16px; top: -64px;
+  z-index: 200;
+  background: var(--navy);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.65rem 1.1rem;
+  transition: top 0.16s ease;
+}
+.skip-link:focus { top: 16px; }
+
+/* Visually-hidden but available to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Layout primitives ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+.section { padding-block: clamp(4.5rem, 9vw, 8rem); }
+.section--tight { padding-block: clamp(3rem, 6vw, 5rem); }
+.section--sunk { background: var(--cream-sunk); }
+.rule { height: 1px; background: var(--line); border: 0; }
+
+/* ---------- Typography ---------- */
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+}
+h1 { font-size: clamp(2.6rem, 5.4vw, 4.3rem); line-height: 1.08; }
+h2 { font-size: clamp(1.9rem, 3.4vw, 2.85rem); }
+h3 { font-size: clamp(1.5rem, 2.2vw, 1.85rem); }
+.serif-italic { font-style: italic; }
+
+p { color: var(--ink); }
+.muted { color: var(--warm-gray); }
+
+.lead {
+  font-size: clamp(1.08rem, 1.5vw, 1.28rem);
+  color: var(--warm-gray);
+  line-height: 1.6;
+  max-width: 44ch;
+}
+
+/* Mono eyebrow / metadata label, uppercase, letter-spaced */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.eyebrow .tick {
+  width: 5px; height: 5px;
+  background: var(--burgundy);   /* the rare accent */
+  display: inline-block;
+}
+
+.section-head { max-width: 56ch; margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+.section-head .eyebrow { margin-bottom: 1.1rem; }
+.section-head h2 { margin-bottom: 1rem; }
+.section-head p { font-size: 1.075rem; color: var(--warm-gray); max-width: 52ch; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.78rem 1.4rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--navy); color: var(--cream); }
+.btn-primary:hover { background: var(--navy-hover); }
+.btn-ghost { background: transparent; color: var(--navy); border-color: var(--line-strong); }
+.btn-ghost:hover { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+
+/* On a navy surface, the palette inverts */
+.on-navy .btn-primary { background: var(--cream); color: var(--navy); }
+.on-navy .btn-primary:hover { background: #FFFFFF; }
+.on-navy .btn-ghost { color: var(--cream); border-color: var(--line-cream); }
+.on-navy .btn-ghost:hover { background: var(--cream); color: var(--navy); border-color: var(--cream); }
+
+/* Arrow link */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 2px;
+  transition: gap 0.16s ease, border-color 0.16s ease;
+}
+.link-arrow:hover { gap: 0.7rem; border-color: var(--navy); }
+.on-navy .link-arrow { color: var(--cream); border-color: var(--line-cream); }
+.on-navy .link-arrow:hover { border-color: var(--cream); }
+
+/* ============================================================
+   Navigation
+   ============================================================ */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245, 242, 235, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.site-nav .container {
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.66rem;
+  flex: 0 0 auto;
+}
+.brand svg { width: 26px; height: auto; }
+.brand .brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.32rem;
+  color: var(--navy);
+  letter-spacing: 0.005em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.1rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.93rem;
+  color: var(--warm-gray);
+  font-weight: 500;
+  padding-block: 0.35rem;
+  transition: color 0.15s ease;
+}
+.nav-links a:hover { color: var(--navy); }
+.nav-links a[aria-current="page"] {
+  color: var(--navy);
+  border-bottom: 2px solid var(--burgundy);  /* single accent use */
+}
+
+.nav-cta { display: flex; align-items: center; gap: 0.9rem; flex: 0 0 auto; }
+.nav-cta .btn { padding: 0.56rem 1.1rem; font-size: 0.88rem; }
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  width: 44px; height: 44px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  display: block;
+  width: 17px; height: 1.5px;
+  background: var(--navy);
+  position: relative;
+}
+.nav-toggle span::before { position: absolute; top: -5px; }
+.nav-toggle span::after  { position: absolute; top: 5px; }
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero { padding-block: clamp(3.5rem, 8vw, 6.5rem) clamp(4rem, 9vw, 7rem); }
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+.hero-copy .eyebrow { margin-bottom: 1.5rem; }
+.hero h1 { margin-bottom: 1.5rem; }
+.hero .lead { margin-bottom: 2.2rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+.hero-note {
+  margin-top: 1.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  color: var(--warm-gray);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.hero-note .dot {
+  width: 7px; height: 7px;
+  background: var(--burgundy);
+}
+
+.hero-visual { display: flex; justify-content: center; }
+.hero-visual svg { width: 100%; max-width: 420px; height: auto; }
+
+/* Clickable contents entries inside the hero plate */
+.hero-visual a.plate-link { cursor: pointer; }
+.hero-visual a.plate-link text { transition: fill 0.15s ease; }
+.hero-visual a.plate-link:hover text,
+.hero-visual a.plate-link:focus-visible text {
+  fill: var(--burgundy);
+  text-decoration: underline;
+}
+.hero-visual a.plate-link:focus-visible {
+  outline: 2px solid var(--burgundy);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   Statement section ("What is CutAtlas")
+   ============================================================ */
+.statement .grid-2 {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.statement .eyebrow { margin-bottom: 1.3rem; }
+.statement h2 { max-width: 18ch; }
+.statement .detail p {
+  font-size: 1.08rem;
+  color: var(--ink);
+  line-height: 1.7;
+}
+.statement .detail p + p { margin-top: 1.1rem; }
+
+/* ============================================================
+   Plate cards (product cards), folded-corner bookplate motif
+   ============================================================ */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.plate {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--cream-raised);
+  border: 1px solid var(--line-strong);
+  padding: clamp(1.9rem, 3vw, 2.6rem);
+  /* notch the top-right corner */
+  clip-path: polygon(0 0, calc(100% - var(--notch)) 0, 100% var(--notch), 100% 100%, 0 100%);
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+.plate::after {
+  /* the folded flap filling the notch */
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: var(--notch); height: var(--notch);
+  background: var(--navy);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+.plate:hover { border-color: var(--navy); background: #FFFFFF; }
+
+.plate .plate-emblem { width: 38px; height: auto; margin-bottom: 1.4rem; }
+.plate .eyebrow { margin-bottom: 0.85rem; }
+.plate h3 { margin-bottom: 0.4rem; }
+.plate .descriptor {
+  font-size: 0.98rem;
+  color: var(--warm-gray);
+  font-style: italic;
+  font-family: var(--font-serif);
+  margin-bottom: 1.15rem;
+}
+.plate .plate-body {
+  color: var(--ink);
+  font-size: 1.0125rem;
+  line-height: 1.65;
+  margin-bottom: 1.6rem;
+  flex: 1;
+}
+.plate .meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.7rem;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: var(--warm-gray);
+  border: 1px solid var(--line-strong);
+  padding: 0.24rem 0.55rem;
+}
+
+/* ============================================================
+   Studio band ("Built by editors"), centered editorial block
+   ============================================================ */
+.studio { text-align: center; }
+.studio .studio-inner { max-width: 54ch; margin-inline: auto; }
+.studio .eyebrow { margin-bottom: 1.3rem; }
+.studio h2 { margin-bottom: 1.1rem; }
+.studio p { font-size: 1.075rem; color: var(--ink); margin-bottom: 1.8rem; }
+
+/* ============================================================
+   Final CTA, navy plate set within a cream section
+   ============================================================ */
+.cta-plate {
+  position: relative;
+  background: var(--navy);
+  color: var(--cream);
+  text-align: center;
+  padding: clamp(3.25rem, 7vw, 5.25rem) clamp(1.5rem, 6vw, 4rem);
+  clip-path: polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 0 100%);
+}
+.cta-plate::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: 34px; height: 34px;
+  background: var(--cream);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+.cta-plate .eyebrow { color: var(--light-gray); margin-bottom: 1.2rem; }
+.cta-plate h2 { color: var(--cream); margin-bottom: 1.1rem; }
+.cta-plate p {
+  color: var(--light-gray);
+  max-width: 46ch;
+  margin: 0 auto 2.2rem;
+  font-size: 1.075rem;
+}
+.cta-plate .hero-actions { justify-content: center; }
+
+/* Tester counter, restrained stat on the waitlist plate */
+.tester-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  margin: -0.7rem auto 2.4rem;
+  max-width: 34ch;
+}
+.tester-count[hidden] { display: none; }
+.tester-count-num {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 6vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--cream);
+}
+.tester-count-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  background: var(--navy);
+  color: var(--cream);
+  border-top: 1px solid var(--line-cream);
+  padding-block: clamp(3rem, 6vw, 4.5rem) 2.25rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+.footer-brand .brand { margin-bottom: 1.1rem; }
+.footer-brand .brand .brand-name { color: var(--cream); }
+.footer-brand p {
+  font-size: 0.9rem;
+  color: var(--light-gray);
+  max-width: 30ch;
+}
+.footer-col h3 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+  margin-bottom: 1rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.62rem; }
+.footer-col a {
+  font-size: 0.92rem;
+  color: var(--cream);
+  transition: color 0.15s ease;
+}
+.footer-col a:hover { color: var(--light-gray); }
+
+.footer-bottom {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line-cream);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.footer-bottom span, .footer-bottom a {
+  font-size: 0.8rem;
+  color: var(--light-gray);
+}
+.footer-bottom a:hover { color: var(--cream); }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+  .hero .container { grid-template-columns: 1fr; }
+  .hero-visual { max-width: 340px; margin-inline: auto; }
+  .statement .grid-2 { grid-template-columns: 1fr; gap: 1.75rem; }
+  .products-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-brand { grid-column: 1 / -1; }
+
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: flex; }
+
+  .site-nav.open .container {
+    flex-wrap: wrap;
+    height: auto;
+    padding-bottom: 1.25rem;
+  }
+  .site-nav.open .brand { min-height: var(--nav-h); }
+  .site-nav.open .nav-toggle { order: 2; }
+  .site-nav.open .nav-links {
+    display: flex;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border-top: 1px solid var(--line);
+    margin-top: 0.25rem;
+  }
+  .site-nav.open .nav-links li { width: 100%; }
+  .site-nav.open .nav-links a {
+    display: block;
+    padding: 0.95rem 0.25rem;
+    border-bottom: 1px solid var(--line);
+    font-size: 1rem;
+  }
+  .site-nav.open .nav-links a[aria-current="page"] {
+    border-bottom: 1px solid var(--line);
+    color: var(--burgundy);
+  }
+  .site-nav.open .nav-cta {
+    display: flex;
+    order: 4;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .site-nav.open .nav-cta .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .container { padding-inline: 22px; }
+  .products-grid { grid-template-columns: 1fr; }
+  .hero-actions .btn { flex: 1; justify-content: center; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
+}
+
+/* ============================================================
+   SUBPAGE STYLES, product, about, legal
+   ============================================================ */
+
+/* ---------- Page hero (non-home) ---------- */
+.page-hero {
+  text-align: center;
+  padding-block: clamp(3.5rem, 7vw, 6rem) clamp(2.75rem, 6vw, 4.5rem);
+}
+.page-hero .container { max-width: 780px; }
+.page-lockup { height: 66px; width: auto; display: block; margin: 0 auto 1.7rem; }
+.page-hero .eyebrow { margin-bottom: 1.3rem; }
+.page-hero h1 { margin-bottom: 1.3rem; }
+.page-hero .lead { margin-inline: auto; margin-bottom: 2rem; }
+.page-hero .hero-actions { justify-content: center; }
+.page-hero .hero-note { justify-content: center; }
+
+/* ---------- How it works, pipeline steps ---------- */
+.steps { border-bottom: 1px solid var(--line); }
+.step {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 0.4rem 1.75rem;
+  padding-block: 2rem;
+  border-top: 1px solid var(--line);
+}
+.step-num {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--navy);
+  grid-row: span 2;
+}
+.step h3 { margin-bottom: 0.45rem; }
+.step p { color: var(--warm-gray); max-width: 62ch; }
+
+/* ---------- Feature grid ---------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.feature {
+  padding: 2rem 1.75rem 2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.feature + .feature { padding-left: 1.75rem; border-left: 1px solid var(--line); }
+.feature .feature-idx {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--warm-gray);
+  display: block;
+  margin-bottom: 0.9rem;
+}
+.feature h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.feature p { color: var(--warm-gray); font-size: 1rem; }
+
+/* ---------- Assistant / callout ---------- */
+.callout {
+  background: var(--cream-raised);
+  border: 1px solid var(--line-strong);
+  padding: clamp(2rem, 4vw, 3.25rem);
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - var(--notch)) 0, 100% var(--notch), 100% 100%, 0 100%);
+}
+.callout::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: var(--notch); height: var(--notch);
+  background: var(--navy);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+.callout .eyebrow { margin-bottom: 1rem; }
+.callout h2 { margin-bottom: 0.9rem; }
+.callout p { color: var(--warm-gray); max-width: 60ch; font-size: 1.075rem; }
+
+/* ---------- FAQ ---------- */
+.faq-list { border-bottom: 1px solid var(--line); }
+.faq-list details {
+  border-top: 1px solid var(--line);
+}
+.faq-list summary {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+  padding: 1.25rem 2.5rem 1.25rem 0;
+  position: relative;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.25rem; top: 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--warm-gray);
+}
+.faq-list details[open] summary::after { content: "\2013"; }
+.faq-list details > p {
+  color: var(--warm-gray);
+  font-size: 1.0125rem;
+  max-width: 64ch;
+  padding-bottom: 1.4rem;
+}
+
+/* ---------- Waitlist form ---------- */
+.waitlist-form {
+  max-width: 440px;
+  margin: 0 auto;
+  text-align: left;
+}
+.waitlist-form .field { margin-bottom: 0.9rem; }
+.waitlist-form label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+  margin-bottom: 0.4rem;
+}
+.waitlist-form input[type="email"],
+.waitlist-form input[type="text"] {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--cream);
+  background: rgba(245, 242, 235, 0.06);
+  border: 1px solid var(--line-cream);
+  padding: 0.7rem 0.85rem;
+}
+.waitlist-form input::placeholder { color: var(--light-gray); }
+.waitlist-form input:focus-visible { outline-color: var(--cream); }
+.waitlist-form .consent {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin: 1rem 0 1.25rem;
+}
+.waitlist-form .consent input { margin-top: 0.2rem; flex: 0 0 auto; }
+.waitlist-form .consent label {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--light-gray);
+  margin: 0;
+  line-height: 1.5;
+}
+.waitlist-form .consent a { color: var(--cream); text-decoration: underline; }
+.waitlist-form .btn { width: 100%; justify-content: center; }
+.waitlist-form .form-note {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--light-gray);
+  margin-top: 0.9rem;
+  text-align: center;
+}
+.waitlist-form .form-status {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  text-align: center;
+  margin: 0.9rem 0 0;
+}
+.waitlist-form .form-status:empty { display: none; }
+.waitlist-form .form-status.is-ok { color: var(--cream); font-weight: 600; }
+.waitlist-form .form-status.is-error { color: #E6A2A2; }
+
+/* ---------- Pricing ---------- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.75rem;
+  align-items: start;
+}
+.price-plate { display: flex; flex-direction: column; }
+/* pricing cards are not links, neutralize the .plate hover affordance */
+.price-plate:hover { border-color: var(--line-strong); background: var(--cream-raised); }
+.price-plate .price-head { margin-bottom: 1.4rem; }
+.price-amount {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--navy);
+  line-height: 1;
+}
+.price-amount .was {
+  font-size: 1.3rem;
+  color: var(--warm-gray);
+  text-decoration: line-through;
+  margin-right: 0.5rem;
+}
+.price-amount .unit {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--warm-gray);
+}
+.price-plate ul {
+  list-style: none;
+  margin: 1.4rem 0;
+  flex: 1;
+}
+.price-plate li {
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.98rem;
+  color: var(--ink);
+}
+.price-plate .btn { width: 100%; justify-content: center; }
+
+/* Free-trial email form inside the pricing plate */
+.trial-form { display: flex; flex-direction: column; gap: 0.6rem; }
+.trial-form input[type="email"] {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--line-strong);
+  padding: 0.62rem 0.8rem;
+}
+.trial-form input[type="email"]::placeholder { color: var(--light-gray); }
+.trial-status { font-size: 0.85rem; line-height: 1.45; margin: 0; }
+.trial-status.is-ok { color: var(--navy); font-weight: 600; }
+.trial-status.is-error { color: var(--burgundy); }
+
+/* ---------- Document / legal pages ---------- */
+.doc { padding-block: clamp(2.75rem, 5vw, 4rem) clamp(3.5rem, 7vw, 5.5rem); }
+.doc .container { max-width: 760px; }
+.doc .doc-back {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--warm-gray);
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+.doc .doc-back:hover { color: var(--navy); }
+.doc h1 { font-size: clamp(2rem, 4vw, 2.9rem); margin-bottom: 0.7rem; }
+.doc .doc-meta {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--warm-gray);
+  padding-bottom: 1.6rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+.doc h2 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  margin-top: 2.4rem;
+  margin-bottom: 0.75rem;
+}
+.doc p { margin-bottom: 0.95rem; color: var(--ink); }
+.doc ul { margin: 0 0 1.1rem 1.3rem; }
+.doc li { margin-bottom: 0.45rem; color: var(--ink); }
+.doc a { color: var(--navy); text-decoration: underline; }
+.doc .placeholder-note {
+  background: var(--cream-raised);
+  border: 1px solid var(--line-strong);
+  border-left: 3px solid var(--burgundy);
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  color: var(--warm-gray);
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Section intro variants ---------- */
+.section-head--center { margin-inline: auto; text-align: center; }
+.section-head--center p { margin-inline: auto; }
+
+/* ---------- Media (video embeds, figures) ---------- */
+figure.media { margin: 0 auto; max-width: 940px; }
+.media-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--navy);
+  border: 1px solid var(--line-strong);
+  overflow: hidden;
+}
+.media-frame iframe,
+.media-frame video,
+.media-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+.media-caption {
+  margin-top: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  text-align: center;
+}
+
+/* ---------- Subpage responsive ---------- */
+@media (max-width: 900px) {
+  .feature-grid { grid-template-columns: 1fr; }
+  .feature, .feature + .feature {
+    padding: 1.6rem 0;
+    border-left: 0;
+  }
+}
+@media (max-width: 620px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .step { grid-template-columns: 1fr; gap: 0.3rem; }
+  .step-num { grid-row: auto; }
+}
+
+/* ============================================================
+   Guides, hub + article
+   ============================================================ */
+
+/* ---------- Hub: guide card grid ---------- */
+.guides-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.guide-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--cream-raised);
+  border: 1px solid var(--line-strong);
+  padding: clamp(1.6rem, 3vw, 2.2rem);
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+.guide-card:hover { border-color: var(--navy); background: #FFFFFF; }
+.guide-card .eyebrow { margin-bottom: 0.9rem; }
+.guide-card h3 { font-size: 1.4rem; margin-bottom: 0.55rem; }
+.guide-card h3 a { color: var(--navy); transition: color 0.15s ease; }
+.guide-card h3 a:hover { color: var(--burgundy); }
+.guide-card p {
+  color: var(--warm-gray);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+  flex: 1;
+}
+.guide-card .link-arrow { align-self: flex-start; }
+
+/* Planned (not-yet-published) guide, no link affordance */
+.guide-card--soon { background: transparent; }
+.guide-card--soon:hover { border-color: var(--line-strong); background: transparent; }
+.guide-card--soon h3 { color: var(--warm-gray); }
+.guide-soon-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+}
+
+/* ---------- Article: single guide ---------- */
+.guide-article {
+  padding-block: clamp(2.5rem, 5vw, 3.75rem) clamp(3.25rem, 6vw, 5rem);
+}
+.guide-article .container { max-width: 760px; }
+
+.breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: var(--warm-gray);
+  margin-bottom: 1.9rem;
+}
+.breadcrumb ol { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.breadcrumb li { display: flex; gap: 0.5rem; }
+.breadcrumb li + li::before { content: "/"; color: var(--light-gray); }
+.breadcrumb a:hover { color: var(--navy); }
+.breadcrumb [aria-current="page"] { color: var(--navy); }
+
+.guide-article .eyebrow { margin-bottom: 1.1rem; }
+.guide-article h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+.guide-article .lead { max-width: none; margin-bottom: 1.6rem; }
+.guide-meta {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: var(--warm-gray);
+  padding-bottom: 1.8rem;
+  margin-bottom: 2.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-body h2 {
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  margin-top: 2.6rem;
+  margin-bottom: 0.8rem;
+}
+.guide-body h3 {
+  font-size: clamp(1.2rem, 1.8vw, 1.4rem);
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.guide-body p { margin-bottom: 1.1rem; line-height: 1.75; }
+.guide-body ul, .guide-body ol { margin: 0 0 1.2rem 1.35rem; }
+.guide-body li { margin-bottom: 0.5rem; line-height: 1.7; }
+.guide-body a { color: var(--navy); text-decoration: underline; }
+.guide-body a:hover { color: var(--burgundy); }
+
+/* Skeleton placeholder, removed once real copy is written */
+.guide-placeholder {
+  color: var(--warm-gray);
+  font-style: italic;
+  border-left: 2px solid var(--line-strong);
+  padding-left: 1rem;
+}
+
+/* End-of-guide CTA spacing */
+.guide-cta { margin-top: 3rem; }
+
+/* Plate variant: a planned (not-yet-published) guide card.
+   Neutralizes the link-affordance hover and dims the title. */
+.plate--soon:hover {
+  border-color: var(--line-strong);
+  background: var(--cream-raised);
+}
+.plate--soon h3 { color: var(--warm-gray); }
+
+/* Tag variant: the burgundy "Planned" tag inside a guide plate */
+.tag--soon {
+  border-color: var(--burgundy);
+  color: var(--burgundy);
+}
+
+@media (max-width: 720px) {
+  .guides-grid { grid-template-columns: 1fr; }
+}
+
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to prepare a Premiere Pro timeline for color grading",
+    "description": "Prep a locked Premiere Pro cut for color: flatten the timeline, name the sequence, set up the source media, export the interchange file and render a reference for the colorist.",
+    "image": "https://cutatlas.io/assets/og-image.png",
+    "mainEntityOfPage": "https://cutatlas.io/guides/prepare-premiere-timeline-for-color",
+    "author": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
+    "publisher": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
+    "datePublished": "2026-05-25",
+    "dateModified": "2026-05-25"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cutatlas.io/" },
+      { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://cutatlas.io/guides" },
+      { "@type": "ListItem", "position": 3, "name": "Prepare a Premiere timeline for color grading", "item": "https://cutatlas.io/guides/prepare-premiere-timeline-for-color" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container">
+      <a class="brand" href="/" aria-label="CutAtlas, home">
+        <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/>
+          <path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/>
+          <rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.6" opacity="0.55"/>
+          <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text>
+        </svg>
+        <span class="brand-name">CutAtlas</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/cutbridge">CutBridge</a></li>
+        <li><a href="/cutmap">CutMap</a></li>
+        <li><a href="/cutcompose">CutCompose</a></li>
+        <li><a href="/guides" aria-current="page">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/cutbridge#waitlist">Join the beta</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ HERO ============ -->
+    <header class="page-hero">
+      <div class="container">
+        <svg class="page-lockup" role="img" aria-label="CutAtlas" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg"><path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/><path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/><line x1="60" y1="8" x2="60" y2="21" stroke="#1B2843" stroke-width="0.4"/><line x1="60" y1="21" x2="73" y2="21" stroke="#1B2843" stroke-width="0.4"/><rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.4" opacity="0.55"/><text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text></svg>
+        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> Guide, Color prep</span>
+        <h1>How to prepare a Premiere Pro timeline for color grading.</h1>
+        <p class="lead">A locked cut and the Premiere Pro project that produced it are not the same thing. The cut might be ready; the project rarely is. Here is what to do before you hand it off to color.</p>
+      </div>
+    </header>
+
+    <hr class="rule" />
+
+    <!-- ============ ARTICLE ============ -->
+    <article class="section guide-article">
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/guides">Guides</a></li>
+            <li><span aria-current="page">Prepare for color grading</span></li>
+          </ol>
+        </nav>
+
+        <div class="guide-body">
+
+          <p>The cut is locked. Everyone signed off. Now you need to send the project to the colorist, and the Premiere project that produced the cut is the wrong thing to send. It is dense with nested sequences, plugin effects, render cache and Lumetri grades, almost none of which translates into DaVinci Resolve. What the colorist needs is much simpler: the picture content, in the right order, at the right durations, with the source media reachable for any refinement.</p>
+
+          <p>The work is to flatten what you have into that simpler form, export it as an interchange file, and give the colorist enough alongside it that they can verify the conform and start grading. The steps below cover that prep, in the order an assistant editor or senior editor would do them.</p>
+
+          <h2>Why a locked cut is not ready for color</h2>
+          <p>Editorial timelines accumulate complexity. By the time the cut is locked there are usually multiple working sequences, nested timelines from earlier passes, disabled clips kept for reference, temporary text overlays, audio sweeteners, Lumetri grades for the producer screener, and effects that exist only because Premiere ships with them. Most of this is invisible to the audience. All of it gets in the way of color.</p>
+
+          <p>The colorist works from picture only. They need every shot in the cut, in editorial order, each clip returned to its native state, conformed against your source media at full quality. With the source reachable, they can extend a cut or refine a dissolve in their Resolve timeline by trimming out into the original clip. Anything that does not contribute to that goal is something they will spend time stripping out, or that will silently break the conform.</p>
+
+          <h2>Flatten and clean the timeline</h2>
+          <p>Always work on a copy. Duplicate the locked cut into a new sequence with a clear name (for example <code>Acme_GRADE_v01</code>) and sit it in a dedicated bin. The original stays untouched in case you need to go back.</p>
+
+          <p>The principle: every clip on the transfer timeline returns to its native state, in editorial order, with nothing on top of it. The colorist starts from clean source. To get there, on the duplicate:</p>
+
+          <ul>
+            <li><strong>Strip every effect on every clip.</strong> Lumetri grades, LUTs, Warp Stabilizer, plugin effects, transitions, the lot. The fastest path is to select all clips and use Premiere's right-click <strong>Remove Attributes</strong>. Tick every attribute and apply. This resets effects, motion, opacity and the rest of the per-clip attributes in one pass.</li>
+            <li><strong>Remove speed changes, especially ramps.</strong> Constant speed adjustments can sometimes travel cleanly through XML, but ramps almost never do. The accepted approach: reset all speed back to 100 percent before export. The colorist grades the full ungraded clip as if there were no ramp. The ramp is re-applied later, during the reconform stage in online, before the next phase of work, not in editorial. If a constant speed change has to stay through to grade, flag it in writing.</li>
+            <li><strong>Flatten to a single video track.</strong> Collapse nested sequences into their content, replace nests with source clips, flatten multi-cam clips to their selected angle. One video track of source clips in cut order is the target.</li>
+            <li><strong>Drop the secondary content.</strong> Disabled clips, hidden tracks, title cards, lower thirds, graphics overlays, none of it belongs on the transfer timeline.</li>
+            <li><strong>Audio: out or one reference track.</strong> Audio post handles the mix in its own AAF. Either remove all audio from the transfer, or leave one mixdown reference track for sync.</li>
+            <li><strong>Switch off Scale to Frame Size.</strong> If clips were placed with this enabled, the colorist sees a different frame than you do. Use Effect Controls scale instead, or apply scale to the source clip explicitly.</li>
+          </ul>
+
+          <p>The end state: a single video track of source clips in cut order, each at default attributes, with no effects, no transforms, no speed changes and no graphics. The colorist gets the picture and nothing else.</p>
+
+          <h2>Handles: where they matter, where they don't</h2>
+          <p>A common misconception when prepping a Premiere cut for color is that you need to bake frame handles into the XML at export time, the way you would for an AAF going to audio post. For an XML to DaVinci Resolve, you do not, and Premiere's FCP XML export dialog does not offer the option.</p>
+
+          <p>The XML describes the cut points and the clip references. When Resolve imports it, it conforms against your source media files on disk. The full source clip is still there, so the colorist can extend a cut, refine a dissolve or recover from a slightly late edit by trimming out into the source on their timeline. In other words, the "handles" come from having access to the original media, not from anything you bake into the export.</p>
+
+          <p>What does matter is that the colorist can actually reach the source media. Send it alongside the XML, or confirm they have access to the same storage and the file paths will resolve cleanly. Without that, every clip arrives offline and there is nothing to trim out into.</p>
+
+          <p>The handle conversation is different for audio post. AAF for Pro Tools does have a Handle Frames option, and there you do set it explicitly, often to several seconds, because AAF can trim the audio media to the cut. Two different exports, two different rules.</p>
+
+          <h2>Name and organise the sequence</h2>
+          <p>Use a naming convention that reads on its own. <code>Acme_GRADE_v02</code> tells anyone what it is. <code>Sequence 01 copy 2</code> does not. A consistent pattern across departments saves time at every step downstream: <code>[project]_[department]_[version]</code> works for grade, online and sound alike.</p>
+
+          <p>Sit the export sequence in a bin named for the handoff, for example <code>_HANDOFF/GRADE/</code>. Keep the working bins above the line; keep the deliverables below. When the project travels, it is obvious what was sent.</p>
+
+          <p>Check the timecode of the export sequence. If you trimmed the head of the cut at any point, the sequence start may have drifted. Resolve will line up by source timecode, so the export should start at a clean reference (01:00:00:00 is common). Stray timecode offsets are a frequent cause of conforms that look right but are off by frames.</p>
+
+          <h2>Export the interchange file</h2>
+          <p>For color handoff to DaVinci Resolve, the standard is FCP XML. In Premiere: <strong>File → Export → Final Cut Pro XML…</strong>, select the export sequence, name the file to match (<code>Acme_GRADE_v01.xml</code>), and save it inside the handoff folder.</p>
+
+          <p>Premiere's XML is consistent in what it carries: cut points, transitions, basic motion (position, scale, rotation), time remapping, source clip metadata. It is also consistent in what it drops: Lumetri grades, Warp Stabilizer, third-party plugin effects, anything beyond a small set of native transitions. If an effect needs to survive into color, bake it into the source media first, render to a self-contained intermediate and use that clip instead.</p>
+
+          <p>Save the XML alongside a path the colorist can reconnect to. Either drop a copy of the source media into the handoff folder, or confirm the colorist has access to the same storage and the paths will resolve cleanly.</p>
+
+          <h2>Render a reference video for the colorist</h2>
+          <p>The reference is a flat H.264 render of the locked cut, with timecode and clip-name burn-in overlaid on the picture. The colorist uses it to verify that every shot lined up after the XML import, and to refer back to your intent on any clip where the source looks ambiguous.</p>
+
+          <p>Match the reference to the XML: same sequence, same duration. If the reference is 14:32 and the conformed timeline in Resolve is 14:34, something dropped or shifted on import, and the colorist will catch it before they start grading. Render at 1080p in a sensible H.264 bitrate. It is a check file, not a deliverable.</p>
+
+          <h2>Confirm with the colorist before you send</h2>
+          <p>A five-minute call before the package leaves saves a half-day later. Things worth confirming:</p>
+          <ul>
+            <li>Frame rate, timebase, resolution. If they will work in a different working resolution, ask whether they want offline proxies or original media.</li>
+            <li>Codec preferences for source media. Some colorists want camera originals; others want pre-transcoded ProRes.</li>
+            <li>Naming and folder structure they expect.</li>
+            <li>Whether they want anything in addition to the XML, for example a separate sequence flattened to a single mezzanine for reference grading.</li>
+            <li>Where the package should land, drive, server path, share link.</li>
+          </ul>
+
+          <p>None of this is complicated. All of it is the kind of assumption that, when wrong, costs a day of back-and-forth and a frustrated email at the end of it.</p>
+
+        </div>
+
+        <!-- End CTA -->
+        <div class="callout guide-cta">
+          <span class="eyebrow">Related tool</span>
+          <h2>CutBridge generates all three, automatically.</h2>
+          <p>CutBridge is an Adobe Premiere Pro plugin that prepares a finished edit for handoff, generating FCP XML, AAF and EDL alongside burn-in references, in a structured package for color, online and sound. Currently in closed beta.</p>
+          <p><a class="link-arrow" href="/cutbridge">See how CutBridge works <span aria-hidden="true">&rarr;</span></a></p>
+        </div>
+
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/" aria-label="CutAtlas, home">
+            <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#F5F2EB"/>
+              <path d="M60 8 L73 21 L60 21 Z" fill="#1B2843"/>
+              <rect x="10" y="14" width="58" height="73" fill="none" stroke="#1B2843" stroke-width="0.6" opacity="0.55"/>
+              <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#1B2843" text-anchor="middle">CA</text>
+            </svg>
+            <span class="brand-name">CutAtlas</span>
+          </a>
+          <p>Editorial infrastructure for professional video post-production.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="/cutbridge">CutBridge</a></li>
+            <li><a href="/cutmap">CutMap</a></li>
+            <li><a href="/cutcompose">CutCompose</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/cutbridge#waitlist">Beta waitlist</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/beta-terms">Beta Terms</a></li>
+            <li><a href="/cutmap-refund">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 CutAtlas · Editorial infrastructure.</span>
+        <a href="mailto:contact@cutatlas.io">contact@cutatlas.io</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('siteNav');
+      var toggle = document.getElementById('navToggle');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    })();
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "44f85e504acd4048890a82f660ed807d"}'></script>
+
+</body>
+</html>
