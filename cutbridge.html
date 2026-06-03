@@ -51,6 +51,7 @@
           <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text>
         </svg>
         <span class="brand-name">CutAtlas</span>
+        <span class="brand-tag" aria-hidden="true">Editorial infrastructure</span>
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -73,18 +74,143 @@
 
   <main id="main" tabindex="-1">
 
-    <!-- ============ HERO ============ -->
-    <header class="page-hero">
+    <!-- ============ HERO (with Premiere panel) ============ -->
+    <header class="stage framed home-hero">
+      <span class="ornament tl" aria-hidden="true">CutBridge by CutAtlas</span>
+      <span class="ornament tr" aria-hidden="true">PL. CB</span>
+      <span class="ornament bl" aria-hidden="true">Finishing-ready handoff</span>
+      <span class="ornament br" aria-hidden="true">v1.0 — closed beta</span>
+
       <div class="container">
-        <img class="page-lockup" src="assets/emblem.svg" alt="CutAtlas" />
-        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> CutBridge by CutAtlas</span>
-        <h1>Finishing-ready handoff,<br />straight from Premiere Pro.</h1>
-        <p class="lead">CutBridge automates the handoff of a finished edit to the color, online, and sound teams, turning a slow, manual chore into a few predictable steps.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#waitlist">Join the waitlist</a>
-          <a class="btn btn-ghost" href="/cutmap">See CutMap</a>
+        <div class="grid">
+
+          <div class="hero-copy">
+            <span class="eyebrow reveal" style="transition-delay:.05s">
+              <span class="tick"></span> CutBridge by CutAtlas
+            </span>
+            <h1 class="reveal" style="transition-delay:.12s">
+              Finishing-ready handoff,<br/>
+              straight from <em class="serif-italic">Premiere Pro.</em>
+            </h1>
+            <p class="lead reveal" style="transition-delay:.22s">
+              CutBridge automates the handoff of a finished edit to the color, online, and sound teams, turning a slow, manual chore into a few predictable steps.
+            </p>
+            <div class="hero-actions reveal" style="transition-delay:.32s">
+              <a class="btn btn-primary" href="#waitlist">Join the waitlist →</a>
+              <a class="btn btn-ghost" href="/cutmap">See CutMap</a>
+            </div>
+            <p class="hero-note reveal" style="transition-delay:.42s">
+              <span class="dot" aria-hidden="true"></span>
+              Currently in closed beta · Public waitlist open
+            </p>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="scene">
+
+              <div class="panel reveal" style="transition-delay:.18s">
+                <div class="chrome">
+                  <div class="tl-dots"><span></span><span></span><span></span></div>
+                  <div class="chrome-title">COSMOS_S03E07_LOCKED_v12.prproj — Premiere Pro</div>
+                  <div class="chrome-cb">CUTBRIDGE</div>
+                </div>
+
+                <div class="tabs">
+                  <span>PROJECT</span>
+                  <span>EFFECT CONTROLS</span>
+                  <span class="is-active">CUTBRIDGE — HANDOFF</span>
+                  <span>METADATA</span>
+                </div>
+
+                <div class="panel-body">
+                  <div class="bins">
+                    <div class="bins-header">PROJECT BINS</div>
+                    <div class="bin-row"><span class="ic"></span> 01_ASSEMBLY</div>
+                    <div class="bin-row indent"><span class="ic seq"></span> ROUGH_v04</div>
+                    <div class="bin-row indent"><span class="ic seq"></span> ROUGH_v07</div>
+                    <div class="bin-row"><span class="ic"></span> 02_VFX_PULLS</div>
+                    <div class="bin-row indent"><span class="ic seq"></span> VFX_SHOTS_v02</div>
+                    <div class="bin-row"><span class="ic"></span> 03_FINISHING</div>
+                    <div class="bin-row indent active"><span class="ic locked"></span> LOCKED_CUT_v12</div>
+                    <div class="bin-row indent-2"><span class="ic seq"></span> Conform ref</div>
+                    <div class="bin-row indent-2"><span class="ic seq"></span> Audio split</div>
+                    <div class="bin-row indent-2"><span class="ic seq"></span> Color ref burn-in</div>
+                    <div class="bin-row"><span class="ic"></span> 04_DELIVERABLES</div>
+                  </div>
+
+                  <div class="timeline">
+                    <div class="ruler">
+                      <div class="ruler-marks">
+                        <span>01:23:30</span><span>01:23:35</span><span>01:23:40</span>
+                        <span>01:23:45</span><span>01:23:50</span><span>01:23:55</span>
+                      </div>
+                    </div>
+                    <div class="tracks">
+                      <div class="track"><span class="track-label">V3</span><div class="track-canvas">
+                        <div class="clip v2" style="left:8%; width:18%;">GFX_LOWER</div>
+                        <div class="clip warn" style="left:62%; width:12%;">missing media</div>
+                      </div></div>
+                      <div class="track"><span class="track-label">V2</span><div class="track-canvas">
+                        <div class="clip v1" style="left:4%; width:22%;">SC_42A_t06</div>
+                        <div class="clip v1" style="left:30%; width:16%;">SC_42B_t04</div>
+                        <div class="clip v2" style="left:48%; width:28%;">SC_42C_t09</div>
+                        <div class="clip v1" style="left:78%; width:18%;">SC_43_t02</div>
+                      </div></div>
+                      <div class="track"><span class="track-label">V1</span><div class="track-canvas">
+                        <div class="clip v1" style="left:0%; width:32%;">SC_42_master</div>
+                        <div class="clip v2" style="left:34%; width:22%;">cut_03</div>
+                        <div class="clip v1" style="left:58%; width:42%;">SC_43_master_v07</div>
+                      </div></div>
+                      <div class="track"><span class="track-label">A1</span><div class="track-canvas">
+                        <div class="clip aud-a" style="left:0%; width:48%;">prod_mix.L</div>
+                        <div class="clip aud-a" style="left:50%; width:48%;">prod_mix.L</div>
+                      </div></div>
+                      <div class="track"><span class="track-label">A2</span><div class="track-canvas">
+                        <div class="clip aud-b" style="left:0%; width:48%;">prod_mix.R</div>
+                        <div class="clip aud-b" style="left:50%; width:48%;">prod_mix.R</div>
+                      </div></div>
+                      <div class="track"><span class="track-label">A3</span><div class="track-canvas">
+                        <div class="clip aud-a" style="left:12%; width:18%;">dx_vo</div>
+                        <div class="clip aud-a" style="left:54%; width:22%;">dx_vo</div>
+                      </div></div>
+                      <div class="track"><span class="track-label">A4</span><div class="track-canvas">
+                        <div class="clip aud-b" style="left:38%; width:12%;">sfx_swoosh</div>
+                        <div class="clip aud-b" style="left:74%; width:14%;">sfx_riser</div>
+                      </div></div>
+                    </div>
+                    <div class="playhead" style="left:46%; top:0;">
+                      <span class="tc-badge">01:23:45:12</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="preflight reveal" style="transition-delay:.6s">
+                <div class="check" aria-hidden="true">✓</div>
+                <div>
+                  <div class="lbl">Preflight</div>
+                  <div class="val">24 / 24 <span style="color:var(--p-text-mute); font-size:.85rem; font-style:normal;">checks passed</span></div>
+                </div>
+              </div>
+
+              <div class="ai-chip reveal" style="transition-delay:.75s">
+                <span class="glyph" aria-hidden="true">
+                  <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#F5F2EB"/>
+                    <path d="M60 8 L73 21 L60 21 Z" fill="#1B2843"/>
+                    <text x="39" y="62" font-family="Georgia, serif" font-size="32" font-style="italic" font-weight="500" fill="#1B2843" text-anchor="middle">A</text>
+                  </svg>
+                </span>
+                <div>
+                  Assistant — ready for handoff.<br/>
+                  <em>Generate AAF + FCP XML?</em>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
-        <p class="hero-note"><span class="dot" aria-hidden="true"></span> Currently in closed beta, public waitlist open.</p>
       </div>
     </header>
 
@@ -95,11 +221,11 @@
       <div class="container">
         <div class="grid-2">
           <div>
-            <span class="eyebrow">01: The problem</span>
+            <span class="eyebrow"><span class="num">01</span> The problem</span>
             <h2>Handoff is where editorial time quietly disappears.</h2>
           </div>
           <div class="detail">
-            <p>When a cut is locked, the project still isn't ready for anyone downstream. Color, online, and sound each need it rebuilt their way, the right sequences, the right exports, the right names, the right folders. So someone sits down and does it by hand: duplicating timelines, stripping effects, renaming, exporting FCP XML and AAF, rendering reference videos.</p>
+            <p>When a cut is locked, the project still isn't ready for anyone downstream. Color, online, and sound each need it rebuilt their way — the right sequences, the right exports, the right names, the right folders. So someone sits down and does it by hand: duplicating timelines, stripping effects, renaming, exporting FCP XML and AAF, rendering reference videos.</p>
             <p>It is repetitive, easy to get wrong, and the mistakes surface downstream, after the project has already left editorial. CutBridge does this preparation in a structured, repeatable way instead.</p>
           </div>
         </div>
@@ -126,26 +252,26 @@
     <section class="section section--sunk">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">02: How it works</span>
+          <span class="eyebrow"><span class="num">02</span> How it works</span>
           <h2>From locked cut to finishing-ready, in three steps.</h2>
           <p>CutBridge runs inside Premiere Pro. It reads your project, prepares what each downstream department needs, and packages the result.</p>
         </div>
 
         <div class="steps">
           <div class="step">
-            <span class="step-num">01</span>
+            <span class="step-num">01 — CHECK</span>
             <h3>Run a timeline check</h3>
-            <p>CutBridge analyzes your project, identifies the role of each sequence, and runs preflight checks, surfacing problems while they are still cheap to fix, before anything leaves editorial.</p>
+            <p>CutBridge analyzes your project, identifies the role of each sequence, and runs preflight checks — surfacing problems while they are still cheap to fix, before anything leaves editorial.</p>
           </div>
           <div class="step">
-            <span class="step-num">02</span>
+            <span class="step-num">02 — PREPARE</span>
             <h3>Prepare the timelines</h3>
-            <p>It generates derivative sequences for each downstream team, grade, online, and sound, built to the form each one expects and ready to export. No manual duplicating or renaming.</p>
+            <p>It generates derivative sequences for each downstream team — grade, online, and sound — built to the form each one expects and ready to export. No manual duplicating or renaming.</p>
           </div>
           <div class="step">
-            <span class="step-num">03</span>
+            <span class="step-num">03 — PACKAGE</span>
             <h3>Export and package</h3>
-            <p>It packages the deliverables into a clean, predictable folder structure, interchange files and burn-in references together, with a manifest of exactly what is inside.</p>
+            <p>It packages the deliverables into a clean, predictable folder structure — interchange files and burn-in references together, with a manifest of exactly what is inside.</p>
           </div>
         </div>
       </div>
@@ -155,14 +281,14 @@
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">03: What it delivers</span>
+          <span class="eyebrow"><span class="num">03</span> What it delivers</span>
           <h2>The package downstream teams expect.</h2>
         </div>
         <div class="feature-grid">
           <div class="feature">
             <span class="feature-idx">FORMATS</span>
             <h3>Interchange files</h3>
-            <p>FCP XML, AAF, and EDL, the formats that carry a timeline cleanly into DaVinci Resolve, Pro Tools, and other finishing tools.</p>
+            <p>FCP XML, AAF, and EDL — the formats that carry a timeline cleanly into DaVinci Resolve, Pro Tools, and other finishing tools.</p>
           </div>
           <div class="feature">
             <span class="feature-idx">REFERENCE</span>
@@ -172,7 +298,7 @@
           <div class="feature">
             <span class="feature-idx">STRUCTURE</span>
             <h3>Structured delivery</h3>
-            <p>A predictable folder layout and a written manifest, nothing arrives loose, mislabeled, or open to guesswork.</p>
+            <p>A predictable folder layout and a written manifest. Nothing arrives loose, mislabeled, or open to guesswork.</p>
           </div>
         </div>
       </div>
@@ -184,7 +310,7 @@
         <div class="callout">
           <span class="eyebrow">Inside the panel</span>
           <h2>A guided workflow, not a wall of buttons.</h2>
-          <p>CutBridge includes a built-in assistant that walks you through each stage of the handoff, what a given department needs, why a check failed, what to send and what to leave out. It stays in the Premiere Pro panel, so you are never breaking focus to look something up.</p>
+          <p>CutBridge includes a built-in assistant that walks you through each stage of the handoff — what a given department needs, why a check failed, what to send and what to leave out. It stays in the Premiere Pro panel, so you are never breaking focus to look something up.</p>
         </div>
       </div>
     </section>
@@ -199,11 +325,11 @@
         <div class="faq-list">
           <details>
             <summary>What is CutBridge?</summary>
-            <p>CutBridge is an Adobe Premiere Pro plugin that automates the handoff of a finished edit to post-production departments, color grading, online/conform, and audio post.</p>
+            <p>CutBridge is an Adobe Premiere Pro plugin that automates the handoff of a finished edit to post-production departments — color grading, online/conform, and audio post.</p>
           </details>
           <details>
             <summary>Who is it for?</summary>
-            <p>It is built for senior freelance editors and assistant editors, small post-production houses, and online/conform specialists, people who need reliable, finishing-ready exports.</p>
+            <p>It is built for senior freelance editors and assistant editors, small post-production houses, and online/conform specialists — people who need reliable, finishing-ready exports.</p>
           </details>
           <details>
             <summary>Does it support macOS and Windows?</summary>
@@ -219,7 +345,7 @@
           </details>
           <details>
             <summary>How much will CutBridge cost?</summary>
-            <p>Final pricing will be announced after the beta. The aim is a transparent, flexible set of plans, joining the waitlist is free and carries no commitment.</p>
+            <p>Final pricing will be announced after the beta. The aim is a transparent, flexible set of plans — joining the waitlist is free and carries no commitment.</p>
           </details>
         </div>
       </div>
@@ -229,7 +355,7 @@
     <section class="section" id="waitlist">
       <div class="container">
         <div class="cta-plate on-navy">
-          <span class="eyebrow">Beta access</span>
+          <span class="eyebrow"><span class="tick"></span> Beta access</span>
           <h2>Join the CutBridge beta waitlist.</h2>
           <p>CutBridge is in closed beta with a small group of users. Join the waitlist for early access and updates as the handoff workflow takes shape.</p>
 
@@ -315,9 +441,11 @@
   </footer>
 
   <script>
+    // mobile nav toggle
     (function () {
       var nav = document.getElementById('siteNav');
       var toggle = document.getElementById('navToggle');
+      if (!toggle) return;
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -325,7 +453,54 @@
       });
     })();
 
-    /* ---- CutBridge beta waitlist -> POST to the waitlist endpoint ---- */
+    // reveal on intersect
+    (function(){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    })();
+
+    // scroll-driven panel rotation + cursor parallax
+    (function(){
+      var scene = document.querySelector('.scene');
+      var panel = document.querySelector('.panel');
+      var hero  = document.querySelector('.home-hero');
+      if (!scene || !panel || !hero) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var RY0 = -13, RX0 = 7, RY1 = -2, RX1 = 1;
+      var progress = 0, hx = 0, hy = 0, hovering = false, active = false;
+      function apply(){
+        if (!active) return;
+        var ry = RY0 + (RY1 - RY0) * progress + (hovering ? -hx * 8 : 0);
+        var rx = RX0 + (RX1 - RX0) * progress + (hovering ?  hy * 6 : 0);
+        panel.style.transform = 'rotateY(' + ry + 'deg) rotateX(' + rx + 'deg)';
+      }
+      function recalc(){
+        var r = hero.getBoundingClientRect();
+        var span = Math.max(1, r.height * 0.85);
+        progress = Math.max(0, Math.min(1, -r.top / span));
+        apply();
+      }
+      panel.addEventListener('transitionend', function(e){
+        if (e.propertyName === 'transform' && !active){ active = true; recalc(); }
+      });
+      var ticking = false;
+      window.addEventListener('scroll', function(){
+        if (!ticking){ requestAnimationFrame(function(){ recalc(); ticking = false; }); ticking = true; }
+      }, { passive: true });
+      scene.addEventListener('mousemove', function(e){
+        var r = scene.getBoundingClientRect();
+        hx = (e.clientX - r.left) / r.width - 0.5;
+        hy = (e.clientY - r.top) / r.height - 0.5;
+        hovering = true; apply();
+      });
+      scene.addEventListener('mouseleave', function(){ hovering = false; apply(); });
+    })();
+
+    // CutBridge beta waitlist — POST to the waitlist endpoint
     (function () {
       var form = document.getElementById('waitlistForm');
       if (!form) return;
@@ -372,7 +547,7 @@
               return;
             }
             if (data.joined) {
-              status.textContent = '✓ You're on the waitlist, check your inbox for confirmation.';
+              status.textContent = "✓ You're on the waitlist, check your inbox for confirmation.";
               status.classList.add('is-ok');
               form.reset();
               return;
@@ -389,38 +564,17 @@
       });
     })();
 
-    /* ---- CutBridge tester counter -> live count of issued beta licences ----
-       Fill in the three CONFIG values below to switch the counter on.
-       SUPABASE_URL  : your project URL, e.g. https://abcd1234.supabase.co
-       SUPABASE_ANON : the public anon key (safe to expose in client code)
-       RPC_FUNCTION  : a Postgres function returning the count as an integer.
-
-       Recommended SQL (run once in the Supabase SQL editor, keeps the
-       licences table private, exposes only the number):
-
-         create or replace function public.beta_tester_count()
-         returns integer
-         language sql
-         security definer
-         set search_path = public
-         as $$ select count(*)::int from licenses $$;
-
-         grant execute on function public.beta_tester_count() to anon;
-
-       Until CONFIG is filled in (or if the request fails), the counter
-       stays hidden, the page never shows a wrong or zero number. */
+    // CutBridge tester counter — live count of issued beta licences
     (function () {
       var CONFIG = {
         SUPABASE_URL: 'https://ikpwodnohabtkiweevmw.supabase.co',
         SUPABASE_ANON: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlrcHdvZG5vaGFidGtpd2Vldm13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyNjgzODYsImV4cCI6MjA5MTg0NDM4Nn0.Pf2Ao4ngC_nPWdTUE4_SlrduBvFDKjWzzi2HyBlk_NQ',
         RPC_FUNCTION: 'beta_tester_count'
       };
-
       var wrap = document.getElementById('testerCount');
       var num = document.getElementById('testerCountNum');
       if (!wrap || !num) return;
       if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_ANON) return;
-
       fetch(CONFIG.SUPABASE_URL.replace(/\/$/, '') + '/rest/v1/rpc/' + CONFIG.RPC_FUNCTION, {
         method: 'POST',
         headers: {
@@ -437,7 +591,7 @@
         if (typeof count !== 'number' || !isFinite(count) || count < 0) return;
         num.textContent = count.toLocaleString('en-US');
         wrap.hidden = false;
-      }).catch(function () { /* leave the counter hidden */ });
+      }).catch(function () { /* leave hidden */ });
     })();
   </script>
 

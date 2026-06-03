@@ -58,6 +58,7 @@
           <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text>
         </svg>
         <span class="brand-name">CutAtlas</span>
+        <span class="brand-tag" aria-hidden="true">Editorial infrastructure</span>
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -81,17 +82,25 @@
   <main id="main" tabindex="-1">
 
     <!-- ============ HERO ============ -->
-    <header class="page-hero">
-      <div class="container">
+    <header class="stage framed page-hero">
+      <span class="ornament tl" aria-hidden="true">CutMap by CutAtlas</span>
+      <span class="ornament tr" aria-hidden="true">PL. CM</span>
+      <span class="ornament bl" aria-hidden="true">Visual versioning</span>
+      <span class="ornament br" aria-hidden="true">v1.0 — available</span>
+
+      <div class="container container--narrow">
         <img class="page-lockup" src="assets/emblem.svg" alt="CutAtlas" />
-        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> CutMap by CutAtlas</span>
-        <h1>See your Premiere project<br />as a visual map.</h1>
+        <span class="eyebrow"><span class="tick"></span> CutMap by CutAtlas</span>
+        <h1>See your Premiere project<br/>as a <em class="serif-italic">visual map.</em></h1>
         <p class="lead">CutMap turns the bins and sequences of an Adobe Premiere Pro project into a clear visual structure, so versioning and navigation are something you read, not something you reconstruct.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#pricing">Start a free trial</a>
           <a class="btn btn-ghost" href="/cutbridge">See CutBridge</a>
         </div>
-        <p class="hero-note"><span class="dot" aria-hidden="true"></span> One-time purchase, no subscription, ever.</p>
+        <p class="hero-note">
+          <span class="dot" aria-hidden="true"></span>
+          One-time purchase, no subscription, ever.
+        </p>
       </div>
     </header>
 
@@ -102,7 +111,7 @@
       <div class="container">
         <div class="grid-2">
           <div>
-            <span class="eyebrow">01: The problem</span>
+            <span class="eyebrow"><span class="num">01</span> The problem</span>
             <h2>A long project stops being legible.</h2>
           </div>
           <div class="detail">
@@ -133,14 +142,14 @@
     <section class="section section--sunk">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">02: What it does</span>
+          <span class="eyebrow"><span class="num">02</span> What it does</span>
           <h2>Your project, made readable.</h2>
         </div>
         <div class="feature-grid">
           <div class="feature">
             <span class="feature-idx">MAP</span>
             <h3>Visual version tree</h3>
-            <p>See every cut and version in a single, organized map, the shape of the project at a glance, not a flat list of bins.</p>
+            <p>See every cut and version in a single, organized map — the shape of the project at a glance, not a flat list of bins.</p>
           </div>
           <div class="feature">
             <span class="feature-idx">SYNC</span>
@@ -150,7 +159,7 @@
           <div class="feature">
             <span class="feature-idx">STATUS</span>
             <h3>Status tracking</h3>
-            <p>Track the status of every version or sequence, what is approved, in progress, or parked, and read it at a glance.</p>
+            <p>Track the status of every version or sequence — what is approved, in progress, or parked — and read it at a glance.</p>
           </div>
         </div>
       </div>
@@ -160,13 +169,13 @@
     <section class="section" id="pricing">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">03: Pricing</span>
-          <h2>One price. No subscription.</h2>
+          <span class="eyebrow"><span class="num">03</span> Pricing</span>
+          <h2>One price. <em class="serif-italic">No subscription.</em></h2>
           <p>Start with a free trial, then unlock CutMap permanently with a single payment.</p>
         </div>
 
         <div class="pricing-grid">
-          <div class="plate price-plate">
+          <div class="price-plate">
             <div class="price-head">
               <h3>Free trial</h3>
             </div>
@@ -184,7 +193,7 @@
             </form>
           </div>
 
-          <div class="plate price-plate">
+          <div class="price-plate">
             <div class="price-head">
               <h3>Lifetime license</h3>
             </div>
@@ -227,7 +236,7 @@
           </details>
           <details>
             <summary>How many devices can I use it on?</summary>
-            <p>A CutMap license covers two seats, you can use it on two devices.</p>
+            <p>A CutMap license covers two seats — you can use it on two devices.</p>
           </details>
           <details>
             <summary>Will I get future updates?</summary>
@@ -293,9 +302,11 @@
   </footer>
 
   <script>
+    // mobile nav toggle
     (function () {
       var nav = document.getElementById('siteNav');
       var toggle = document.getElementById('navToggle');
+      if (!toggle) return;
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -303,9 +314,8 @@
       });
     })();
 
-    /* ---- CutMap pricing: Paddle checkout + free-trial form ---- */
+    // CutMap pricing: Paddle checkout + free-trial form
     (function () {
-      // Load Paddle.js and initialise with the public client-side token
       var pd = document.createElement('script');
       pd.src = 'https://cdn.paddle.com/paddle/v2/paddle.js';
       pd.onload = function () {
@@ -315,7 +325,6 @@
       };
       document.head.appendChild(pd);
 
-      // "Buy now" -> open Paddle checkout
       var buyBtn = document.getElementById('buyBtn');
       if (buyBtn) {
         buyBtn.addEventListener('click', function () {
@@ -327,7 +336,6 @@
         });
       }
 
-      // Free-trial form -> POST the email to the trial endpoint
       var trialForm = document.getElementById('trialForm');
       if (trialForm) {
         trialForm.addEventListener('submit', function (e) {

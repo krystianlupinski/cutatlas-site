@@ -26,7 +26,6 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ============ NAV ============ -->
   <nav class="site-nav" id="siteNav">
     <div class="container">
       <a class="brand" href="/" aria-label="CutAtlas, home">
@@ -37,6 +36,7 @@
           <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text>
         </svg>
         <span class="brand-name">CutAtlas</span>
+        <span class="brand-tag" aria-hidden="true">Editorial infrastructure</span>
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -59,45 +59,47 @@
 
   <main id="main" tabindex="-1">
 
-    <!-- ============ HERO ============ -->
-    <header class="page-hero">
-      <div class="container">
-        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> About CutAtlas</span>
-        <h1>A small studio building editorial infrastructure.</h1>
-        <p class="lead">CutAtlas makes tools for video post-production, built by people who spent years in post, for the people still there.</p>
+    <header class="stage framed page-hero">
+      <span class="ornament tl" aria-hidden="true">About CutAtlas</span>
+      <span class="ornament tr" aria-hidden="true">PL. AB</span>
+      <span class="ornament bl" aria-hidden="true">Studio</span>
+      <span class="ornament br" aria-hidden="true">EST. 2026</span>
+
+      <div class="container container--narrow">
+        <span class="eyebrow"><span class="tick"></span> About CutAtlas</span>
+        <h1>A small studio building <em class="serif-italic">editorial infrastructure.</em></h1>
+        <p class="lead">CutAtlas makes tools for video post-production — built by people who spent years in post, for the people still there.</p>
       </div>
     </header>
 
     <hr class="rule" />
 
-    <!-- ============ WHAT WE DO ============ -->
     <section class="section statement">
       <div class="container">
         <div class="grid-2">
           <div>
-            <span class="eyebrow">01: What we do</span>
+            <span class="eyebrow"><span class="num">01</span> What we do</span>
             <h2>Tools for the work between the cut and the deliverable.</h2>
           </div>
           <div class="detail">
-            <p>CutAtlas builds plugins for Adobe Premiere Pro that take over the repetitive, exacting parts of post-production, the work that is necessary, unforgiving, and a poor use of an editor's attention.</p>
-            <p>There are two products so far: CutBridge, which automates the handoff of a finished edit to color, online, and sound; and CutMap, which keeps a long project legible while you build it. Each does one job, does it reliably, and stays out of the way otherwise.</p>
+            <p>CutAtlas builds plugins for Adobe Premiere Pro that take over the repetitive, exacting parts of post-production — the work that is necessary, unforgiving, and a poor use of an editor's attention.</p>
+            <p>There are three products in development: <a href="/cutbridge">CutBridge</a>, which automates the handoff of a finished edit to color, online, and sound; <a href="/cutmap">CutMap</a>, which keeps a long project legible while you build it; and <a href="/cutcompose">CutCompose</a>, which assembles the first roughcut. Each does one job, does it reliably, and stays out of the way otherwise.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ HOW WE WORK ============ -->
     <section class="section section--sunk">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">02: How we work</span>
+          <span class="eyebrow"><span class="num">02</span> How we work</span>
           <h2>What guides the work.</h2>
         </div>
         <div class="feature-grid">
           <div class="feature">
             <span class="feature-idx">PRECISION</span>
             <h3>Built to be exact</h3>
-            <p>Editors notice sloppiness. Our tools aim to be precise and predictable, doing one job well rather than many jobs loosely.</p>
+            <p>Editors notice sloppiness. Our tools aim to be precise and predictable — doing one job well rather than many jobs loosely.</p>
           </div>
           <div class="feature">
             <span class="feature-idx">HONESTY</span>
@@ -113,20 +115,18 @@
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
     <section class="section">
       <div class="container">
         <div class="callout">
-          <span class="eyebrow">Contact</span>
+          <span class="eyebrow"><span class="tick"></span> Contact</span>
           <h2>Get in touch.</h2>
-          <p>CutAtlas is a small, independent studio based in Łapy, Poland. For support, press, or a question about the products, email <a href="mailto:contact@cutatlas.io">contact@cutatlas.io</a>, a person reads it.</p>
+          <p>CutAtlas is a small, independent studio based in Łapy, Poland. For support, press, or a question about the products, email <a href="mailto:contact@cutatlas.io">contact@cutatlas.io</a> — a person reads it.</p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -183,6 +183,7 @@
     (function () {
       var nav = document.getElementById('siteNav');
       var toggle = document.getElementById('navToggle');
+      if (!toggle) return;
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -191,8 +192,6 @@
     })();
   </script>
 
-  <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "44f85e504acd4048890a82f660ed807d"}'></script>
-
 </body>
 </html>
