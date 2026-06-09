@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CutCompose by CutAtlas, Automatic roughcut assembly for Premiere Pro</title>
-  <meta name="description" content="CutCompose is an upcoming CutAtlas tool that assembles a first roughcut inside Adobe Premiere Pro, from your script, storyboard, and footage, processed entirely on your own machine. In development." />
-  <link rel="canonical" href="https://cutatlas.io/cutcompose" />
+  <title>CutSync by CutAtlas, On-set footage ingest for Premiere Pro</title>
+  <meta name="description" content="CutSync is an upcoming CutAtlas tool that pulls footage from the video assistant on set, imports it into Adobe Premiere Pro, and copies the media to the editor's drive in the background. In development." />
+  <link rel="canonical" href="https://cutatlas.io/cutsync" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cutatlas.io/cutcompose" />
-  <meta property="og:title" content="CutCompose by CutAtlas, Automatic roughcut assembly for Premiere Pro" />
-  <meta property="og:description" content="An upcoming CutAtlas tool that assembles a first roughcut inside Premiere Pro, from your script and footage. In development." />
+  <meta property="og:url" content="https://cutatlas.io/cutsync" />
+  <meta property="og:title" content="CutSync by CutAtlas, On-set footage ingest for Premiere Pro" />
+  <meta property="og:description" content="An upcoming CutAtlas tool that brings footage from set into Premiere Pro and onto the editor's drive, automatically. In development." />
   <meta property="og:image" content="https://cutatlas.io/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CutCompose by CutAtlas, Automatic roughcut assembly for Premiere Pro" />
-  <meta name="twitter:description" content="An upcoming CutAtlas tool that assembles a first roughcut inside Premiere Pro, from your script and footage. In development." />
+  <meta name="twitter:title" content="CutSync by CutAtlas, On-set footage ingest for Premiere Pro" />
+  <meta name="twitter:description" content="An upcoming CutAtlas tool that brings footage from set into Premiere Pro and onto the editor's drive, automatically. In development." />
   <meta name="twitter:image" content="https://cutatlas.io/assets/og-image.png" />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -27,12 +27,12 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "CutCompose",
-    "alternateName": "CutCompose by CutAtlas",
+    "name": "CutSync",
+    "alternateName": "CutSync by CutAtlas",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "macOS, Windows",
-    "url": "https://cutatlas.io/cutcompose",
-    "description": "CutCompose is an upcoming CutAtlas tool that assembles a first roughcut inside Adobe Premiere Pro from a script, storyboard, and footage, processed locally on your own machine. In development.",
+    "url": "https://cutatlas.io/cutsync",
+    "description": "CutSync is an upcoming CutAtlas tool that pulls footage from the video assistant on set, imports it into Adobe Premiere Pro, and copies the media to the editor's local drive in the background. In development.",
     "publisher": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" }
   }
   </script>
@@ -56,8 +56,8 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="/cutbridge">CutBridge</a></li>
         <li><a href="/cutmap">CutMap</a></li>
-        <li><a href="/cutcompose" aria-current="page">CutCompose</a></li>
-        <li><a href="/cutsync">CutSync</a></li>
+        <li><a href="/cutcompose">CutCompose</a></li>
+        <li><a href="/cutsync" aria-current="page">CutSync</a></li>
         <li><a href="/guides">Guides</a></li>
         <li><a href="/about">About</a></li>
       </ul>
@@ -75,16 +75,16 @@
   <main id="main" tabindex="-1">
 
     <header class="stage framed page-hero">
-      <span class="ornament tl" aria-hidden="true">CutCompose by CutAtlas</span>
-      <span class="ornament tr" aria-hidden="true">PL. CC</span>
-      <span class="ornament bl" aria-hidden="true">Roughcut assembly</span>
+      <span class="ornament tl" aria-hidden="true">CutSync by CutAtlas</span>
+      <span class="ornament tr" aria-hidden="true">PL. CS</span>
+      <span class="ornament bl" aria-hidden="true">On-set ingest</span>
       <span class="ornament br" aria-hidden="true">In development</span>
 
       <div class="container container--narrow">
-        <img class="page-lockup" src="assets/emblem-cc.svg" alt="CutCompose" />
-        <span class="eyebrow"><span class="tick"></span> CutCompose by CutAtlas</span>
-        <h1>A roughcut, assembled<br/><em class="serif-italic">before you start.</em></h1>
-        <p class="lead">CutCompose reads your script, storyboard, and footage, then lays out a first assembly directly inside your Adobe Premiere Pro project, so the edit begins from a structured starting point, not a blank timeline.</p>
+        <img class="page-lockup" src="assets/emblem-cs.svg" alt="CutSync" />
+        <span class="eyebrow"><span class="tick"></span> CutSync by CutAtlas</span>
+        <h1>The edit starts<br/><em class="serif-italic">on set.</em></h1>
+        <p class="lead">CutSync pulls takes from the video assistant as they come in on set, imports them straight into your Adobe Premiere Pro project, and copies the media onto the editor's drive in the background, so the cut can begin while the shoot is still running.</p>
         <p class="hero-note">
           <span class="dot" aria-hidden="true"></span>
           In development · A public waitlist will open later
@@ -98,24 +98,24 @@
       <div class="container">
         <div class="section-head">
           <span class="eyebrow"><span class="num">01</span> What it will do</span>
-          <h2>From pre-production materials to a first cut.</h2>
-          <p>The first assembly is necessary work, but rarely creative work — combing footage, matching it to the script, laying selects onto a timeline. CutCompose does that opening pass, and hands you an edit that is already taking shape.</p>
+          <h2>From the video assist to the timeline.</h2>
+          <p>Getting footage off set and into an edit-ready state is logistics, not craft — copying cards, naming clips, building a project, waiting for the transfer to finish. CutSync takes over that path, so the material is on the editor's machine and in Premiere before anyone leaves the location.</p>
         </div>
         <div class="feature-grid">
           <div class="feature">
-            <span class="feature-idx">LOCAL</span>
-            <h3>Everything on your machine</h3>
-            <p>CutCompose processes your scripts and footage entirely on your own computer. Nothing is uploaded — client NDAs stay intact.</p>
+            <span class="feature-idx">ON-SET</span>
+            <h3>Straight from the video assist</h3>
+            <p>Pulls takes from the video assistant's system on set as they are recorded — no waiting for a card to be handed over at wrap.</p>
           </div>
           <div class="feature">
             <span class="feature-idx">PREMIERE</span>
-            <h3>Inside your project</h3>
-            <p>It builds bins, sequences, and markers directly in your open Premiere Pro project, not in a separate app you have to export from.</p>
+            <h3>Imported into your project</h3>
+            <p>Brings the footage directly into an Adobe Premiere Pro project, so the editor opens a session that is already populated, not an empty bin.</p>
           </div>
           <div class="feature">
-            <span class="feature-idx">SHORT-FORM</span>
-            <h3>Built for commercial work</h3>
-            <p>Designed for advertising and short formats — 30-second spots, branded content, manifesto films — where a fast, solid first cut saves real hours.</p>
+            <span class="feature-idx">BACKGROUND</span>
+            <h3>Copied to the editor's drive</h3>
+            <p>In the background, copies the media from the assistant's computer onto the editor's local drive, so the material is secured and ready the moment editing starts.</p>
           </div>
         </div>
       </div>
@@ -133,13 +133,13 @@
           <div class="step">
             <span class="step-num">01 — ON SET</span>
             <h3>CutSync, on set</h3>
-            <p>Brings footage from the video assist into Premiere Pro and onto the editor's drive while the shoot is still running.</p>
-            <a class="link-arrow" href="/cutsync">Explore CutSync <span class="a">→</span></a>
+            <p>Brings footage from the video assist into Premiere Pro and onto the editor's drive while the shoot is still running. <em>In development.</em></p>
           </div>
           <div class="step">
             <span class="step-num">02 — START</span>
             <h3>CutCompose, the start</h3>
-            <p>Builds the roughcut from your script, storyboard, and footage, so editing begins from a structured assembly. <em>In development.</em></p>
+            <p>Builds the roughcut from your script, storyboard, and footage, so editing begins from a structured assembly.</p>
+            <a class="link-arrow" href="/cutcompose">Explore CutCompose <span class="a">→</span></a>
           </div>
           <div class="step">
             <span class="step-num">03 — THROUGH</span>

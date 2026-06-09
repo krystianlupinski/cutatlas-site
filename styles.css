@@ -966,6 +966,11 @@ body.boot-active{ overflow: hidden; }
 .viz-script .line.short{ width: 64%; }
 .viz-script .line.shorter{ width: 38%; }
 .viz-script .line.accent{ background: var(--burgundy); width: 22%; }
+.viz-copy{ display: flex; flex-direction: column; gap: 9px; height: 100%; justify-content: center; }
+.viz-copy .row{ display: grid; grid-template-columns: minmax(0,1fr) 84px; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.03em; color: var(--warm-gray); }
+.viz-copy .fn{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.viz-copy .bar{ height: 3px; background: var(--line-2); border-radius: 2px; position: relative; overflow: hidden; }
+.viz-copy .bar > span{ position: absolute; left: 0; top: 0; bottom: 0; width: var(--p, 60%); background: var(--burgundy); border-radius: 2px; }
 
 /* ---------- steps (numbered, for cutbridge/cutcompose) ---------- */
 .steps{
@@ -994,6 +999,10 @@ body.boot-active{ overflow: hidden; }
 @media (max-width: 880px){
   .steps{ grid-template-columns: 1fr; }
 }
+/* four-step pipeline (CutSync added) */
+.steps--four{ grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1080px){ .steps--four{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px){ .steps--four{ grid-template-columns: 1fr; } }
 
 /* ---------- feature-grid (for cutbridge/cutmap/about) ---------- */
 .feature-grid{
