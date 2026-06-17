@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>How to Prepare a Premiere Pro Timeline for Color Grading | CutAtlas</title>
-  <meta name="description" content="Prep a locked Premiere Pro cut for color: flatten the timeline, set frame handles, name the sequence, export the interchange file and render a reference for the colorist." />
+  <meta name="description" content="Prep a locked Premiere Pro cut for color: flatten the timeline, name the sequence, set up the source media, export the interchange file and render a reference for the colorist." />
   <link rel="canonical" href="https://cutatlas.io/guides/prepare-premiere-timeline-for-color" />
 
   <meta property="og:type" content="article" />
@@ -1047,7 +1047,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "How to prepare a Premiere Pro timeline for color grading",
-    "description": "Prep a locked Premiere Pro cut for color: flatten the timeline, set frame handles, name the sequence, export the interchange file and render a reference for the colorist.",
+    "description": "Prep a locked Premiere Pro cut for color: flatten the timeline, name the sequence, set up the source media, export the interchange file and render a reference for the colorist.",
     "image": "https://cutatlas.io/assets/og-image.png",
     "mainEntityOfPage": "https://cutatlas.io/guides/prepare-premiere-timeline-for-color",
     "author": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
@@ -1130,34 +1130,39 @@ figure.media { margin: 0 auto; max-width: 940px; }
 
         <div class="guide-body">
 
-          <p>The cut is locked. Everyone signed off. Now you need to send the project to the colorist, and the Premiere project that produced the cut is the wrong thing to send. It is dense with nested sequences, plugin effects, render cache and Lumetri grades, almost none of which translates into DaVinci Resolve. What the colorist needs is much simpler: the picture content, in the right order, at the right durations, with handles.</p>
+          <p>The cut is locked. Everyone signed off. Now you need to send the project to the colorist, and the Premiere project that produced the cut is the wrong thing to send. It is dense with nested sequences, plugin effects, render cache and Lumetri grades, almost none of which translates into DaVinci Resolve. What the colorist needs is much simpler: the picture content, in the right order, at the right durations, with the source media reachable for any refinement.</p>
 
-          <p>The work is to flatten what you have into that simpler form, export it as an interchange file, and give the colorist enough alongside it that they can verify the conform and start grading. The steps below cover that prep, in the order an assistant editor or senior editor would do them.</p>
+          <p>The work is to flatten what you have into that simpler form, export it as an interchange file, and give the colorist enough alongside it that they can verify the conform and start grading. The steps below cover that prep, in the order an assistant editor or senior editor would do them. Color is one of three handoffs from a locked cut; the broader <a href="/guides/premiere-handoff-checklist">Premiere Pro handoff checklist</a> covers online and sound as well.</p>
 
           <h2>Why a locked cut is not ready for color</h2>
           <p>Editorial timelines accumulate complexity. By the time the cut is locked there are usually multiple working sequences, nested timelines from earlier passes, disabled clips kept for reference, temporary text overlays, audio sweeteners, Lumetri grades for the producer screener, and effects that exist only because Premiere ships with them. Most of this is invisible to the audience. All of it gets in the way of color.</p>
 
-          <p>The colorist works from picture only. They need every shot in the cut, in the right place, with enough head and tail to refine an edit if needed, and the source media reconnected at full quality. Anything that does not contribute to that goal is something they will spend time stripping out, or that will silently break the conform.</p>
+          <p>The colorist works from picture only. They need every shot in the cut, in editorial order, each clip returned to its native state, conformed against your source media at full quality. With the source reachable, they can extend a cut or refine a dissolve in their Resolve timeline by trimming out into the original clip. Anything that does not contribute to that goal is something they will spend time stripping out, or that will silently break the conform.</p>
 
           <h2>Flatten and clean the timeline</h2>
           <p>Always work on a copy. Duplicate the locked cut into a new sequence with a clear name (for example <code>Acme_GRADE_v01</code>) and sit it in a dedicated bin. The original stays untouched in case you need to go back.</p>
 
-          <p>On the duplicate, take out anything that is not picture for the colorist:</p>
+          <p>The principle: every clip on the transfer timeline returns to its native state, in editorial order, with nothing on top of it. The colorist starts from clean source. To get there, on the duplicate:</p>
+
           <ul>
-            <li>Disabled clips and hidden video tracks.</li>
-            <li>Title cards and lower thirds you do not want graded with the picture.</li>
-            <li>Audio tracks (audio post handles those separately, in their own AAF).</li>
-            <li>Premiere-specific effects: Lumetri grades, Warp Stabilizer, plugin transitions. These do not survive XML and will be dropped on import.</li>
+            <li><strong>Strip every effect on every clip.</strong> Lumetri grades, LUTs, Warp Stabilizer, plugin effects, transitions, the lot. The fastest path is to select all clips and use Premiere's right-click <strong>Remove Attributes</strong>. Tick every attribute and apply. This resets effects, motion, opacity and the rest of the per-clip attributes in one pass.</li>
+            <li><strong>Remove speed changes, especially ramps.</strong> Constant speed adjustments can sometimes travel cleanly through XML, but ramps almost never do. The accepted approach: reset all speed back to 100 percent before export. The colorist grades the full ungraded clip as if there were no ramp. The ramp is re-applied later, during the reconform stage in online, before the next phase of work, not in editorial. If a constant speed change has to stay through to grade, flag it in writing.</li>
+            <li><strong>Flatten to a single video track.</strong> Collapse nested sequences into their content, replace nests with source clips, flatten multi-cam clips to their selected angle. One video track of source clips in cut order is the target.</li>
+            <li><strong>Drop the secondary content.</strong> Disabled clips, hidden tracks, title cards, lower thirds, graphics overlays, none of it belongs on the transfer timeline.</li>
+            <li><strong>Audio: out or one reference track.</strong> Audio post handles the mix in its own AAF. Either remove all audio from the transfer, or leave one mixdown reference track for sync.</li>
+            <li><strong>Switch off Scale to Frame Size.</strong> If clips were placed with this enabled, the colorist sees a different frame than you do. Use Effect Controls scale instead, or apply scale to the source clip explicitly.</li>
           </ul>
 
-          <p>Collapse nested sequences into their content. Flatten multi-cam clips down to their selected angle. The sequence that leaves editorial should read as a single video track of source clips in cut order, with nothing on top of them.</p>
+          <p>The end state: a single video track of source clips in cut order, each at default attributes, with no effects, no transforms, no speed changes and no graphics. The colorist gets the picture and nothing else.</p>
 
-          <h2>Handles: how many frames, and why</h2>
-          <p>A handle is the buffer of source frames before the in-point and after the out-point of each clip in the cut. The colorist needs them so they can slide an edit, extend a dissolve or recover from a slightly late cut without coming back to you for a re-export.</p>
+          <h2>Handles: where they matter, where they don't</h2>
+          <p>A common misconception when prepping a Premiere cut for color is that you need to bake frame handles into the XML at export time, the way you would for an AAF going to audio post. For an XML to DaVinci Resolve, you do not, and Premiere's FCP XML export dialog does not offer the option.</p>
 
-          <p>A common minimum is twenty-four frames at the head and tail of every clip, one second at 24 fps, slightly less at 25 or 30. For projects with potential reframes, longer dissolves or speed ramps, push to forty-eight frames or more. Storage is cheap; another round-trip back to editorial is not.</p>
+          <p>The XML describes the cut points and the clip references. When Resolve imports it, it conforms against your source media files on disk. The full source clip is still there, so the colorist can extend a cut, refine a dissolve or recover from a slightly late edit by trimming out into the source on their timeline. In other words, the "handles" come from having access to the original media, not from anything you bake into the export.</p>
 
-          <p>Premiere does not add handles automatically. You set the handle length in the XML or AAF export dialog at the moment of export. If the colorist comes back saying "no handles," they came in at zero, not at whatever you intended.</p>
+          <p>What does matter is that the colorist can actually reach the source media. Send it alongside the XML, or confirm they have access to the same storage and the file paths will resolve cleanly. Without that, every clip arrives offline and there is nothing to trim out into.</p>
+
+          <p>The handle conversation is different for audio post. AAF for Pro Tools does have a Handle Frames option, and there you do set it explicitly, often to several seconds, because AAF can trim the audio media to the cut. Two different exports, two different rules.</p>
 
           <h2>Name and organise the sequence</h2>
           <p>Use a naming convention that reads on its own. <code>Acme_GRADE_v02</code> tells anyone what it is. <code>Sequence 01 copy 2</code> does not. A consistent pattern across departments saves time at every step downstream: <code>[project]_[department]_[version]</code> works for grade, online and sound alike.</p>
@@ -1167,7 +1172,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
           <p>Check the timecode of the export sequence. If you trimmed the head of the cut at any point, the sequence start may have drifted. Resolve will line up by source timecode, so the export should start at a clean reference (01:00:00:00 is common). Stray timecode offsets are a frequent cause of conforms that look right but are off by frames.</p>
 
           <h2>Export the interchange file</h2>
-          <p>For color handoff to DaVinci Resolve, the standard is FCP XML. In Premiere: <strong>File → Export → Final Cut Pro XML…</strong>, select the export sequence, name the file to match (<code>Acme_GRADE_v01.xml</code>), and save it inside the handoff folder.</p>
+          <p>For color handoff to DaVinci Resolve, the standard is FCP XML. In Premiere: <strong>File → Export → Final Cut Pro XML…</strong>, select the export sequence, name the file to match (<code>Acme_GRADE_v01.xml</code>), and save it inside the handoff folder. For how that file imports into Resolve and what happens on the way back, see the <a href="/guides/premiere-to-davinci-resolve-roundtrip">Premiere to DaVinci Resolve roundtrip</a> guide.</p>
 
           <p>Premiere's XML is consistent in what it carries: cut points, transitions, basic motion (position, scale, rotation), time remapping, source clip metadata. It is also consistent in what it drops: Lumetri grades, Warp Stabilizer, third-party plugin effects, anything beyond a small set of native transitions. If an effect needs to survive into color, bake it into the source media first, render to a self-contained intermediate and use that clip instead.</p>
 

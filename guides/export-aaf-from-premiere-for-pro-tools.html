@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FCP XML vs. AAF vs. EDL: Which Interchange Format to Use | CutAtlas</title>
-  <meta name="description" content="A practical comparison of FCP XML, AAF and EDL, what each format carries, which finishing tool needs which, and how to avoid the common breakages when handing off a Premiere Pro edit." />
-  <link rel="canonical" href="https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl" />
+  <title>How to Export AAF from Premiere Pro for Pro Tools | CutAtlas</title>
+  <meta name="description" content="Export a clean AAF from Premiere Pro for Pro Tools: the export settings, handles, embedded vs. separate media, what audio actually transfers, OMF, and what the mixer needs." />
+  <link rel="canonical" href="https://cutatlas.io/guides/export-aaf-from-premiere-for-pro-tools" />
 
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl" />
-  <meta property="og:title" content="FCP XML vs. AAF vs. EDL: Which Interchange Format to Use" />
-  <meta property="og:description" content="What each interchange format carries, which finishing tool needs which, and how to avoid the common breakages." />
+  <meta property="og:url" content="https://cutatlas.io/guides/export-aaf-from-premiere-for-pro-tools" />
+  <meta property="og:title" content="How to Export AAF from Premiere Pro for Pro Tools" />
+  <meta property="og:description" content="The AAF export settings for a clean audio handoff from Premiere to Pro Tools: handles, embedded vs. separate media, what transfers, and OMF." />
   <meta property="og:image" content="https://cutatlas.io/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="FCP XML vs. AAF vs. EDL: Which Interchange Format to Use" />
-  <meta name="twitter:description" content="What each interchange format carries, which finishing tool needs which, and how to avoid the common breakages." />
+  <meta name="twitter:title" content="How to Export AAF from Premiere Pro for Pro Tools" />
+  <meta name="twitter:description" content="The AAF export settings for a clean audio handoff from Premiere to Pro Tools: handles, embedded vs. separate media, what transfers, and OMF." />
   <meta name="twitter:image" content="https://cutatlas.io/assets/og-image.png" />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -1046,14 +1046,14 @@ figure.media { margin: 0 auto; max-width: 940px; }
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "FCP XML vs. AAF vs. EDL: which interchange format to use, and when",
-    "description": "A practical comparison of FCP XML, AAF and EDL, what each format carries, which finishing tool needs which, and how to avoid the common breakages when handing off a Premiere Pro edit.",
+    "headline": "How to export an AAF from Premiere Pro for Pro Tools and audio post",
+    "description": "Export a clean AAF from Premiere Pro for Pro Tools: the export settings, handles, embedded vs. separate media, what audio actually transfers, OMF, and what the mixer needs.",
     "image": "https://cutatlas.io/assets/og-image.png",
-    "mainEntityOfPage": "https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl",
+    "mainEntityOfPage": "https://cutatlas.io/guides/export-aaf-from-premiere-for-pro-tools",
     "author": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
     "publisher": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
-    "datePublished": "2026-05-25",
-    "dateModified": "2026-05-25"
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17"
   }
   </script>
   <script type="application/ld+json">
@@ -1063,7 +1063,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cutatlas.io/" },
       { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://cutatlas.io/guides" },
-      { "@type": "ListItem", "position": 3, "name": "FCP XML vs. AAF vs. EDL", "item": "https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl" }
+      { "@type": "ListItem", "position": 3, "name": "Export AAF from Premiere for Pro Tools", "item": "https://cutatlas.io/guides/export-aaf-from-premiere-for-pro-tools" }
     ]
   }
   </script>
@@ -1108,9 +1108,9 @@ figure.media { margin: 0 auto; max-width: 940px; }
     <header class="page-hero">
       <div class="container">
         <svg class="page-lockup" role="img" aria-label="CutAtlas" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg"><path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/><path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/><line x1="60" y1="8" x2="60" y2="21" stroke="#1B2843" stroke-width="0.4"/><line x1="60" y1="21" x2="73" y2="21" stroke="#1B2843" stroke-width="0.4"/><rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.4" opacity="0.55"/><text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text></svg>
-        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> Guide, Interchange formats</span>
-        <h1>FCP XML vs. AAF vs. EDL.</h1>
-        <p class="lead">Three interchange formats. Each carries a different slice of your timeline. Pick the wrong one and the cut arrives incomplete. Here is what each one holds, and which to send where.</p>
+        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> Guide, Audio post</span>
+        <h1>How to export an AAF from Premiere Pro for Pro Tools.</h1>
+        <p class="lead">When the cut is locked and the mix moves to Pro Tools, AAF is how the audio gets there. Here is how to export one cleanly from Premiere: the settings that matter, handles, embedded versus separate media, what actually carries over, and where OMF still fits.</p>
       </div>
     </header>
 
@@ -1124,67 +1124,90 @@ figure.media { margin: 0 auto; max-width: 940px; }
           <ol>
             <li><a href="/">Home</a></li>
             <li><a href="/guides">Guides</a></li>
-            <li><span aria-current="page">FCP XML vs. AAF vs. EDL</span></li>
+            <li><span aria-current="page">Export AAF for Pro Tools</span></li>
           </ol>
         </nav>
 
         <div class="guide-body">
 
-          <p>A locked cut isn't ready to leave editorial. It is bound to the Premiere Pro project that produced it, its sequences, its effects, its render cache. To carry that work cleanly into a colorist's DaVinci Resolve, a mixer's Pro Tools or an online editor's Avid Media Composer, you need a translation layer. That layer is an interchange file.</p>
+          <p>Audio post does not work from your Premiere project. The mixer works in Pro Tools, and the bridge between the two is an AAF: a file that carries your audio edit, in its track layout, with the media the mixer can build on. Get the export right and the session opens with your cut intact. Get it wrong and the first hour of the mix is spent chasing offline files and missing handles.</p>
 
-          <p>FCP XML, AAF and EDL are the three interchange formats in common use for handoff. They are not interchangeable. Each one preserves a different slice of the timeline, and each is the right format for a different downstream tool. Picking the wrong one is a common way a handoff arrives incomplete.</p>
+          <p>This guide covers the AAF export from Premiere step by step, the choices in the export dialog, what the format does and doesn&rsquo;t carry, and the OMF route that some facilities still ask for. If you want the wider picture of how AAF compares to XML and EDL, the guide on <a href="/guides/fcp-xml-vs-aaf-vs-edl">FCP XML vs. AAF vs. EDL</a> covers that; here the focus is the audio handoff alone.</p>
 
-          <h2>What each format carries</h2>
-          <p>At a high level, an interchange file is a text description of your timeline. It does not contain the footage. Instead, it points at the media on your storage and tells the receiving application: place this clip here, with this in-point and this out-point, on this track. The differences between formats are about what gets preserved beyond that basic structure.</p>
+          <h2>Why audio post wants AAF, not XML</h2>
+          <p>XML and EDL describe a picture edit. They are built to rebuild a visual timeline in a colorist&rsquo;s or online editor&rsquo;s tool, and they carry almost nothing the mixer can use. AAF is the format designed for audio interchange. It moves your clips onto Pro Tools tracks in the same arrangement you had in Premiere, with the source audio attached, so the mixer starts from your edit rather than rebuilding it by ear.</p>
 
-          <p>FCP XML is a plain-text XML file. It supports multiple video and audio tracks, transitions, motion (position, scale, rotation), time remapping and clip metadata, the richest of the three in terms of editorial structure. AAF is a binary multimedia container that, unlike FCP XML, can embed the audio media inside the file itself. EDL is the oldest and simplest: one event per line, a single video track, no effects.</p>
+          <p>So audio post asks for an AAF rather than the XML you send to color. It is the one format built to move the sound editorial across with the sync and the edit intact.</p>
 
-          <h2>FCP XML, strengths and limits</h2>
-          <p>Reach for FCP XML when video is the priority and you are sending the cut to a tool that speaks it, most importantly DaVinci Resolve. Resolve's XML importer is reliable and preserves the editorial structure faithfully enough that a colorist can grade your cut and trust it lines up.</p>
-
-          <p>What FCP XML does not handle well is Premiere-specific effects. Plugin transitions, Premiere's own Lumetri grades and many warp/stabilization effects will not translate. The accepted practice is to flatten the timeline first, bake in only what needs to survive, strip out what doesn't, before exporting the XML.</p>
-
-          <h2>AAF, when audio is the priority</h2>
-          <p>AAF is the format audio post expects. A Pro Tools mixer importing your project wants AAF, not XML, because AAF carries audio cleanly and can embed the audio media inside the file. It is also the format of choice if any part of your pipeline involves Avid Media Composer.</p>
-
-          <p>Premiere's AAF export gives you two important choices. The first is embedded versus linked media: embedded is safer for handoff because nothing can go missing on the way to the mix stage. The second is frame handles, extra frames before and after each clip. More handles means more flexibility for the mixer to slide edits and crossfade audio without coming back to you.</p>
-
-          <h2>EDL, the simplest of the three</h2>
-          <p>An EDL is plain text, one cut per line, a single video track. It strips out almost everything: transitions, effects, multi-track structure, audio sync. It survives because some legacy systems read only EDL, and because when everything else fails you can open one in a text editor and see exactly what is there.</p>
-
-          <p>Reach for EDL when your destination explicitly asks for one, or as a fallback reference when an XML or AAF refuses to import cleanly somewhere downstream.</p>
-
-          <h2>Which format for which destination</h2>
-          <p>As a working rule:</p>
+          <h2>Export an AAF, step by step</h2>
+          <p>With the sequence open and the Timeline panel active, go to <strong>File&nbsp;&rarr;&nbsp;Export&nbsp;&rarr;&nbsp;AAF</strong>. Name the file to match your handoff convention, for example <code>Acme_SOUND_v01</code>, and Premiere opens the AAF Export Settings dialog. The options that matter for a Pro Tools turnover:</p>
           <ul>
-            <li><strong>DaVinci Resolve for color:</strong> FCP XML.</li>
-            <li><strong>Pro Tools for sound mix:</strong> AAF.</li>
-            <li><strong>Avid Media Composer for online or conform:</strong> AAF.</li>
-            <li><strong>A finishing system that asks for cuts only:</strong> EDL.</li>
+            <li><strong>Mixdown Video:</strong> leave it off. The mixer gets picture from a separate reference video, not baked into the AAF.</li>
+            <li><strong>Breakout to Mono:</strong> turn it on for Pro Tools. Each channel lands on its own mono track, with stereo clips split to Left and Right, which is how Pro Tools expects them.</li>
+            <li><strong>Sample Rate and Bits per Sample:</strong> match the confirmed spec, usually 48&nbsp;kHz and 24-bit. A mismatch here forces a sample-rate conversion on import.</li>
+            <li><strong>Files &mdash; embedded or separate:</strong> this controls how the media is packaged (covered below).</li>
+            <li><strong>Render &mdash; complete or trimmed:</strong> choose to copy complete audio files, or trim them and set a handle length (also below).</li>
           </ul>
-          <p>When in doubt, send the format the receiving department asks for. Mixing engineers and colorists have strong preferences for a reason, those are the formats their tools handle most cleanly.</p>
 
-          <h2>Common breakages, and how to avoid them</h2>
-          <p>Three failures recur.</p>
+          <p>One thing to leave alone: rendering audio effects on export. There is a known issue where rendering effects shifts volume keyframes on trimmed clips. Audio post rebuilds processing in the mix anyway, so export the clips clean and let the mixer take it from there.</p>
 
-          <h3>Media reconnection</h3>
-          <p>The interchange file points at your media on your storage. If the receiving editor or colorist does not have access to the same paths, every clip arrives offline. The fix: send the interchange file alongside the media, or relink in a location both parties can see.</p>
+          <h2>Handles, and embedded vs. separate media</h2>
+          <p>Two settings get conflated more than any others in the AAF dialog. They are independent, and it helps to keep them apart.</p>
 
-          <h3>Frame handles</h3>
-          <p>A colorist or mixer needs extra frames before and after each cut so they can extend transitions or slide edits. A common minimum is twenty-four frames at the head and tail of every clip. Without handles, every refinement downstream becomes a phone call back to editorial.</p>
+          <h3>Embedded or separate</h3>
+          <p>This is about packaging, not handles. <strong>Embed Audio</strong> writes the audio into the AAF itself, so the whole handoff is a single self-contained file that is hard to lose track of; the trade-off is that some source metadata is dropped. <strong>Separate Audio</strong> renders the audio as files in a folder next to the AAF, which preserves more metadata and suits field-recorder matching, at the cost of a folder that has to travel intact or the session opens offline. Neither is the &ldquo;correct&rdquo; answer. Ask the mixer which they prefer and send that; if no one has said, either works as long as the media actually arrives with the AAF.</p>
 
-          <h3>Unsupported effects</h3>
-          <p>Premiere-specific transitions or plugin effects often do not translate at all. The reliable fix is to flatten and bake any effect that needs to survive into the source media before exporting the interchange file.</p>
+          <h3>Handles</h3>
+          <p>Handles are set by the Render choice. <strong>Copy Complete Audio Files</strong> sends the full source clip, so the mixer has unlimited room either side of every edit. <strong>Trim Audio Files</strong> sends only the used portion plus a handle you specify in frames. Set a handle of several seconds; sixty frames is a common floor and many mixers ask for more, so there is room to extend, crossfade and smooth around each cut. You can embed with handles or send separate files with handles &mdash; the two settings don&rsquo;t depend on each other.</p>
 
-          <p>Picking the format is only the start. For the audio side, see <a href="/guides/export-aaf-from-premiere-for-pro-tools">exporting an AAF for Pro Tools</a>; for the full delivery, the <a href="/guides/premiere-handoff-checklist">Premiere Pro handoff checklist</a>; and for color, the step-by-step on <a href="/guides/prepare-premiere-timeline-for-color">preparing a timeline for color grading</a> and the <a href="/guides/premiere-to-davinci-resolve-roundtrip">Premiere to DaVinci Resolve roundtrip</a>.</p>
+          <h2>What actually transfers (and what doesn&rsquo;t)</h2>
+          <p>AAF carries the sound editorial, not your mix. Knowing the line saves a confused email from the studio later. What comes across:</p>
+          <ul>
+            <li>Every audio clip, in its track layout and at its edit points.</li>
+            <li>Crossfades and clip fades.</li>
+            <li><strong>Audio Gain</strong> (the clip-level Gain command in Premiere) arrives as <strong>Clip Gain</strong> in Pro Tools.</li>
+            <li><strong>Clip volume keyframes</strong> arrive as volume <strong>automation</strong> in Pro Tools, rather than as clip gain.</li>
+          </ul>
+          <p>What does not come across:</p>
+          <ul>
+            <li>Track-level volume keyframes &mdash; automation written on the track rather than the clip.</li>
+            <li>Channel volume, panning and muting from the Premiere mixer.</li>
+            <li>Audio effects and plugins. These are Premiere-specific and the mix rebuilds them.</li>
+          </ul>
+          <p>The practical takeaway: do your level work as clip volume or Audio Gain if you want it to survive, keep your editorial clean, and don&rsquo;t treat the AAF as a finished mix. It is a starting point for one.</p>
+
+          <h2>OMF: the older route some facilities still ask for</h2>
+          <p>Before AAF, OMF was the standard audio interchange, and a few established rooms still request it. Premiere exports one from <strong>File&nbsp;&rarr;&nbsp;Export&nbsp;&rarr;&nbsp;OMF</strong>. The dialog mirrors the AAF one: set an OMF Title, the Sample Rate and Bits per Sample, choose Embedded or Separate audio, and under Render pick Copy Complete Audio Files or Trim Audio Files with a handle length (the default is one second, in frames at the sequence rate). Like AAF, OMF carries clip-based audio, keyframes, transitions and metadata.</p>
+
+          <p>The reason AAF has largely replaced it: OMF files are capped at 2&nbsp;GB, so an embedded OMF of a long or high-sample-rate sequence can hit the ceiling and fail. If a facility asks for OMF, separate audio sidesteps the size limit; otherwise AAF is the safer default. Confirm which the mixer wants before you export either.</p>
+
+          <h2>What the mixer needs alongside the AAF</h2>
+          <p>The AAF on its own is not the whole handoff. Send it with:</p>
+          <ul>
+            <li><strong>A reference video</strong> &mdash; a flat H.264 of the locked cut with timecode and clip-name burn-in. The mixer lines the session up to picture against it and confirms nothing drifted on import.</li>
+            <li><strong>A guide track:</strong> a stereo mixdown of your editorial audio, so the mixer can check the AAF against what you heard in the edit.</li>
+            <li><strong>The spec, in writing:</strong> frame rate, timecode (drop or non-drop), and the sample rate and bit depth the AAF was exported at.</li>
+          </ul>
+          <p>This is the sound portion of a larger delivery. For the color and online packages that usually go out at the same time, see the <a href="/guides/premiere-handoff-checklist">Premiere Pro handoff checklist</a>.</p>
+
+          <h2>Common AAF problems</h2>
+          <p>Most failed turnovers come down to a handful of repeats:</p>
+          <ul>
+            <li><strong>Session opens offline.</strong> Separate audio was chosen but the media folder didn&rsquo;t travel with the AAF, or the path broke. Send the folder alongside the AAF, or embed.</li>
+            <li><strong>No room to work.</strong> Files were trimmed with no handles, so the mixer can&rsquo;t extend or crossfade. Set a handle, or copy complete files.</li>
+            <li><strong>Stereo where mono was expected.</strong> Breakout to Mono was off, so interleaved clips land awkwardly in Pro Tools. Turn it on for a Pro Tools turnover.</li>
+            <li><strong>Levels look wrong.</strong> The mixer expected your fader moves, but track automation and channel settings don&rsquo;t transfer. Bake critical level work into clip volume or Audio Gain, or just flag it.</li>
+            <li><strong>Shifted keyframes.</strong> Effects were rendered on export. Leave them unrendered and let the mix handle processing.</li>
+          </ul>
+          <p>None of these is hard to avoid once you know the dialog. Set it the same way each time, send the reference and guide track with it, and the session opens ready to mix.</p>
 
         </div>
 
         <!-- End CTA -->
         <div class="callout guide-cta">
           <span class="eyebrow">Related tool</span>
-          <h2>CutBridge generates all three, automatically.</h2>
-          <p>CutBridge is an Adobe Premiere Pro plugin that prepares a finished edit for handoff, generating FCP XML, AAF and EDL alongside burn-in references, in a structured package for color, online and sound. Currently in closed beta.</p>
+          <h2>CutBridge handles the sound package too.</h2>
+          <p>CutBridge is an Adobe Premiere Pro plugin that prepares a finished edit for handoff. It generates FCP XML, AAF and EDL alongside burn-in references, organised into a structured package for color, online and sound. Currently in closed beta.</p>
           <p><a class="link-arrow" href="/cutbridge">See how CutBridge works <span aria-hidden="true">&rarr;</span></a></p>
         </div>
 
