@@ -1093,7 +1093,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
       </ul>
 
       <div class="nav-cta">
-        <a class="btn btn-primary" href="/cutbridge#waitlist">Request access</a>
+        <a class="btn btn-primary" href="/cutbridge#waitlist">Join the beta</a>
       </div>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -1132,7 +1132,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
 
           <p>The cut is locked. Everyone signed off. Now you need to send the project to the colorist, and the Premiere project that produced the cut is the wrong thing to send. It is dense with nested sequences, plugin effects, render cache and Lumetri grades, almost none of which translates into DaVinci Resolve. What the colorist needs is much simpler: the picture content, in the right order, at the right durations, with the source media reachable for any refinement.</p>
 
-          <p>The work is to flatten what you have into that simpler form, export it as an interchange file, and give the colorist enough alongside it that they can verify the conform and start grading. The steps below cover that prep, in the order an assistant editor or senior editor would do them. Color is one of three handoffs from a locked cut; the broader <a href="/guides/premiere-handoff-checklist">Premiere Pro handoff checklist</a> covers online and sound as well.</p>
+          <p>The work is to flatten what you have into that simpler form, export it as an interchange file, and give the colorist enough alongside it that they can verify the conform and start grading. The steps below cover that prep, in the order an assistant editor or senior editor would do them.</p>
 
           <h2>Why a locked cut is not ready for color</h2>
           <p>Editorial timelines accumulate complexity. By the time the cut is locked there are usually multiple working sequences, nested timelines from earlier passes, disabled clips kept for reference, temporary text overlays, audio sweeteners, Lumetri grades for the producer screener, and effects that exist only because Premiere ships with them. Most of this is invisible to the audience. All of it gets in the way of color.</p>
@@ -1172,7 +1172,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
           <p>Check the timecode of the export sequence. If you trimmed the head of the cut at any point, the sequence start may have drifted. Resolve will line up by source timecode, so the export should start at a clean reference (01:00:00:00 is common). Stray timecode offsets are a frequent cause of conforms that look right but are off by frames.</p>
 
           <h2>Export the interchange file</h2>
-          <p>For color handoff to DaVinci Resolve, the standard is FCP XML. In Premiere: <strong>File → Export → Final Cut Pro XML…</strong>, select the export sequence, name the file to match (<code>Acme_GRADE_v01.xml</code>), and save it inside the handoff folder. For how that file imports into Resolve and what happens on the way back, see the <a href="/guides/premiere-to-davinci-resolve-roundtrip">Premiere to DaVinci Resolve roundtrip</a> guide.</p>
+          <p>For color handoff to DaVinci Resolve, the standard is FCP XML. In Premiere: <strong>File → Export → Final Cut Pro XML…</strong>, select the export sequence, name the file to match (<code>Acme_GRADE_v01.xml</code>), and save it inside the handoff folder.</p>
 
           <p>Premiere's XML is consistent in what it carries: cut points, transitions, basic motion (position, scale, rotation), time remapping, source clip metadata. It is also consistent in what it drops: Lumetri grades, Warp Stabilizer, third-party plugin effects, anything beyond a small set of native transitions. If an effect needs to survive into color, bake it into the source media first, render to a self-contained intermediate and use that clip instead.</p>
 
@@ -1242,7 +1242,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
             <li><a href="/about">About</a></li>
             <li><a href="/guides">Guides</a></li>
             <li><a href="/faq">FAQ</a></li>
-            <li><a href="/cutbridge#waitlist">Request access</a></li>
+            <li><a href="/cutbridge#waitlist">Beta waitlist</a></li>
           </ul>
         </div>
 
