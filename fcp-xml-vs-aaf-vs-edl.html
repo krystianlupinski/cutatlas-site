@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>How to Prepare a Premiere Pro Timeline for Color Grading | CutAtlas</title>
-  <meta name="description" content="Prep a locked Premiere Pro cut for color: flatten the timeline, name the sequence, set up the source media, export the interchange file and render a reference for the colorist." />
-  <link rel="canonical" href="https://cutatlas.io/guides/prepare-premiere-timeline-for-color" />
+  <title>FCP XML vs. AAF vs. EDL: Which Interchange Format to Use | CutAtlas</title>
+  <meta name="description" content="A practical comparison of FCP XML, AAF and EDL, what each format carries, which finishing tool needs which, and how to avoid the common breakages when handing off a Premiere Pro edit." />
+  <link rel="canonical" href="https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl" />
 
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://cutatlas.io/guides/prepare-premiere-timeline-for-color" />
-  <meta property="og:title" content="How to Prepare a Premiere Pro Timeline for Color Grading" />
-  <meta property="og:description" content="The prep steps that turn a locked Premiere Pro cut into something a colorist can open and grade with confidence." />
+  <meta property="og:url" content="https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl" />
+  <meta property="og:title" content="FCP XML vs. AAF vs. EDL: Which Interchange Format to Use" />
+  <meta property="og:description" content="What each interchange format carries, which finishing tool needs which, and how to avoid the common breakages." />
   <meta property="og:image" content="https://cutatlas.io/assets/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="How to Prepare a Premiere Pro Timeline for Color Grading" />
-  <meta name="twitter:description" content="The prep steps that turn a locked Premiere Pro cut into something a colorist can open and grade with confidence." />
+  <meta name="twitter:title" content="FCP XML vs. AAF vs. EDL: Which Interchange Format to Use" />
+  <meta name="twitter:description" content="What each interchange format carries, which finishing tool needs which, and how to avoid the common breakages." />
   <meta name="twitter:image" content="https://cutatlas.io/assets/og-image.png" />
 
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -1046,10 +1046,10 @@ figure.media { margin: 0 auto; max-width: 940px; }
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "How to prepare a Premiere Pro timeline for color grading",
-    "description": "Prep a locked Premiere Pro cut for color: flatten the timeline, name the sequence, set up the source media, export the interchange file and render a reference for the colorist.",
+    "headline": "FCP XML vs. AAF vs. EDL: which interchange format to use, and when",
+    "description": "A practical comparison of FCP XML, AAF and EDL, what each format carries, which finishing tool needs which, and how to avoid the common breakages when handing off a Premiere Pro edit.",
     "image": "https://cutatlas.io/assets/og-image.png",
-    "mainEntityOfPage": "https://cutatlas.io/guides/prepare-premiere-timeline-for-color",
+    "mainEntityOfPage": "https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl",
     "author": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
     "publisher": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" },
     "datePublished": "2026-05-25",
@@ -1063,7 +1063,7 @@ figure.media { margin: 0 auto; max-width: 940px; }
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cutatlas.io/" },
       { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://cutatlas.io/guides" },
-      { "@type": "ListItem", "position": 3, "name": "Prepare a Premiere timeline for color grading", "item": "https://cutatlas.io/guides/prepare-premiere-timeline-for-color" }
+      { "@type": "ListItem", "position": 3, "name": "FCP XML vs. AAF vs. EDL", "item": "https://cutatlas.io/guides/fcp-xml-vs-aaf-vs-edl" }
     ]
   }
   </script>
@@ -1108,9 +1108,9 @@ figure.media { margin: 0 auto; max-width: 940px; }
     <header class="page-hero">
       <div class="container">
         <svg class="page-lockup" role="img" aria-label="CutAtlas" viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg"><path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/><path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/><line x1="60" y1="8" x2="60" y2="21" stroke="#1B2843" stroke-width="0.4"/><line x1="60" y1="21" x2="73" y2="21" stroke="#1B2843" stroke-width="0.4"/><rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.4" opacity="0.55"/><text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text></svg>
-        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> Guide, Color prep</span>
-        <h1>How to prepare a Premiere Pro timeline for color grading.</h1>
-        <p class="lead">A locked cut and the Premiere Pro project that produced it are not the same thing. The cut might be ready; the project rarely is. Here is what to do before you hand it off to color.</p>
+        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> Guide, Interchange formats</span>
+        <h1>FCP XML vs. AAF vs. EDL.</h1>
+        <p class="lead">Three interchange formats. Each carries a different slice of your timeline. Pick the wrong one and the cut arrives incomplete. Here is what each one holds, and which to send where.</p>
       </div>
     </header>
 
@@ -1124,76 +1124,59 @@ figure.media { margin: 0 auto; max-width: 940px; }
           <ol>
             <li><a href="/">Home</a></li>
             <li><a href="/guides">Guides</a></li>
-            <li><span aria-current="page">Prepare for color grading</span></li>
+            <li><span aria-current="page">FCP XML vs. AAF vs. EDL</span></li>
           </ol>
         </nav>
 
         <div class="guide-body">
 
-          <p>The cut is locked. Everyone signed off. Now you need to send the project to the colorist, and the Premiere project that produced the cut is the wrong thing to send. It is dense with nested sequences, plugin effects, render cache and Lumetri grades, almost none of which translates into DaVinci Resolve. What the colorist needs is much simpler: the picture content, in the right order, at the right durations, with the source media reachable for any refinement.</p>
+          <p>A locked cut isn't ready to leave editorial. It is bound to the Premiere Pro project that produced it, its sequences, its effects, its render cache. To carry that work cleanly into a colorist's DaVinci Resolve, a mixer's Pro Tools or an online editor's Avid Media Composer, you need a translation layer. That layer is an interchange file.</p>
 
-          <p>The work is to flatten what you have into that simpler form, export it as an interchange file, and give the colorist enough alongside it that they can verify the conform and start grading. The steps below cover that prep, in the order an assistant editor or senior editor would do them. Color is one of three handoffs from a locked cut; the broader <a href="/guides/premiere-handoff-checklist">Premiere Pro handoff checklist</a> covers online and sound as well.</p>
+          <p>FCP XML, AAF and EDL are the three interchange formats in common use for handoff. They are not interchangeable. Each one preserves a different slice of the timeline, and each is the right format for a different downstream tool. Picking the wrong one is a common way a handoff arrives incomplete.</p>
 
-          <h2>Why a locked cut is not ready for color</h2>
-          <p>Editorial timelines accumulate complexity. By the time the cut is locked there are usually multiple working sequences, nested timelines from earlier passes, disabled clips kept for reference, temporary text overlays, audio sweeteners, Lumetri grades for the producer screener, and effects that exist only because Premiere ships with them. Most of this is invisible to the audience. All of it gets in the way of color.</p>
+          <h2>What each format carries</h2>
+          <p>At a high level, an interchange file is a text description of your timeline. It does not contain the footage. Instead, it points at the media on your storage and tells the receiving application: place this clip here, with this in-point and this out-point, on this track. The differences between formats are about what gets preserved beyond that basic structure.</p>
 
-          <p>The colorist works from picture only. They need every shot in the cut, in editorial order, each clip returned to its native state, conformed against your source media at full quality. With the source reachable, they can extend a cut or refine a dissolve in their Resolve timeline by trimming out into the original clip. Anything that does not contribute to that goal is something they will spend time stripping out, or that will silently break the conform.</p>
+          <p>FCP XML is a plain-text XML file. It supports multiple video and audio tracks, transitions, motion (position, scale, rotation), time remapping and clip metadata, the richest of the three in terms of editorial structure. AAF is a binary multimedia container that, unlike FCP XML, can embed the audio media inside the file itself. EDL is the oldest and simplest: one event per line, a single video track, no effects.</p>
 
-          <h2>Flatten and clean the timeline</h2>
-          <p>Always work on a copy. Duplicate the locked cut into a new sequence with a clear name (for example <code>Acme_GRADE_v01</code>) and sit it in a dedicated bin. The original stays untouched in case you need to go back.</p>
+          <h2>FCP XML, strengths and limits</h2>
+          <p>Reach for FCP XML when video is the priority and you are sending the cut to a tool that speaks it, most importantly DaVinci Resolve. Resolve's XML importer is reliable and preserves the editorial structure faithfully enough that a colorist can grade your cut and trust it lines up.</p>
 
-          <p>The principle: every clip on the transfer timeline returns to its native state, in editorial order, with nothing on top of it. The colorist starts from clean source. To get there, on the duplicate:</p>
+          <p>What FCP XML does not handle well is Premiere-specific effects. Plugin transitions, Premiere's own Lumetri grades and many warp/stabilization effects will not translate. The accepted practice is to flatten the timeline first, bake in only what needs to survive, strip out what doesn't, before exporting the XML.</p>
 
+          <h2>AAF, when audio is the priority</h2>
+          <p>AAF is the format audio post expects. A Pro Tools mixer importing your project wants AAF, not XML, because AAF carries audio cleanly and can embed the audio media inside the file. It is also the format of choice if any part of your pipeline involves Avid Media Composer.</p>
+
+          <p>Premiere's AAF export gives you two important choices. The first is embedded versus linked media: embedded is safer for handoff because nothing can go missing on the way to the mix stage. The second is frame handles, extra frames before and after each clip. More handles means more flexibility for the mixer to slide edits and crossfade audio without coming back to you.</p>
+
+          <h2>EDL, the simplest of the three</h2>
+          <p>An EDL is plain text, one cut per line, a single video track. It strips out almost everything: transitions, effects, multi-track structure, audio sync. It survives because some legacy systems read only EDL, and because when everything else fails you can open one in a text editor and see exactly what is there.</p>
+
+          <p>Reach for EDL when your destination explicitly asks for one, or as a fallback reference when an XML or AAF refuses to import cleanly somewhere downstream.</p>
+
+          <h2>Which format for which destination</h2>
+          <p>As a working rule:</p>
           <ul>
-            <li><strong>Strip every effect on every clip.</strong> Lumetri grades, LUTs, Warp Stabilizer, plugin effects, transitions, the lot. The fastest path is to select all clips and use Premiere's right-click <strong>Remove Attributes</strong>. Tick every attribute and apply. This resets effects, motion, opacity and the rest of the per-clip attributes in one pass.</li>
-            <li><strong>Remove speed changes, especially ramps.</strong> Constant speed adjustments can sometimes travel cleanly through XML, but ramps almost never do. The accepted approach: reset all speed back to 100 percent before export. The colorist grades the full ungraded clip as if there were no ramp. The ramp is re-applied later, during the reconform stage in online, before the next phase of work, not in editorial. If a constant speed change has to stay through to grade, flag it in writing.</li>
-            <li><strong>Flatten to a single video track.</strong> Collapse nested sequences into their content, replace nests with source clips, flatten multi-cam clips to their selected angle. One video track of source clips in cut order is the target.</li>
-            <li><strong>Drop the secondary content.</strong> Disabled clips, hidden tracks, title cards, lower thirds, graphics overlays, none of it belongs on the transfer timeline.</li>
-            <li><strong>Audio: out or one reference track.</strong> Audio post handles the mix in its own AAF. Either remove all audio from the transfer, or leave one mixdown reference track for sync.</li>
-            <li><strong>Switch off Scale to Frame Size.</strong> If clips were placed with this enabled, the colorist sees a different frame than you do. Use Effect Controls scale instead, or apply scale to the source clip explicitly.</li>
+            <li><strong>DaVinci Resolve for color:</strong> FCP XML.</li>
+            <li><strong>Pro Tools for sound mix:</strong> AAF.</li>
+            <li><strong>Avid Media Composer for online or conform:</strong> AAF.</li>
+            <li><strong>A finishing system that asks for cuts only:</strong> EDL.</li>
           </ul>
+          <p>When in doubt, send the format the receiving department asks for. Mixing engineers and colorists have strong preferences for a reason, those are the formats their tools handle most cleanly.</p>
 
-          <p>The end state: a single video track of source clips in cut order, each at default attributes, with no effects, no transforms, no speed changes and no graphics. The colorist gets the picture and nothing else.</p>
+          <h2>Common breakages, and how to avoid them</h2>
+          <p>Three failures recur.</p>
 
-          <h2>Handles: where they matter, where they don't</h2>
-          <p>A common misconception when prepping a Premiere cut for color is that you need to bake frame handles into the XML at export time, the way you would for an AAF going to audio post. For an XML to DaVinci Resolve, you do not, and Premiere's FCP XML export dialog does not offer the option.</p>
+          <h3>Media reconnection</h3>
+          <p>The interchange file points at your media on your storage. If the receiving editor or colorist does not have access to the same paths, every clip arrives offline. The fix: send the interchange file alongside the media, or relink in a location both parties can see.</p>
 
-          <p>The XML describes the cut points and the clip references. When Resolve imports it, it conforms against your source media files on disk. The full source clip is still there, so the colorist can extend a cut, refine a dissolve or recover from a slightly late edit by trimming out into the source on their timeline. In other words, the "handles" come from having access to the original media, not from anything you bake into the export.</p>
+          <h3>Frame handles</h3>
+          <p>A colorist or mixer needs extra frames before and after each cut so they can extend transitions or slide edits. A common minimum is twenty-four frames at the head and tail of every clip. Without handles, every refinement downstream becomes a phone call back to editorial.</p>
 
-          <p>What does matter is that the colorist can actually reach the source media. Send it alongside the XML, or confirm they have access to the same storage and the file paths will resolve cleanly. Without that, every clip arrives offline and there is nothing to trim out into.</p>
+          <h3>Unsupported effects</h3>
+          <p>Premiere-specific transitions or plugin effects often do not translate at all. The reliable fix is to flatten and bake any effect that needs to survive into the source media before exporting the interchange file.</p>
 
-          <p>The handle conversation is different for audio post. AAF for Pro Tools does have a Handle Frames option, and there you do set it explicitly, often to several seconds, because AAF can trim the audio media to the cut. Two different exports, two different rules.</p>
-
-          <h2>Name and organise the sequence</h2>
-          <p>Use a naming convention that reads on its own. <code>Acme_GRADE_v02</code> tells anyone what it is. <code>Sequence 01 copy 2</code> does not. A consistent pattern across departments saves time at every step downstream: <code>[project]_[department]_[version]</code> works for grade, online and sound alike.</p>
-
-          <p>Sit the export sequence in a bin named for the handoff, for example <code>_HANDOFF/GRADE/</code>. Keep the working bins above the line; keep the deliverables below. When the project travels, it is obvious what was sent.</p>
-
-          <p>Check the timecode of the export sequence. If you trimmed the head of the cut at any point, the sequence start may have drifted. Resolve will line up by source timecode, so the export should start at a clean reference (01:00:00:00 is common). Stray timecode offsets are a frequent cause of conforms that look right but are off by frames.</p>
-
-          <h2>Export the interchange file</h2>
-          <p>For color handoff to DaVinci Resolve, the standard is FCP XML. In Premiere: <strong>File → Export → Final Cut Pro XML…</strong>, select the export sequence, name the file to match (<code>Acme_GRADE_v01.xml</code>), and save it inside the handoff folder. For how that file imports into Resolve and what happens on the way back, see the <a href="/guides/premiere-to-davinci-resolve-roundtrip">Premiere to DaVinci Resolve roundtrip</a> guide.</p>
-
-          <p>Premiere's XML is consistent in what it carries: cut points, transitions, basic motion (position, scale, rotation), time remapping, source clip metadata. It is also consistent in what it drops: Lumetri grades, Warp Stabilizer, third-party plugin effects, anything beyond a small set of native transitions. If an effect needs to survive into color, bake it into the source media first, render to a self-contained intermediate and use that clip instead.</p>
-
-          <p>Save the XML alongside a path the colorist can reconnect to. Either drop a copy of the source media into the handoff folder, or confirm the colorist has access to the same storage and the paths will resolve cleanly.</p>
-
-          <h2>Render a reference video for the colorist</h2>
-          <p>The reference is a flat H.264 render of the locked cut, with timecode and clip-name burn-in overlaid on the picture. The colorist uses it to verify that every shot lined up after the XML import, and to refer back to your intent on any clip where the source looks ambiguous.</p>
-
-          <p>Match the reference to the XML: same sequence, same duration. If the reference is 14:32 and the conformed timeline in Resolve is 14:34, something dropped or shifted on import, and the colorist will catch it before they start grading. Render at 1080p in a sensible H.264 bitrate. It is a check file, not a deliverable.</p>
-
-          <h2>Confirm with the colorist before you send</h2>
-          <p>A five-minute call before the package leaves saves a half-day later. Things worth confirming:</p>
-          <ul>
-            <li>Frame rate, timebase, resolution. If they will work in a different working resolution, ask whether they want offline proxies or original media.</li>
-            <li>Codec preferences for source media. Some colorists want camera originals; others want pre-transcoded ProRes.</li>
-            <li>Naming and folder structure they expect.</li>
-            <li>Whether they want anything in addition to the XML, for example a separate sequence flattened to a single mezzanine for reference grading.</li>
-            <li>Where the package should land, drive, server path, share link.</li>
-          </ul>
-
-          <p>None of this is complicated. All of it is the kind of assumption that, when wrong, costs a day of back-and-forth and a frustrated email at the end of it.</p>
+          <p>Picking the format is only the start. For the audio side, see <a href="/guides/export-aaf-from-premiere-for-pro-tools">exporting an AAF for Pro Tools</a>; for the full delivery, the <a href="/guides/premiere-handoff-checklist">Premiere Pro handoff checklist</a>; and for color, the step-by-step on <a href="/guides/prepare-premiere-timeline-for-color">preparing a timeline for color grading</a> and the <a href="/guides/premiere-to-davinci-resolve-roundtrip">Premiere to DaVinci Resolve roundtrip</a>.</p>
 
         </div>
 
