@@ -1380,3 +1380,180 @@ body.boot-active{ overflow: hidden; }
   .reveal, .reveal.in{ opacity: 1; transform: none; }
   .boot{ display: none; }
 }
+
+/* ============================================================
+   CutBridge conversion additions (2026-08-30)
+   Scoped, additive classes only — no existing rules changed.
+   ============================================================ */
+
+/* safety guard: [hidden] always wins over any display rule */
+[hidden]{ display: none !important; }
+
+/* ---------- YouTube facade (thumbnail, player loads on click) ---------- */
+.yt-facade{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  display: block;
+  padding: 0; border: 0;
+  background: var(--p-bg);
+  cursor: pointer;
+}
+.yt-facade img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: .92;
+  transition: opacity .25s ease;
+}
+.yt-facade:hover img{ opacity: 1; }
+.yt-facade-btn{
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px; height: 72px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--navy);
+  color: var(--cream);
+  border: 1px solid var(--line-cream);
+  border-radius: 50%;
+  box-shadow: 0 18px 40px -12px rgba(27,40,67,0.55);
+  transition: background .2s ease, transform .2s ease;
+}
+.yt-facade-btn svg{ margin-left: 3px; }
+.yt-facade:hover .yt-facade-btn{
+  background: var(--burgundy);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+.yt-facade:focus-visible{ outline: 2px solid var(--navy); outline-offset: 3px; }
+@media (max-width: 640px){
+  .yt-facade-btn{ width: 56px; height: 56px; }
+}
+
+/* ---------- problem → outcome comparison ---------- */
+.xform{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3vw, 40px);
+  margin-bottom: clamp(36px, 4vw, 56px);
+}
+.xform-col{
+  display: flex; flex-direction: column; align-items: center;
+  padding: clamp(22px, 3vw, 36px) clamp(18px, 2.5vw, 32px);
+  background: var(--cream-raised);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+.xform-col--cb{ border-color: var(--line-2); }
+.xform-label{
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-bottom: 18px;
+}
+.xform-col--cb .xform-label{ color: var(--burgundy); }
+.xform-node{
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  color: var(--navy);
+  border: 1px solid var(--line-2);
+  border-radius: 2px;
+  padding: 9px 16px;
+  background: var(--cream);
+  text-align: center;
+}
+.xform-node.xform-cb{
+  background: var(--navy);
+  color: var(--cream);
+  border-color: var(--navy);
+  font-weight: 600;
+}
+.xform-node.xform-out{ color: var(--warm-gray); }
+.xform-node.xform-out.is-ok{
+  color: var(--navy);
+  border-color: var(--burgundy);
+}
+.xform-node.xform-out.is-ok::before{
+  content: "✓ ";
+  color: var(--burgundy);
+}
+.xform-arrow{
+  width: 1px; height: 22px;
+  background: var(--line-2);
+  position: relative;
+  margin: 8px 0;
+}
+.xform-arrow::after{
+  content: "";
+  position: absolute; left: 50%; bottom: -1px;
+  width: 5px; height: 5px;
+  border-right: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  transform: translateX(-50%) rotate(45deg);
+}
+.xform-list{
+  list-style: none;
+  width: 100%; max-width: 300px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--cream);
+}
+.xform-list li{
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--warm-gray);
+  padding: 7px 14px;
+  border-bottom: 1px solid var(--line);
+}
+.xform-list li:last-child{ border-bottom: 0; }
+/* balance: stretch the CutBridge column's middle so both columns align */
+.xform-col--cb{ justify-content: flex-start; }
+.xform-col--cb .xform-arrow{ flex: 1; min-height: 22px; height: auto; }
+@media (max-width: 760px){
+  .xform{ grid-template-columns: 1fr; }
+  .xform-col--cb .xform-arrow{ flex: 0 0 auto; height: 22px; }
+}
+.xform-detail{
+  max-width: 68ch;
+}
+.xform-detail p{ color: var(--ink); }
+.xform-detail p + p{ margin-top: 1em; }
+
+/* ---------- step result line ---------- */
+.step-result{
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+}
+.step-result::before{
+  content: "✓ ";
+  color: var(--burgundy);
+}
+
+/* ---------- mid-page CTA ---------- */
+.cta-mid{
+  margin-top: clamp(40px, 5vw, 64px);
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  text-align: center;
+}
+.cta-mid .hero-note{ margin: 0; }
+
+/* ---------- inline email + button row (signup form) ---------- */
+.wl-row{
+  display: flex; gap: 12px; align-items: stretch;
+  flex-wrap: wrap;
+}
+.wl-row .field{ flex: 1 1 260px; }
+.wl-row .btn{ flex: 0 0 auto; margin-top: 0; align-self: stretch; }
+@media (max-width: 540px){
+  .wl-row{ flex-direction: column; }
+  .wl-row .field{ flex: 0 0 auto; }
+  .wl-row .btn{ width: 100%; justify-content: center; }
+}
+
+/* prevent sub-pixel horizontal wiggle on mobile (3D panel overhang) */
+html, body{ overflow-x: clip; }
