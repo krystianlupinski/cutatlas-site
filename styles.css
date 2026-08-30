@@ -1557,3 +1557,10 @@ body.boot-active{ overflow: hidden; }
 
 /* prevent sub-pixel horizontal wiggle on mobile (3D panel overhang) */
 html, body{ overflow-x: clip; }
+
+/* ---------- featured product block (homepage) ---------- */
+.section-head .hero-actions{
+  display: flex; gap: 14px; align-items: center;
+  margin: 26px 0 16px; flex-wrap: wrap;
+}
+.section-head .hero-note{ margin-top: 0; }

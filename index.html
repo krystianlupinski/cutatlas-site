@@ -118,7 +118,7 @@
       </ul>
 
       <div class="nav-cta">
-        <a class="btn btn-primary" href="/cutbridge#waitlist">Join the beta</a>
+        <a class="btn btn-primary" href="/cutbridge#waitlist" data-cta="nav">Get early access</a>
       </div>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -141,7 +141,7 @@
 
           <div class="hero-copy">
             <span class="eyebrow reveal" style="transition-delay:.05s">
-              <span class="num">01</span> What is CutAtlas
+              <span class="num">01</span> CutAtlas
             </span>
             <h1 class="reveal" style="transition-delay:.12s">
               Tools for the<br/>
@@ -154,12 +154,12 @@
               work editors still do by hand.
             </p>
             <div class="hero-actions reveal" style="transition-delay:.32s">
-              <a class="btn btn-primary" href="/cutbridge">Explore CutBridge →</a>
-              <a class="btn btn-ghost" href="/cutmap">See CutMap</a>
+              <a class="btn btn-primary" href="/cutbridge" data-cta="hero">Explore CutBridge →</a>
+              <a class="btn btn-ghost" href="#products">All tools ↓</a>
             </div>
             <p class="hero-note reveal" style="transition-delay:.42s">
               <span class="dot" aria-hidden="true"></span>
-              CutBridge — Closed beta · Public waitlist open
+              CutBridge — Closed beta · Onboarding editors now
             </p>
           </div>
 
@@ -247,22 +247,8 @@
               <div class="preflight reveal" style="transition-delay:.6s">
                 <div class="check" aria-hidden="true">✓</div>
                 <div>
-                  <div class="lbl">Preflight</div>
-                  <div class="val">24 / 24 <span style="color:var(--p-text-mute); font-size:.85rem; font-style:normal;">checks passed</span></div>
-                </div>
-              </div>
-
-              <div class="ai-chip reveal" style="transition-delay:.75s">
-                <span class="glyph" aria-hidden="true">
-                  <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#F5F2EB"/>
-                    <path d="M60 8 L73 21 L60 21 Z" fill="#1B2843"/>
-                    <text x="39" y="62" font-family="Georgia, serif" font-size="32" font-style="italic" font-weight="500" fill="#1B2843" text-anchor="middle">A</text>
-                  </svg>
-                </span>
-                <div>
-                  Assistant — ready for handoff.<br/>
-                  <em>Generate AAF + FCP XML?</em>
+                  <div class="lbl">Package check</div>
+                  <div class="val">24 / 24 <span style="color:var(--p-text-mute); font-size:.85rem; font-style:normal;">deliverables verified</span></div>
                 </div>
               </div>
 
@@ -275,18 +261,33 @@
 
     <hr class="rule" />
 
-    <!-- ============ CUTBRIDGE TUTORIAL ============ -->
-    <section class="section section--tight">
+    <!-- ============ FEATURED — CUTBRIDGE ============ -->
+    <section class="section section--sunk" id="cutbridge-featured">
       <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><span class="num">02</span> Featured — CutBridge by CutAtlas</span>
+          <h2>Stop building turnovers <em class="serif-italic">by hand.</em></h2>
+          <p>CutBridge prepares your locked Premiere Pro edit for color, online and sound — XML, AAF, EDL, references and delivery structure in one guided workflow.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/cutbridge#waitlist" data-cta="featured">Get early access →</a>
+            <a class="btn btn-ghost" href="/cutbridge" data-cta="featured-learn">Learn more</a>
+          </div>
+          <p class="hero-note"><span class="dot" aria-hidden="true"></span> Closed beta · Premiere Pro · macOS + Windows</p>
+        </div>
         <figure class="media">
           <div class="media-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/uo4Q0Mjag4E?rel=0"
-              title="CutBridge 2.0, handoff workflow tutorial"
-              loading="lazy"
-              allow="fullscreen; picture-in-picture"
-              allowfullscreen></iframe>
+            <button class="yt-facade" type="button"
+              data-yt="3OibRgEjhoQ" data-yt-title="CutBridge 2.0 — From Picture Lock to Turnover" data-event="homepage_promo_play"
+              aria-label="Play video: CutBridge 2.0 — From Picture Lock to Turnover">
+              <img src="https://i.ytimg.com/vi/3OibRgEjhoQ/maxresdefault.jpg"
+                onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/3OibRgEjhoQ/hqdefault.jpg';}else{this.style.display='none';}"
+                alt="" loading="lazy" width="1280" height="720" />
+              <span class="yt-facade-btn" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </span>
+            </button>
           </div>
-          <figcaption class="media-caption">CutBridge 2.0, from locked edit to complete turnover in one click</figcaption>
+          <figcaption class="media-caption">CutBridge 2.0 — from picture lock to turnover</figcaption>
         </figure>
       </div>
     </section>
@@ -296,7 +297,7 @@
       <div class="container">
         <div class="grid-2">
           <div>
-            <span class="eyebrow"><span class="num">02</span> What is CutAtlas</span>
+            <span class="eyebrow"><span class="num">03</span> What is CutAtlas</span>
             <h2>Software for the work between the cut and the deliverable.</h2>
           </div>
           <div class="detail">
@@ -308,14 +309,14 @@
     </section>
 
     <!-- ============ PRODUCTS (bento) ============ -->
-    <section class="stage framed compact section">
+    <section class="stage framed compact section" id="products">
       <span class="ornament tl" aria-hidden="true">PL. II</span>
       <span class="ornament br" aria-hidden="true">CONTENTS · I / II / III / IV</span>
 
       <div class="container">
         <div class="section-head" style="display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; max-width:none; padding-bottom:24px; border-bottom:1px solid var(--line); margin-bottom:36px;">
           <div>
-            <span class="eyebrow"><span class="num">03</span> Products</span>
+            <span class="eyebrow"><span class="num">04</span> Products</span>
             <h2 style="margin-top:12px;">Four tools, <em class="serif-italic">one pipeline.</em></h2>
           </div>
           <span class="eyebrow" style="text-align:right;">Four plugins · One Premiere project</span>
@@ -324,7 +325,7 @@
         <div class="cards">
 
           <!-- CutBridge — flagship -->
-          <a class="card lg flagship" href="/cutbridge">
+          <a class="card lg flagship" href="/cutbridge" data-cta="card">
             <div class="card-head">
               <span class="card-mark" aria-hidden="true">
                 <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg">
@@ -449,10 +450,20 @@
     <section class="section studio">
       <div class="container">
         <div class="studio-inner">
-          <span class="eyebrow"><span class="num">04</span> The studio</span>
+          <span class="eyebrow"><span class="num">05</span> The studio</span>
           <h2 style="margin-top:14px;">Built by editors.</h2>
           <p>CutAtlas is a small studio in Poland, run by people who spent years in post and grew tired of the same manual chores. We build the tools we wanted on the timeline, and we would rather ship something dependable than something loud.</p>
           <a class="link-arrow" href="/about">About CutAtlas <span class="a">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA — CUTBRIDGE ============ -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta-mid">
+          <a class="btn btn-primary" href="/cutbridge#waitlist" data-cta="final">Get early access →</a>
+          <p class="hero-note"><span class="dot" aria-hidden="true"></span> CutBridge — closed beta · onboarding Premiere Pro editors now</p>
         </div>
       </div>
     </section>
@@ -492,7 +503,7 @@
             <li><a href="/about">About</a></li>
             <li><a href="/guides">Guides</a></li>
             <li><a href="/faq">FAQ</a></li>
-            <li><a href="/cutbridge#waitlist">Beta waitlist</a></li>
+            <li><a href="/cutbridge#waitlist">Early access</a></li>
           </ul>
         </div>
 
@@ -521,7 +532,9 @@
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var seen = false;
       try { seen = !!sessionStorage.getItem('cutbridge_boot_seen'); } catch(e){}
-      if (reduce || seen){ boot.remove(); return; }
+      // paid/campaign traffic (utm-tagged) skips the intro — straight to content
+      var paid = /[?&]utm_/.test(window.location.search);
+      if (reduce || seen || paid){ boot.remove(); return; }
       document.body.classList.add('boot-active');
       var dismissed = false;
       var skip = function(){
@@ -597,6 +610,77 @@
         hovering = true; apply();
       });
       scene.addEventListener('mouseleave', function(){ hovering = false; apply(); });
+    })();
+
+    // lightweight event tracking — GTM/GA4/Meta-ready, makes no external calls by itself
+    (function () {
+      var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      var utm = {};
+      try {
+        var params = new URLSearchParams(window.location.search);
+        UTM_KEYS.forEach(function (k) { var v = params.get(k); if (v) utm[k] = v; });
+        if (Object.keys(utm).length) {
+          sessionStorage.setItem('cb_utm', JSON.stringify(utm));
+        } else {
+          utm = JSON.parse(sessionStorage.getItem('cb_utm') || '{}');
+        }
+      } catch (e) { utm = {}; }
+      window.cbTrack = function (name, props) {
+        var data = { event: name };
+        Object.keys(utm).forEach(function (k) { data[k] = utm[k]; });
+        if (props) Object.keys(props).forEach(function (k) { data[k] = props[k]; });
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(data);
+        if (typeof window.fbq === 'function') {
+          try { window.fbq('trackCustom', name, data); } catch (e) {}
+        }
+      };
+      window.cbTrack('homepage_page_view');
+      document.querySelectorAll('[data-cta]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          window.cbTrack('homepage_cutbridge_cta_click', { position: el.getAttribute('data-cta') });
+        });
+      });
+      // carry UTM parameters over to /cutbridge links
+      var qs = Object.keys(utm).map(function (k) { return k + '=' + encodeURIComponent(utm[k]); }).join('&');
+      if (qs) {
+        document.querySelectorAll('a[href^="/cutbridge"]').forEach(function (a) {
+          var href = a.getAttribute('href');
+          var hashIdx = href.indexOf('#');
+          var base = hashIdx < 0 ? href : href.slice(0, hashIdx);
+          var hash = hashIdx < 0 ? '' : href.slice(hashIdx);
+          a.setAttribute('href', base + (base.indexOf('?') < 0 ? '?' : '&') + qs + hash);
+        });
+      }
+      // featured CutBridge block came into view
+      var feat = document.getElementById('cutbridge-featured');
+      if (feat && 'IntersectionObserver' in window) {
+        var fio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              window.cbTrack('homepage_cutbridge_feature_view');
+              fio.disconnect();
+            }
+          });
+        }, { threshold: 0.2 });
+        fio.observe(feat);
+      }
+    })();
+
+    // YouTube facade — load the player (and its cookies/JS) only on click
+    (function () {
+      document.querySelectorAll('.yt-facade').forEach(function (facade) {
+        facade.addEventListener('click', function () {
+          var frame = facade.parentNode;
+          var iframe = document.createElement('iframe');
+          iframe.src = 'https://www.youtube-nocookie.com/embed/' + facade.getAttribute('data-yt') + '?rel=0&autoplay=1';
+          iframe.title = facade.getAttribute('data-yt-title') || 'CutBridge video';
+          iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+          iframe.setAttribute('allowfullscreen', '');
+          frame.replaceChild(iframe, facade);
+          if (window.cbTrack) window.cbTrack(facade.getAttribute('data-event') || 'homepage_video_play');
+        });
+      });
     })();
 
     // bento card cursor light
