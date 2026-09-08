@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CutBridge by CutAtlas, Finishing-ready handoff from Premiere Pro</title>
-  <meta name="description" content="CutBridge automates post-production handoff from Adobe Premiere Pro, generating FCP XML, AAF, EDL, and burn-in references for color, online, and sound teams. Currently in closed beta." />
+  <meta name="description" content="CutBridge automates post-production handoff from Adobe Premiere Pro, generating FCP XML, AAF, EDL, and burn-in references for color, online, and sound teams. $149/year founding price, 7-day free trial." />
   <link rel="canonical" href="https://cutatlas.io/cutbridge" />
 
   <meta property="og:type" content="website" />
@@ -30,12 +30,14 @@
     "name": "CutBridge",
     "alternateName": "CutBridge by CutAtlas",
     "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "macOS",
+    "operatingSystem": "macOS (Apple Silicon)",
     "url": "https://cutatlas.io/cutbridge",
-    "description": "CutBridge is an Adobe Premiere Pro plugin that automates post-production handoff, generating FCP XML, AAF, EDL, and burn-in references for color, online, and sound teams. Currently in closed beta.",
+    "description": "CutBridge is an Adobe Premiere Pro plugin that automates post-production handoff, generating FCP XML, AAF, EDL, and burn-in references for color, online, and sound teams.",
+    "offers": { "@type": "AggregateOffer", "priceCurrency": "USD", "lowPrice": "29", "highPrice": "149", "offerCount": "2", "url": "https://cutatlas.io/cutbridge#pricing" },
     "publisher": { "@type": "Organization", "name": "CutAtlas", "url": "https://cutatlas.io/" }
   }
   </script>
+  <script defer data-domain="cutatlas.io" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -51,7 +53,6 @@
           <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text>
         </svg>
         <span class="brand-name">CutAtlas</span>
-        <span class="brand-tag" aria-hidden="true">Editorial infrastructure</span>
       </a>
 
       <ul class="nav-links" id="navLinks">
@@ -64,7 +65,7 @@
       </ul>
 
       <div class="nav-cta">
-        <a class="btn btn-primary" href="#waitlist" data-cta="nav">Get early access</a>
+        <a class="btn btn-primary" href="#pricing">Get CutBridge</a>
       </div>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -75,197 +76,50 @@
 
   <main id="main" tabindex="-1">
 
-    <!-- ============ HERO (with Premiere panel) ============ -->
-    <header class="stage framed home-hero">
-      <span class="ornament tl" aria-hidden="true">CutBridge by CutAtlas</span>
-      <span class="ornament tr" aria-hidden="true">PL. CB</span>
-      <span class="ornament bl" aria-hidden="true">Finishing-ready handoff</span>
-      <span class="ornament br" aria-hidden="true">v1.0 — closed beta</span>
-
+    <!-- ============ HERO ============ -->
+    <header class="page-hero">
       <div class="container">
-        <div class="grid">
-
-          <div class="hero-copy">
-            <span class="eyebrow reveal" style="transition-delay:.05s">
-              <span class="tick"></span> CutBridge by CutAtlas
-            </span>
-            <h1 class="reveal" style="transition-delay:.12s">
-              Stop building turnovers <em class="serif-italic">by hand.</em>
-            </h1>
-            <p class="lead reveal" style="transition-delay:.22s">
-              CutBridge prepares your locked edit for color, online and sound — directly inside Premiere Pro. XML, AAF, EDL, references and delivery structure in one guided workflow.
-            </p>
-            <div class="hero-actions reveal" style="transition-delay:.32s">
-              <a class="btn btn-primary" href="#waitlist" data-cta="hero">Get early access →</a>
-              <a class="btn btn-ghost" href="#demo">See it in action ↓</a>
-            </div>
-            <p class="hero-note reveal" style="transition-delay:.42s">
-              <span class="dot" aria-hidden="true"></span>
-              Closed beta · 7-day trial · Premiere Pro · macOS
-            </p>
-          </div>
-
-          <div class="hero-visual" aria-hidden="true">
-            <div class="scene">
-
-              <div class="panel reveal" style="transition-delay:.18s">
-                <div class="chrome">
-                  <div class="tl-dots"><span></span><span></span><span></span></div>
-                  <div class="chrome-title">COSMOS_S03E07_LOCKED_v12.prproj — Premiere Pro</div>
-                  <div class="chrome-cb">CUTBRIDGE</div>
-                </div>
-
-                <div class="tabs">
-                  <span>PROJECT</span>
-                  <span>EFFECT CONTROLS</span>
-                  <span class="is-active">CUTBRIDGE — HANDOFF</span>
-                  <span>METADATA</span>
-                </div>
-
-                <div class="panel-body">
-                  <div class="bins">
-                    <div class="bins-header">PROJECT BINS</div>
-                    <div class="bin-row"><span class="ic"></span> 01_ASSEMBLY</div>
-                    <div class="bin-row indent"><span class="ic seq"></span> ROUGH_v04</div>
-                    <div class="bin-row indent"><span class="ic seq"></span> ROUGH_v07</div>
-                    <div class="bin-row"><span class="ic"></span> 02_VFX_PULLS</div>
-                    <div class="bin-row indent"><span class="ic seq"></span> VFX_SHOTS_v02</div>
-                    <div class="bin-row"><span class="ic"></span> 03_FINISHING</div>
-                    <div class="bin-row indent active"><span class="ic locked"></span> LOCKED_CUT_v12</div>
-                    <div class="bin-row indent-2"><span class="ic seq"></span> Conform ref</div>
-                    <div class="bin-row indent-2"><span class="ic seq"></span> Audio split</div>
-                    <div class="bin-row indent-2"><span class="ic seq"></span> Color ref burn-in</div>
-                    <div class="bin-row"><span class="ic"></span> 04_DELIVERABLES</div>
-                  </div>
-
-                  <div class="timeline">
-                    <div class="ruler">
-                      <div class="ruler-marks">
-                        <span>01:23:30</span><span>01:23:35</span><span>01:23:40</span>
-                        <span>01:23:45</span><span>01:23:50</span><span>01:23:55</span>
-                      </div>
-                    </div>
-                    <div class="tracks">
-                      <div class="track"><span class="track-label">V3</span><div class="track-canvas">
-                        <div class="clip v2" style="left:8%; width:18%;">GFX_LOWER</div>
-                        <div class="clip warn" style="left:62%; width:12%;">missing media</div>
-                      </div></div>
-                      <div class="track"><span class="track-label">V2</span><div class="track-canvas">
-                        <div class="clip v1" style="left:4%; width:22%;">SC_42A_t06</div>
-                        <div class="clip v1" style="left:30%; width:16%;">SC_42B_t04</div>
-                        <div class="clip v2" style="left:48%; width:28%;">SC_42C_t09</div>
-                        <div class="clip v1" style="left:78%; width:18%;">SC_43_t02</div>
-                      </div></div>
-                      <div class="track"><span class="track-label">V1</span><div class="track-canvas">
-                        <div class="clip v1" style="left:0%; width:32%;">SC_42_master</div>
-                        <div class="clip v2" style="left:34%; width:22%;">cut_03</div>
-                        <div class="clip v1" style="left:58%; width:42%;">SC_43_master_v07</div>
-                      </div></div>
-                      <div class="track"><span class="track-label">A1</span><div class="track-canvas">
-                        <div class="clip aud-a" style="left:0%; width:48%;">prod_mix.L</div>
-                        <div class="clip aud-a" style="left:50%; width:48%;">prod_mix.L</div>
-                      </div></div>
-                      <div class="track"><span class="track-label">A2</span><div class="track-canvas">
-                        <div class="clip aud-b" style="left:0%; width:48%;">prod_mix.R</div>
-                        <div class="clip aud-b" style="left:50%; width:48%;">prod_mix.R</div>
-                      </div></div>
-                      <div class="track"><span class="track-label">A3</span><div class="track-canvas">
-                        <div class="clip aud-a" style="left:12%; width:18%;">dx_vo</div>
-                        <div class="clip aud-a" style="left:54%; width:22%;">dx_vo</div>
-                      </div></div>
-                      <div class="track"><span class="track-label">A4</span><div class="track-canvas">
-                        <div class="clip aud-b" style="left:38%; width:12%;">sfx_swoosh</div>
-                        <div class="clip aud-b" style="left:74%; width:14%;">sfx_riser</div>
-                      </div></div>
-                    </div>
-                    <div class="playhead" style="left:46%; top:0;">
-                      <span class="tc-badge">01:23:45:12</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="preflight reveal" style="transition-delay:.6s">
-                <div class="check" aria-hidden="true">✓</div>
-                <div>
-                  <div class="lbl">Package check</div>
-                  <div class="val">24 / 24 <span style="color:var(--p-text-mute); font-size:.85rem; font-style:normal;">deliverables verified</span></div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
+        <img class="page-lockup" src="assets/emblem.svg" alt="CutAtlas" />
+        <span class="eyebrow"><span class="tick" aria-hidden="true"></span> CutBridge by CutAtlas</span>
+        <h1>Finishing-ready handoff,<br />straight from Premiere Pro.</h1>
+        <p class="lead">CutBridge automates the handoff of a finished edit to the color, online, and sound teams, turning a slow, manual chore into a few predictable steps.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pricing">Get CutBridge</a>
+          <a class="btn btn-ghost" href="#demo">See it in action ↓</a>
         </div>
+        <p class="hero-note"><span class="dot" aria-hidden="true"></span> Available now · Apple Silicon Mac · Premiere Pro 26.3+ · 7-day free trial, no card.</p>
       </div>
     </header>
 
-    <hr class="rule" />
-
     <!-- ============ DEMO VIDEO ============ -->
-    <section class="section section--tight" id="demo">
+    <section class="section section--tight">
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><span class="tick"></span> Demo</span>
-          <h2>See CutBridge in action.</h2>
-        </div>
         <figure class="media">
           <div class="media-frame">
-            <button class="yt-facade" type="button"
-              data-yt="3OibRgEjhoQ" data-yt-title="CutBridge 2.0 — From Picture Lock to Turnover" data-event="cutbridge_promo_play"
-              aria-label="Play video: CutBridge 2.0 — From Picture Lock to Turnover">
-              <img src="https://i.ytimg.com/vi/3OibRgEjhoQ/maxresdefault.jpg"
-                onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/3OibRgEjhoQ/hqdefault.jpg';}else{this.style.display='none';}"
-                alt="" loading="lazy" width="1280" height="720" />
-              <span class="yt-facade-btn" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </span>
-            </button>
+            <video controls playsinline preload="metadata" poster="assets/cutbridge-promo-poster.jpg">
+              <source src="assets/cutbridge-promo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
-          <figcaption class="media-caption">CutBridge 2.0 — from picture lock to turnover</figcaption>
+          <figcaption class="media-caption">CutBridge 2.0, from locked edit to complete turnover in one click</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- ============ THE PROBLEM → OUTCOME ============ -->
+    <hr class="rule" />
+
+    <!-- ============ THE PROBLEM ============ -->
     <section class="section statement">
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><span class="num">01</span> The problem</span>
-          <h2>Handoff is where editorial time quietly disappears.</h2>
-        </div>
-
-        <div class="xform" role="img" aria-label="Comparison: without CutBridge, a locked edit goes through manual cleanup, duplicated timelines, FCP XML, AAF, EDL, reference exports, folder setup and checks before it becomes a finishing-ready turnover. With CutBridge, the locked edit goes through CutBridge and arrives finishing-ready.">
-          <div class="xform-col">
-            <span class="xform-label">Without CutBridge</span>
-            <div class="xform-node">Locked edit</div>
-            <span class="xform-arrow" aria-hidden="true"></span>
-            <ul class="xform-list">
-              <li>Manual timeline cleanup</li>
-              <li>Duplicate + rename sequences</li>
-              <li>FCP XML</li>
-              <li>AAF</li>
-              <li>EDL</li>
-              <li>Reference exports</li>
-              <li>Folder structure</li>
-              <li>Final checks</li>
-            </ul>
-            <span class="xform-arrow" aria-hidden="true"></span>
-            <div class="xform-node xform-out">Finishing-ready turnover</div>
+        <div class="grid-2">
+          <div>
+            <span class="eyebrow">01: The problem</span>
+            <h2>Handoff is where editorial time quietly disappears.</h2>
           </div>
-          <div class="xform-col xform-col--cb">
-            <span class="xform-label">With CutBridge</span>
-            <div class="xform-node">Locked edit</div>
-            <span class="xform-arrow" aria-hidden="true"></span>
-            <div class="xform-node xform-cb">CutBridge</div>
-            <span class="xform-arrow" aria-hidden="true"></span>
-            <div class="xform-node xform-out is-ok">Finishing-ready turnover</div>
+          <div class="detail">
+            <p>When a cut is locked, the project still isn't ready for anyone downstream. Color, online, and sound each need it rebuilt their way, the right sequences, the right exports, the right names, the right folders. So someone sits down and does it by hand: duplicating timelines, stripping effects, renaming, exporting FCP XML and AAF, rendering reference videos.</p>
+            <p>It is repetitive, easy to get wrong, and the mistakes surface downstream, after the project has already left editorial. CutBridge does this preparation in a structured, repeatable way instead.</p>
           </div>
-        </div>
-
-        <div class="xform-detail">
-          <p>When a cut is locked, the project still isn't ready for anyone downstream. Color, online, and sound each need it rebuilt their way — the right sequences, the right exports, the right names, the right folders. So someone sits down and does it by hand: duplicating timelines, stripping effects, renaming, exporting FCP XML and AAF, rendering reference videos.</p>
-          <p>It is repetitive, easy to get wrong, and the mistakes surface downstream, after the project has already left editorial. CutBridge does this preparation in a structured, repeatable way instead.</p>
         </div>
       </div>
     </section>
@@ -274,65 +128,27 @@
     <section class="section section--sunk">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow"><span class="num">02</span> How it works</span>
-          <h2>From locked cut to finishing-ready, in four steps.</h2>
-          <p>CutBridge runs inside Premiere Pro. You pick the timelines, the deliverables, and the destination — it exports and validates the rest.</p>
+          <span class="eyebrow">02: How it works</span>
+          <h2>From locked cut to finishing-ready, in three steps.</h2>
+          <p>CutBridge runs inside Premiere Pro. It reads your project, prepares what each downstream department needs, and packages the result.</p>
         </div>
 
-        <div class="steps steps--four">
+        <div class="steps">
           <div class="step">
-            <span class="step-num">01 — TIMELINES</span>
-            <h3>Pick the timelines</h3>
-            <p>Select which timelines from your locked cut go into the turnover.</p>
-          </div>
-          <div class="step">
-            <span class="step-num">02 — DELIVERABLES</span>
-            <h3>Choose what gets created</h3>
-            <p>Grade, online, preview, AAF — pick what each downstream team needs.</p>
+            <span class="step-num">01</span>
+            <h3>Run a timeline check</h3>
+            <p>CutBridge analyzes your project, identifies the role of each sequence, and runs preflight checks, surfacing problems while they are still cheap to fix, before anything leaves editorial.</p>
           </div>
           <div class="step">
-            <span class="step-num">03 — DESTINATION</span>
-            <h3>Set the destination</h3>
-            <p>Choose where the finished package should land.</p>
+            <span class="step-num">02</span>
+            <h3>Prepare the timelines</h3>
+            <p>It generates derivative sequences for each downstream team, grade, online, and sound, built to the form each one expects and ready to export. No manual duplicating or renaming.</p>
           </div>
           <div class="step">
-            <span class="step-num">04 — RELEASE</span>
-            <h3>Release the package</h3>
-            <p>CutBridge exports everything and validates the package on its own, confirming every deliverable was actually created.</p>
-            <p class="step-result">Nothing leaves editorial incomplete.</p>
+            <span class="step-num">03</span>
+            <h3>Export and package</h3>
+            <p>It packages the deliverables into a clean, predictable folder structure, interchange files and burn-in references together, with a manifest of exactly what is inside.</p>
           </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ============ FULL TUTORIAL ============ -->
-    <section class="section section--tight" id="tutorial">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><span class="tick"></span> Tutorial</span>
-          <h2>See the complete workflow.</h2>
-          <p>The full walkthrough — a locked edit exported and validated as a complete turnover for color, online, and sound.</p>
-        </div>
-        <figure class="media">
-          <div class="media-frame">
-            <button class="yt-facade" type="button"
-              data-yt="uo4Q0Mjag4E" data-yt-title="One-Click Turnovers in Premiere Pro — CutBridge Tutorial" data-event="cutbridge_tutorial_play"
-              aria-label="Play video: One-Click Turnovers in Premiere Pro — CutBridge Tutorial">
-              <img src="https://i.ytimg.com/vi/uo4Q0Mjag4E/maxresdefault.jpg"
-                onerror="if(!this.dataset.f){this.dataset.f=1;this.src='https://i.ytimg.com/vi/uo4Q0Mjag4E/hqdefault.jpg';}else{this.style.display='none';}"
-                alt="" loading="lazy" width="1280" height="720" />
-              <span class="yt-facade-btn" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </span>
-            </button>
-          </div>
-          <figcaption class="media-caption">One-Click Turnovers in Premiere Pro — CutBridge Tutorial</figcaption>
-        </figure>
-
-        <div class="cta-mid">
-          <a class="btn btn-primary" href="#waitlist" data-cta="mid">Get early access →</a>
-          <p class="hero-note"><span class="dot" aria-hidden="true"></span> We’re currently onboarding editors to the closed beta.</p>
         </div>
       </div>
     </section>
@@ -341,14 +157,14 @@
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow"><span class="num">03</span> What it delivers</span>
+          <span class="eyebrow">03: What it delivers</span>
           <h2>The package downstream teams expect.</h2>
         </div>
         <div class="feature-grid">
           <div class="feature">
             <span class="feature-idx">FORMATS</span>
             <h3>Interchange files</h3>
-            <p>FCP XML, AAF, and EDL — the formats that carry a timeline cleanly into DaVinci Resolve, Pro Tools, and other finishing tools.</p>
+            <p>FCP XML, AAF, and EDL, the formats that carry a timeline cleanly into DaVinci Resolve, Pro Tools, and other finishing tools.</p>
           </div>
           <div class="feature">
             <span class="feature-idx">REFERENCE</span>
@@ -358,9 +174,77 @@
           <div class="feature">
             <span class="feature-idx">STRUCTURE</span>
             <h3>Structured delivery</h3>
-            <p>A predictable folder layout and a written manifest. Nothing arrives loose, mislabeled, or open to guesswork.</p>
+            <p>A predictable folder layout and a written manifest, nothing arrives loose, mislabeled, or open to guesswork.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ ASSISTANT ============ -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="callout">
+          <span class="eyebrow">Inside the panel</span>
+          <h2>A guided workflow, not a wall of buttons.</h2>
+          <p>CutBridge includes a built-in assistant that walks you through each stage of the handoff, what a given department needs, why a check failed, what to send and what to leave out. It stays in the Premiere Pro panel, so you are never breaking focus to look something up.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">04: Pricing</span>
+          <h2>One licence per editor. Cancel any time.</h2>
+          <p>Start with a 7-day free trial, no card needed. Founding price for the first 100 subscribers or until 31 December 2026, whichever comes first.</p>
+        </div>
+
+        <div class="pricing-grid pricing-grid--two">
+          <div class="plate price-plate price-plate--featured">
+            <div class="price-head">
+              <span class="price-badge">Recommended · Founding</span>
+              <h3>Annual</h3>
+            </div>
+            <div class="price-amount"><span class="was"><span class="sr-only">Regular price </span>$179</span><span class="sr-only">, now </span>$149 <span class="unit">/ year</span></div>
+            <ul>
+              <li>Founding price locked for as long as you stay subscribed</li>
+              <li>Every update included</li>
+              <li>One Mac at a time, move whenever you like</li>
+              <li>30-day money-back guarantee</li>
+            </ul>
+            <button type="button" class="btn btn-primary" data-buy="annual_founding" data-price="pri_01m20arw105hp10a9d8vmn1sjn">Buy annual — $149/year</button>
+            <form class="trial-form" data-trial="annual">
+              <label class="sr-only" for="trial-email-a">Email address</label>
+              <input type="email" id="trial-email-a" name="email" placeholder="you@studio.com" required />
+              <button type="submit" class="btn btn-ghost">Start 7-day free trial</button>
+              <p class="trial-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <div class="plate price-plate">
+            <div class="price-head">
+              <span class="price-badge price-badge--muted">Project pass</span>
+              <h3>Monthly</h3>
+            </div>
+            <div class="price-amount">$29 <span class="unit">/ month</span></div>
+            <ul>
+              <li>For the occasional turnover</li>
+              <li>Every update included</li>
+              <li>One Mac at a time</li>
+              <li>Cancel any time, 30-day money-back guarantee</li>
+            </ul>
+            <button type="button" class="btn btn-ghost" data-buy="monthly" data-price="pri_01m20apz0s65a985yntn2w7xew">Buy monthly — $29/month</button>
+            <form class="trial-form" data-trial="monthly">
+              <label class="sr-only" for="trial-email-m">Email address</label>
+              <input type="email" id="trial-email-m" name="email" placeholder="you@studio.com" required />
+              <button type="submit" class="btn btn-ghost">Start 7-day free trial</button>
+              <p class="trial-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+
+        <p class="pricing-note">Studio or team? <a href="mailto:contact@cutatlas.io?subject=CutBridge%20studio%20licence">Write to us</a> · Prices in USD, VAT added at checkout by Paddle, our merchant of record · Requires an Apple Silicon Mac and Premiere Pro 26.3 or newer · <a href="/cutbridge-eula">Licence terms</a> · <a href="/cutbridge-refund">Refunds</a></p>
       </div>
     </section>
 
@@ -374,27 +258,39 @@
         <div class="faq-list">
           <details>
             <summary>What is CutBridge?</summary>
-            <p>CutBridge is an Adobe Premiere Pro plugin that automates the handoff of a finished edit to post-production departments — color grading, online/conform, and audio post.</p>
+            <p>CutBridge is an Adobe Premiere Pro plugin that automates the handoff of a finished edit to post-production departments, color grading, online/conform, and audio post.</p>
           </details>
           <details>
             <summary>Who is it for?</summary>
-            <p>It is built for senior freelance editors and assistant editors, small post-production houses, and online/conform specialists — people who need reliable, finishing-ready exports.</p>
+            <p>It is built for senior freelance editors and assistant editors, small post-production houses, and online/conform specialists, people who need reliable, finishing-ready exports.</p>
           </details>
           <details>
-            <summary>How do I get access?</summary>
-            <p>CutBridge is currently in closed beta. Leave your email below and we will onboard you to an upcoming beta group — beta access runs as a 7-day trial, and joining the list is free and carries no commitment.</p>
+            <summary>Does it support macOS and Windows?</summary>
+            <p>Today CutBridge runs on Apple Silicon Macs (macOS 11 or newer) with Premiere Pro 26.3 or newer. Windows and Intel Macs are planned, leave your e-mail below and we will tell you when they ship.</p>
           </details>
           <details>
-            <summary>Which platforms does it support?</summary>
-            <p>CutBridge runs on macOS, with Adobe Premiere Pro.</p>
+            <summary>How does the assistant work?</summary>
+            <p>The built-in assistant guides you through each step of the workflow and explains what each downstream team needs, directly inside the Premiere Pro panel.</p>
           </details>
           <details>
             <summary>What about data privacy?</summary>
             <p>Your projects and exports stay local. No footage or media is uploaded to the cloud.</p>
           </details>
           <details>
-            <summary>How much will CutBridge cost?</summary>
-            <p>Final pricing will be announced after the beta. The aim is a transparent, flexible set of plans — requesting early access is free and carries no commitment.</p>
+            <summary>How much does CutBridge cost?</summary>
+            <p>$149 per year at the founding price (regular $179), or $29 per month if you only need it for a project. Both start with a 7-day free trial with no card, and both come with a 30-day money-back guarantee.</p>
+          </details>
+          <details>
+            <summary>What does "founding price" mean?</summary>
+            <p>The first 100 annual subscribers, or anyone who subscribes before 31 December 2026, pay $149 a year for as long as their subscription stays active. If you cancel and come back later, the regular price applies.</p>
+          </details>
+          <details>
+            <summary>What happens if I cancel?</summary>
+            <p>CutBridge keeps working until the end of the period you have paid for, then stops releasing packages. Every package you have already produced stays yours, in open formats (XML, AAF, MP4, CSV) that need neither us nor the plugin.</p>
+          </details>
+          <details>
+            <summary>Can I use one licence on two Macs?</summary>
+            <p>One licence is active on one Mac at a time. Moving is normal: click "Remove from this Mac" in the panel and activate on the other one.</p>
           </details>
         </div>
       </div>
@@ -404,25 +300,31 @@
     <section class="section" id="waitlist">
       <div class="container">
         <div class="cta-plate on-navy">
-          <span class="eyebrow"><span class="tick"></span> Closed beta</span>
-          <h2>Get early access to CutBridge.</h2>
-          <p>CutBridge is currently in closed beta. We’re onboarding Premiere Pro editors to upcoming beta groups — leave your email and you’ll be in line for the next one. Beta access runs as a 7-day trial.</p>
+          <span class="eyebrow">Windows or Intel Mac?</span>
+          <h2>Not on Apple Silicon yet?</h2>
+          <p>CutBridge ships for Apple Silicon first. Leave your e-mail and we will write when Windows and Intel builds are ready, nothing else.</p>
 
           <p class="tester-count" id="testerCount" hidden>
-            <span class="tester-count-num" id="testerCountNum"></span>
-            <span class="tester-count-label">editors are testing CutBridge in the closed beta</span>
+            <span class="tester-count-num" id="testerCountNum">,</span>
+            <span class="tester-count-label">editors are on the list</span>
           </p>
 
-          <form class="waitlist-form" id="waitlistForm" aria-label="CutBridge early access">
-            <div class="wl-row">
-              <div class="field">
-                <label class="sr-only" for="wl-email">Email address</label>
-                <input type="email" id="wl-email" name="email" placeholder="you@studio.com" required autocomplete="email" inputmode="email" />
-              </div>
-              <button type="submit" class="btn btn-primary" id="waitlistBtn" data-cta="form">Get early access</button>
+          <form class="waitlist-form" id="waitlistForm" aria-label="CutBridge platform notification request">
+            <div class="field">
+              <label for="wl-email">Email address</label>
+              <input type="email" id="wl-email" name="email" placeholder="you@studio.com" required />
             </div>
+            <div class="field">
+              <label for="wl-name">Name (optional)</label>
+              <input type="text" id="wl-name" name="name" placeholder="Your name" />
+            </div>
+            <div class="consent">
+              <input type="checkbox" id="wl-consent" name="consent" required />
+              <label for="wl-consent">I agree to receive an e-mail when CutBridge ships for my platform. See the <a href="/cutbridge-privacy">Privacy Policy</a>.</label>
+            </div>
+            <button type="submit" class="btn btn-primary" id="waitlistBtn">Notify me</button>
             <p class="form-status" id="waitlistStatus" role="status" aria-live="polite"></p>
-            <p class="form-note">By requesting access you agree to receive email updates about beta access — see the <a href="/privacy">Privacy Policy</a> and <a href="/beta-terms">Beta Terms</a>. No commitment, opt out at any time.</p>
+            <p class="form-note">No commitment, unsubscribe at any time.</p>
           </form>
         </div>
       </div>
@@ -463,16 +365,17 @@
             <li><a href="/about">About</a></li>
             <li><a href="/guides">Guides</a></li>
             <li><a href="/faq">FAQ</a></li>
-            <li><a href="/cutbridge#waitlist">Early access</a></li>
+            <li><a href="/cutbridge#pricing">Pricing</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h3>Legal</h3>
           <ul>
-            <li><a href="/privacy">Privacy</a></li>
-            <li><a href="/beta-terms">Beta Terms</a></li>
-            <li><a href="/cutmap-refund">Refund Policy</a></li>
+            <li><a href="/legal">Legal</a></li>
+            <li><a href="/cutbridge-eula">CutBridge EULA</a></li>
+            <li><a href="/cutbridge-privacy">CutBridge Privacy</a></li>
+            <li><a href="/cutbridge-refund">CutBridge Refunds</a></li>
           </ul>
         </div>
       </div>
@@ -485,11 +388,9 @@
   </footer>
 
   <script>
-    // mobile nav toggle
     (function () {
       var nav = document.getElementById('siteNav');
       var toggle = document.getElementById('navToggle');
-      if (!toggle) return;
       toggle.addEventListener('click', function () {
         var open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -497,115 +398,103 @@
       });
     })();
 
-    // reveal on intersect
-    (function(){
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(e){
-          if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-    })();
-
-    // scroll-driven panel rotation + cursor parallax
-    (function(){
-      var scene = document.querySelector('.scene');
-      var panel = document.querySelector('.panel');
-      var hero  = document.querySelector('.home-hero');
-      if (!scene || !panel || !hero) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var RY0 = -13, RX0 = 7, RY1 = -2, RX1 = 1;
-      var progress = 0, hx = 0, hy = 0, hovering = false, active = false;
-      function apply(){
-        if (!active) return;
-        var ry = RY0 + (RY1 - RY0) * progress + (hovering ? -hx * 8 : 0);
-        var rx = RX0 + (RX1 - RX0) * progress + (hovering ?  hy * 6 : 0);
-        panel.style.transform = 'rotateY(' + ry + 'deg) rotateX(' + rx + 'deg)';
-      }
-      function recalc(){
-        var r = hero.getBoundingClientRect();
-        var span = Math.max(1, r.height * 0.85);
-        progress = Math.max(0, Math.min(1, -r.top / span));
-        apply();
-      }
-      panel.addEventListener('transitionend', function(e){
-        if (e.propertyName === 'transform' && !active){ active = true; recalc(); }
-      });
-      var ticking = false;
-      window.addEventListener('scroll', function(){
-        if (!ticking){ requestAnimationFrame(function(){ recalc(); ticking = false; }); ticking = true; }
-      }, { passive: true });
-      scene.addEventListener('mousemove', function(e){
-        var r = scene.getBoundingClientRect();
-        hx = (e.clientX - r.left) / r.width - 0.5;
-        hy = (e.clientY - r.top) / r.height - 0.5;
-        hovering = true; apply();
-      });
-      scene.addEventListener('mouseleave', function(){ hovering = false; apply(); });
-    })();
-
-    // lightweight event tracking — GTM/GA4/Meta-ready, makes no external calls by itself
+    /* ---- CutBridge pricing: Paddle checkout + free-trial forms + events ---- */
     (function () {
-      var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
-      var utm = {};
-      try {
-        var params = new URLSearchParams(window.location.search);
-        UTM_KEYS.forEach(function (k) { var v = params.get(k); if (v) utm[k] = v; });
-        if (Object.keys(utm).length) {
-          sessionStorage.setItem('cb_utm', JSON.stringify(utm));
-        } else {
-          utm = JSON.parse(sessionStorage.getItem('cb_utm') || '{}');
-        }
-      } catch (e) { utm = {}; }
-      window.cbTrack = function (name, props) {
-        var data = { event: name };
-        Object.keys(utm).forEach(function (k) { data[k] = utm[k]; });
-        if (props) Object.keys(props).forEach(function (k) { data[k] = props[k]; });
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push(data);
-        if (typeof window.fbq === 'function') {
-          try { window.fbq('trackCustom', name, data); } catch (e) {}
-        }
+      function track(name, props) {
+        try { if (window.plausible) window.plausible(name, { props: props || {} }); } catch (e) {}
+      }
+
+      var pd = document.createElement('script');
+      pd.src = 'https://cdn.paddle.com/paddle/v2/paddle.js';
+      pd.onload = function () {
+        if (!window.Paddle) return;
+        window.Paddle.Initialize({
+          token: 'live_07ea7ca3b9a2da9d04e67d08a32',
+          eventCallback: function (ev) {
+            if (!ev || !ev.name) return;
+            var plan = (ev.data && ev.data.custom_data && ev.data.custom_data.plan) || '';
+            if (ev.name === 'checkout.loaded') track('checkout_started', { plan: plan });
+            if (ev.name === 'checkout.completed') track('checkout_completed', { plan: plan });
+          }
+        });
       };
-      window.cbTrack('cutbridge_page_view');
-      document.querySelectorAll('[data-cta]').forEach(function (el) {
-        el.addEventListener('click', function () {
-          window.cbTrack('cutbridge_cta_click', { position: el.getAttribute('data-cta') });
+      document.head.appendChild(pd);
+
+      var pricing = document.getElementById('pricing');
+      if (pricing && 'IntersectionObserver' in window) {
+        var seen = false;
+        new IntersectionObserver(function (entries) {
+          if (!seen && entries.some(function (e) { return e.isIntersecting; })) { seen = true; track('pricing_view'); }
+        }, { threshold: 0.3 }).observe(pricing);
+      }
+
+      Array.prototype.forEach.call(document.querySelectorAll('[data-buy]'), function (btn) {
+        btn.addEventListener('click', function () {
+          var plan = btn.getAttribute('data-buy');
+          track('plan_select', { plan: plan });
+          if (window.Paddle && window.Paddle.Checkout) {
+            window.Paddle.Checkout.open({
+              items: [{ priceId: btn.getAttribute('data-price'), quantity: 1 }],
+              customData: { plan: plan, source: 'cutbridge_pricing' },
+              settings: { successUrl: 'https://cutatlas.io/cutbridge-thanks?plan=' + plan }
+            });
+          }
+        });
+      });
+
+      Array.prototype.forEach.call(document.querySelectorAll('form[data-trial]'), function (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var input = form.querySelector('input[type="email"]');
+          var btn = form.querySelector('button[type="submit"]');
+          var status = form.querySelector('.trial-status');
+          var email = (input.value || '').trim();
+          if (!email) return;
+          var label = btn.textContent;
+          btn.disabled = true;
+          btn.textContent = 'Sending…';
+          status.textContent = '';
+          status.className = 'trial-status';
+          track('trial_requested', { plan: form.getAttribute('data-trial') });
+          fetch('https://cutbridge.fly.dev/trial', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+          }).then(function (res) {
+            btn.disabled = false;
+            btn.textContent = label;
+            if (res.status === 409) {
+              status.textContent = 'This e-mail already has a trial.';
+              status.classList.add('is-error');
+            } else if (res.status === 429) {
+              status.textContent = 'Too many requests, please try again in a few minutes.';
+              status.classList.add('is-error');
+            } else if (!res.ok) {
+              status.textContent = 'Something went wrong. Please try again.';
+              status.classList.add('is-error');
+            } else {
+              status.textContent = '✓ Check your inbox, your trial key is on its way.';
+              status.classList.add('is-ok');
+            }
+          }).catch(function () {
+            btn.disabled = false;
+            btn.textContent = label;
+            status.textContent = 'Something went wrong. Please try again.';
+            status.classList.add('is-error');
+          });
         });
       });
     })();
 
-    // YouTube facades — load the player (and its cookies/JS) only on click
-    (function () {
-      document.querySelectorAll('.yt-facade').forEach(function (facade) {
-        facade.addEventListener('click', function () {
-          var frame = facade.parentNode;
-          var iframe = document.createElement('iframe');
-          iframe.src = 'https://www.youtube-nocookie.com/embed/' + facade.getAttribute('data-yt') + '?rel=0&autoplay=1';
-          iframe.title = facade.getAttribute('data-yt-title') || 'CutBridge video';
-          iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
-          iframe.setAttribute('allowfullscreen', '');
-          frame.replaceChild(iframe, facade);
-          if (window.cbTrack) window.cbTrack(facade.getAttribute('data-event') || 'cutbridge_video_play');
-        });
-      });
-    })();
-
-    // CutBridge early access — POST to the existing waitlist endpoint
+    /* ---- CutBridge beta waitlist -> POST to the waitlist endpoint ---- */
     (function () {
       var form = document.getElementById('waitlistForm');
       if (!form) return;
-      var emailInput = document.getElementById('wl-email');
-      var signupStarted = false;
-      emailInput.addEventListener('focus', function () {
-        if (!signupStarted) {
-          signupStarted = true;
-          if (window.cbTrack) window.cbTrack('cutbridge_signup_start');
-        }
-      });
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        var email = (emailInput.value || '').trim();
+        var email = (document.getElementById('wl-email').value || '').trim();
+        var name = (document.getElementById('wl-name').value || '').trim();
+        var consent = document.getElementById('wl-consent').checked;
         var btn = document.getElementById('waitlistBtn');
         var status = document.getElementById('waitlistStatus');
         status.className = 'form-status';
@@ -614,11 +503,17 @@
           status.classList.add('is-error');
           return;
         }
+        if (!consent) {
+          status.textContent = 'Please tick the consent box to request access.';
+          status.classList.add('is-error');
+          return;
+        }
         var label = btn.textContent;
         btn.disabled = true;
         btn.textContent = 'Sending…';
         status.textContent = '';
         var payload = { email: email };
+        if (name) payload.name = name;
         fetch('https://cutbridge.fly.dev/waitlist/join', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -633,15 +528,14 @@
               return;
             }
             if (data.already_registered) {
-              status.textContent = "You're already on the early access list.";
+              status.textContent = 'This email has already requested access.';
               status.classList.add('is-ok');
               return;
             }
             if (data.joined) {
-              status.textContent = "✓ You're in — check your inbox for confirmation.";
+              status.textContent = '✓ Request received, check your inbox for confirmation.';
               status.classList.add('is-ok');
               form.reset();
-              if (window.cbTrack) window.cbTrack('cutbridge_signup_complete');
               return;
             }
             status.textContent = 'Something went wrong. Please try again.';
@@ -656,17 +550,38 @@
       });
     })();
 
-    // CutBridge tester counter — live count of issued beta licences
+    /* ---- CutBridge tester counter -> live count of issued beta licences ----
+       Fill in the three CONFIG values below to switch the counter on.
+       SUPABASE_URL  : your project URL, e.g. https://abcd1234.supabase.co
+       SUPABASE_ANON : the public anon key (safe to expose in client code)
+       RPC_FUNCTION  : a Postgres function returning the count as an integer.
+
+       Recommended SQL (run once in the Supabase SQL editor, keeps the
+       licences table private, exposes only the number):
+
+         create or replace function public.beta_tester_count()
+         returns integer
+         language sql
+         security definer
+         set search_path = public
+         as $$ select count(*)::int from licenses $$;
+
+         grant execute on function public.beta_tester_count() to anon;
+
+       Until CONFIG is filled in (or if the request fails), the counter
+       stays hidden, the page never shows a wrong or zero number. */
     (function () {
       var CONFIG = {
         SUPABASE_URL: 'https://ikpwodnohabtkiweevmw.supabase.co',
         SUPABASE_ANON: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlrcHdvZG5vaGFidGtpd2Vldm13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyNjgzODYsImV4cCI6MjA5MTg0NDM4Nn0.Pf2Ao4ngC_nPWdTUE4_SlrduBvFDKjWzzi2HyBlk_NQ',
         RPC_FUNCTION: 'beta_tester_count'
       };
+
       var wrap = document.getElementById('testerCount');
       var num = document.getElementById('testerCountNum');
       if (!wrap || !num) return;
       if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_ANON) return;
+
       fetch(CONFIG.SUPABASE_URL.replace(/\/$/, '') + '/rest/v1/rpc/' + CONFIG.RPC_FUNCTION, {
         method: 'POST',
         headers: {
@@ -680,11 +595,10 @@
         return res.json();
       }).then(function (data) {
         var count = typeof data === 'number' ? data : (data && Number(data.count));
-        // only show the counter for a credible, non-trivial number
-        if (typeof count !== 'number' || !isFinite(count) || count < 10) return;
+        if (typeof count !== 'number' || !isFinite(count) || count < 0) return;
         num.textContent = count.toLocaleString('en-US');
         wrap.hidden = false;
-      }).catch(function () { /* leave hidden */ });
+      }).catch(function () { /* leave the counter hidden */ });
     })();
   </script>
 

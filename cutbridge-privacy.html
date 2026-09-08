@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CutBridge, Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for CutBridge by CutAtlas." />
+  <link rel="canonical" href="https://cutatlas.io/cutbridge-privacy" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cutatlas.io/cutbridge-privacy" />
+  <meta property="og:title" content="CutBridge, Privacy Policy" />
+  <meta property="og:description" content="Privacy Policy for CutBridge by CutAtlas." />
+  <meta property="og:image" content="https://cutatlas.io/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CutBridge, Privacy Policy" />
+  <meta name="twitter:description" content="Privacy Policy for CutBridge by CutAtlas." />
+  <meta name="twitter:image" content="https://cutatlas.io/assets/og-image.png" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <link rel="apple-touch-icon" href="/favicon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <nav class="site-nav" id="siteNav">
+    <div class="container">
+      <a class="brand" href="/" aria-label="CutAtlas, home">
+        <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#1B2843"/>
+          <path d="M60 8 L73 21 L60 21 Z" fill="#F5F2EB"/>
+          <rect x="10" y="14" width="58" height="73" fill="none" stroke="#F5F2EB" stroke-width="0.6" opacity="0.55"/>
+          <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#F5F2EB" text-anchor="middle">CA</text>
+        </svg>
+        <span class="brand-name">CutAtlas</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/cutbridge">CutBridge</a></li>
+        <li><a href="/cutmap">CutMap</a></li>
+        <li><a href="/cutcompose">CutCompose</a></li>
+        <li><a href="/cutsync">CutSync</a></li>
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/cutbridge#pricing">Get CutBridge</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main" tabindex="-1">
+    <article class="doc">
+      <div class="container">
+        <a class="doc-back" href="/cutbridge">← CutBridge</a>
+        <h1>Privacy Policy, CutBridge</h1>
+<p class="doc-meta">Document CB-PRIVACY-2026-08-v1 · Effective 2026-08-21</p>
+<p><strong>Controller:</strong> Edits Krystian Łupiński, Wólka Waniewska 54a,
+18-100 Łapy, Poland, NIP 9662065316 — contact@cutatlas.io.</p>
+<h2>The short version</h2>
+<p>CutBridge runs on your computer. <strong>Your projects, media and deliverables never
+leave it.</strong> Three things do: your licence details, an optional usage report, and
+— if you send one — an error report. Before anything is sent, file names,
+sequence names and paths are replaced with anonymous fingerprints.</p>
+<hr />
+<h2>1. Licence data</h2>
+<p><strong>What:</strong> your e-mail address, licence key, a device identifier we generate
+(a random value stored in <code>~/.cutbridge/device-id.txt</code> — it is not your serial
+number, MAC address or anything Apple assigned), activation timestamps, and the
+name and version of the Software. When your computer activates, deactivates or
+re-validates a licence, or records that you accepted these documents, we also
+store the IP address the request came from, together with the time.</p>
+<p><strong>Why:</strong> to issue the licence, to enforce the number of activations you paid
+for, and to let you move a licence to a new computer. The IP address is kept as
+a security record — to detect a single licence being shared across many machines
+and to have proof of when the terms were accepted.</p>
+<p><strong>Legal basis:</strong> performance of a contract (Art. 6(1)(b) GDPR) for the licence
+data; our legitimate interest in preventing licence abuse and in keeping proof
+of acceptance (Art. 6(1)(f) GDPR) for the IP address.</p>
+<p><strong>Kept:</strong> for as long as the licence is active, then for the period required by
+Polish accounting and tax law (currently 5 years from the end of the tax year).</p>
+<h2>2. Usage reports — only if you say yes</h2>
+<p>We ask <strong>once</strong>, in the panel, and remember your answer. If you say no, nothing
+is collected and we do not ask again. You can change your mind at any time.</p>
+<p><strong>What is sent after each release:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software version and channel</td>
+<td><code>2.4.0</code>, <code>stable</code></td>
+</tr>
+<tr>
+<td>Operating system, major version</td>
+<td><code>darwin</code>, <code>24</code></td>
+</tr>
+<tr>
+<td>Python runtime version, major.minor</td>
+<td><code>3.14</code></td>
+</tr>
+<tr>
+<td>Licence <em>kind</em> — never the key</td>
+<td><code>trial</code>, <code>active</code></td>
+</tr>
+<tr>
+<td>Device identifier</td>
+<td>the random value above</td>
+</tr>
+<tr>
+<td>Whether the run succeeded, and how long it took</td>
+<td><code>false</code>, <code>93.4 s</code></td>
+</tr>
+<tr>
+<td>Counts</td>
+<td><code>4 sequences</code>, <code>61 shots</code></td>
+</tr>
+<tr>
+<td>Which parts were rebuilt</td>
+<td><code>grade</code>, <code>online</code></td>
+</tr>
+<tr>
+<td>Fingerprint of the project name</td>
+<td><code>1a2b3c4d</code></td>
+</tr>
+<tr>
+<td>Failure notes, with names removed</td>
+<td><code>render failed: &lt;path:7ebe8cbd.mp4&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>What is NOT sent</strong> (in a usage report): your project file, your media, your
+output, sequence names, file names, folder names, paths, your e-mail address,
+your licence key, your name. A usage report is not tied to your IP address — the
+IP is used only to rate-limit and is not stored with the report. (Licence and
+acceptance requests are a separate channel and do store the IP — see section 1.)</p>
+<p><strong>Fingerprints.</strong> A path such as
+<code>/Users/jan/Clients/Spring/spot.prproj</code> is sent as <code>&lt;path:7ebe8cbd.prproj&gt;</code>.
+The fingerprint is the first 8 characters of a SHA-256 hash. Its only purpose is
+to let us see that <em>the same file</em> failed more than once. It cannot be turned
+back into the path, and we do not attempt to.</p>
+<p><strong>Why:</strong> to see whether a version is failing more often than the one before it.
+Error counts alone grow with the number of users and say nothing.</p>
+<p><strong>Legal basis:</strong> your consent (Art. 6(1)(a) GDPR). Withdrawing it stops
+collection immediately and deletes anything still queued on your computer.</p>
+<p><strong>Kept:</strong> 180 days, then deleted automatically.</p>
+<h2>3. Error reports</h2>
+<p>If the Software fails, it may send the exception type, the name of the step
+that was running, the (redacted) message and the (redacted) stack trace,
+alongside the fields in section 2. The same
+redaction is applied, and applied again on our server before storage.</p>
+<p><strong>Legal basis:</strong> your consent, as in section 2.</p>
+<p><strong>Kept:</strong> 180 days.</p>
+<h2>4. Purchases</h2>
+<p>Sales are processed by <strong>Paddle.com Market Ltd</strong>, acting as merchant of record.
+Paddle collects and processes your payment and billing data as its own
+controller, under its own privacy policy. We receive from Paddle only what we
+need to issue your licence: your e-mail address and the transaction reference.
+<strong>We never see your card details.</strong></p>
+<h2>5. Who else processes this data</h2>
+<table>
+<thead>
+<tr>
+<th>Processor</th>
+<th>What for</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supabase</td>
+<td>database (licences, telemetry)</td>
+<td>Frankfurt, Germany (<code>eu-central-1</code>)</td>
+</tr>
+<tr>
+<td>Fly.io</td>
+<td>the licensing service</td>
+<td>Frankfurt, Germany (<code>fra</code>)</td>
+</tr>
+<tr>
+<td>Resend</td>
+<td>sending your licence key by e-mail</td>
+<td>delivery: Ireland (<code>eu-west-1</code>) — <strong>metadata and logs: United States</strong></td>
+</tr>
+<tr>
+<td>Paddle</td>
+<td>payments (own controller)</td>
+<td>EU / UK</td>
+</tr>
+</tbody>
+</table>
+<p>Your licences, your telemetry and the licensing service itself stay inside the
+EEA. <strong>One transfer leaves it</strong>, and we would rather name it than bury it in a
+general sentence: Resend, which sends you your licence key, delivers from
+Ireland but keeps account data, e-mail metadata, logs and API records in the
+United States regardless of the delivery region. What reaches them is your
+e-mail address and the fact that a message was sent to it.</p>
+<p>We have a data processing agreement with each processor. That transfer relies on
+the European Commission's standard contractual clauses.</p>
+<h2>6. Your rights</h2>
+<p>You may ask us to: show you your data, correct it, delete it, restrict or object
+to processing, or give it to you in a portable form. You may withdraw consent to
+usage reports at any time without affecting the lawfulness of what was collected
+before.</p>
+<p><strong>Deleting usage reports is built in.</strong> Ask us and we remove every record tied to
+your device identifier. There is a function in our database for exactly this
+purpose — it is not a manual favour.</p>
+<p>Write to contact@cutatlas.io. If you are unhappy with how we respond you may complain to the
+Polish supervisory authority (Prezes Urzędu Ochrony Danych Osobowych,
+ul. Stawki 2, 00-193 Warszawa) or the authority in your own country.</p>
+<h2>7. What we do not do</h2>
+<p>We do not sell your data. We do not use it for advertising. We do not profile
+you. We make no automated decisions that produce legal effects for you. We do
+not use tracking cookies in the Software.</p>
+<h2>8. Changes</h2>
+<p>If we change this policy in a way that affects you, you will be asked to read
+and accept the new version in the panel before continuing. Older versions remain
+available at https://cutatlas.io/legal.</p>
+<h2>9. Contact</h2>
+<p>contact@cutatlas.io · https://cutatlas.io</p>
+      </div>
+    </article>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="/" aria-label="CutAtlas, home">
+            <svg viewBox="0 0 80 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M5 8 L60 8 L73 21 L73 92 L5 92 Z" fill="#F5F2EB"/>
+              <path d="M60 8 L73 21 L60 21 Z" fill="#1B2843"/>
+              <rect x="10" y="14" width="58" height="73" fill="none" stroke="#1B2843" stroke-width="0.6" opacity="0.55"/>
+              <text x="39" y="62" font-family="Georgia, 'Liberation Serif', serif" font-size="28" font-style="italic" fill="#1B2843" text-anchor="middle">CA</text>
+            </svg>
+            <span class="brand-name">CutAtlas</span>
+          </a>
+          <p>Editorial infrastructure for professional video post-production.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="/cutbridge">CutBridge</a></li>
+            <li><a href="/cutmap">CutMap</a></li>
+            <li><a href="/cutcompose">CutCompose</a></li>
+            <li><a href="/cutsync">CutSync</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/cutbridge#waitlist">Request access</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/cutmap-privacy">CutMap Privacy</a></li>
+            <li><a href="/cutmap-terms">CutMap Terms</a></li>
+            <li><a href="/cutmap-refund">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 CutAtlas · Editorial infrastructure.</span>
+        <a href="mailto:contact@cutatlas.io">contact@cutatlas.io</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var nav = document.getElementById('siteNav');
+      var toggle = document.getElementById('navToggle');
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+    })();
+  </script>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "44f85e504acd4048890a82f660ed807d"}'></script>
+
+</body>
+</html>
