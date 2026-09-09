@@ -421,7 +421,7 @@
           <p>Start with a 7-day free trial, no card needed. Founding price for the first 100 subscribers or until 31 December 2026, whichever comes first.</p>
           <p class="user-count" id="userCount" hidden>
             <span class="user-count-num" id="userCountNum"></span>
-            <span class="user-count-label">editors have activated CutBridge</span>
+            <span class="user-count-label">editors have signed up for CutBridge</span>
           </p>
         </div>
 
@@ -890,7 +890,7 @@
       });
     })();
 
-    // CutBridge user counter — licences (beta, trial, paid) with at least one activation.
+    // CutBridge user counter — issued CutBridge licences (beta, trial, paid), regardless of activation.
     // RPC `cutbridge_user_count` lives in Supabase (see licensing-service/sql/008); until it
     // exists the request fails and the counter simply stays hidden.
     (function () {
