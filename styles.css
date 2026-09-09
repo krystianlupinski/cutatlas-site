@@ -1679,3 +1679,19 @@ html, body{ overflow-x: clip; }
   .burnin-pip{ left: 50%; width: 44%; }
   .burnin-label{ white-space: normal; max-width: 92%; }
 }
+
+/* ---------- user counter under the pricing head (2026-09-09) ---------- */
+.user-count{
+  margin: 18px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--warm-gray);
+}
+.user-count-num{
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-right: 8px;
+}

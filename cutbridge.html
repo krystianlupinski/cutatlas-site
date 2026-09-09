@@ -419,6 +419,10 @@
           <span class="eyebrow"><span class="num">05</span> Pricing</span>
           <h2>One licence per editor. Cancel any time.</h2>
           <p>Start with a 7-day free trial, no card needed. Founding price for the first 100 subscribers or until 31 December 2026, whichever comes first.</p>
+          <p class="user-count" id="userCount" hidden>
+            <span class="user-count-num" id="userCountNum"></span>
+            <span class="user-count-label">editors have activated CutBridge</span>
+          </p>
         </div>
 
         <div class="pricing-grid pricing-grid--three">
@@ -553,11 +557,6 @@
           <span class="eyebrow"><span class="tick"></span> Windows or Intel Mac?</span>
           <h2>Not on Apple Silicon yet?</h2>
           <p>CutBridge ships for Apple Silicon first. Leave your e-mail and we will write when Windows and Intel builds are ready — nothing else.</p>
-
-          <p class="tester-count" id="testerCount" hidden>
-            <span class="tester-count-num" id="testerCountNum"></span>
-            <span class="tester-count-label">editors are on the list</span>
-          </p>
 
           <form class="waitlist-form" id="waitlistForm" aria-label="CutBridge platform notification request">
             <div class="wl-row">
@@ -891,15 +890,17 @@
       });
     })();
 
-    // CutBridge tester counter — live count of issued beta licences
+    // CutBridge user counter — licences (beta, trial, paid) with at least one activation.
+    // RPC `cutbridge_user_count` lives in Supabase (see licensing-service/sql/008); until it
+    // exists the request fails and the counter simply stays hidden.
     (function () {
       var CONFIG = {
         SUPABASE_URL: 'https://ikpwodnohabtkiweevmw.supabase.co',
         SUPABASE_ANON: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlrcHdvZG5vaGFidGtpd2Vldm13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyNjgzODYsImV4cCI6MjA5MTg0NDM4Nn0.Pf2Ao4ngC_nPWdTUE4_SlrduBvFDKjWzzi2HyBlk_NQ',
-        RPC_FUNCTION: 'beta_tester_count'
+        RPC_FUNCTION: 'cutbridge_user_count'
       };
-      var wrap = document.getElementById('testerCount');
-      var num = document.getElementById('testerCountNum');
+      var wrap = document.getElementById('userCount');
+      var num = document.getElementById('userCountNum');
       if (!wrap || !num) return;
       if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_ANON) return;
       fetch(CONFIG.SUPABASE_URL.replace(/\/$/, '') + '/rest/v1/rpc/' + CONFIG.RPC_FUNCTION, {
