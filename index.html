@@ -140,28 +140,46 @@
         <div class="grid">
 
           <div class="hero-copy">
-            <span class="eyebrow reveal" style="transition-delay:.05s">
+            <span class="eyebrow reveal" style="transition-delay:.05s" id="heroEyebrow">
               <span class="num">01</span> CutAtlas
             </span>
-            <h1 class="reveal" style="transition-delay:.12s">
+            <h1 class="reveal" style="transition-delay:.12s" id="heroTitle">
               Tools for the<br/>
               work between the<br/>
               <em class="serif-italic">cut</em> and the deliverable.
             </h1>
-            <p class="lead reveal" style="transition-delay:.22s">
+            <p class="lead reveal" style="transition-delay:.22s" id="heroLead">
               CutAtlas builds editorial infrastructure for professional video post-production —
               Adobe Premiere Pro plugins that automate the repetitive, error-prone handoff
               work editors still do by hand.
             </p>
-            <div class="hero-actions reveal" style="transition-delay:.32s">
-              <a class="btn btn-primary" href="/cutbridge" data-cta="hero">Explore CutBridge →</a>
-              <a class="btn btn-ghost" href="#products">All tools ↓</a>
-            </div>
-            <p class="hero-note reveal" style="transition-delay:.42s">
+            <form class="trial-form hero-trial" data-trial="annual" aria-label="Start a CutBridge free trial">
+              <label class="sr-only" for="trial-email-h">Email address</label>
+              <div class="hero-trial-row">
+                <input type="email" id="trial-email-h" name="email" placeholder="you@studio.com" required autocomplete="email" inputmode="email" />
+                <button type="submit" class="btn btn-primary" data-cta="hero">Start CutBridge free trial</button>
+              </div>
+              <p class="trial-hint">7 days, no card. Your key arrives by e-mail within a minute. $149/year founding price after the trial.</p>
+              <p class="trial-status" role="status" aria-live="polite"></p>
+            </form>
+            <p class="hero-note">
               <span class="dot" aria-hidden="true"></span>
-              CutBridge — available now · $149/year founding price
+              <span>Premiere Pro 26.3+ · Apple Silicon Mac · <a href="/cutbridge" data-cta="hero-learn">About CutBridge →</a> · <a href="#products">All tools ↓</a></span>
             </p>
           </div>
+          <script>
+            // Paid (utm-tagged) visitors clicked an ad about CutBridge — greet them with CutBridge,
+            // not the company. Runs before first paint of the hero; organic visitors and crawlers
+            // keep the CutAtlas headline.
+            (function () {
+              if (!/[?&]utm_/.test(window.location.search)) return;
+              var e = document.getElementById('heroEyebrow'), t = document.getElementById('heroTitle'), l = document.getElementById('heroLead');
+              if (!e || !t || !l) return;
+              e.innerHTML = '<span class="num">01</span> CutBridge by CutAtlas';
+              t.innerHTML = 'Stop building turnovers <em class="serif-italic">by hand.</em>';
+              l.textContent = 'CutBridge prepares your locked edit for color, online and sound — directly inside Premiere Pro. XML, AAF, EDL, references and delivery structure in one guided workflow.';
+            })();
+          </script>
 
           <!-- Premiere panel mockup -->
           <div class="hero-visual" aria-hidden="true">
@@ -575,6 +593,10 @@
       }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
       document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
     })();
+    // safety net: never leave hero content invisible if the observer misfires
+    setTimeout(function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.hero-copy .reveal'), function(el){ el.classList.add('in'); });
+    }, 1500);
 
     // scroll-driven panel rotation + cursor parallax (home hero)
     (function(){
@@ -637,6 +659,50 @@
         }
       };
       window.cbTrack('homepage_page_view');
+      // hero trial form — same endpoint and behaviour as the pricing cards on /cutbridge
+      Array.prototype.forEach.call(document.querySelectorAll('form[data-trial]'), function (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var input = form.querySelector('input[type="email"]');
+          var btn = form.querySelector('button[type="submit"]');
+          var status = form.querySelector('.trial-status');
+          var email = (input.value || '').trim();
+          if (!email) return;
+          var label = btn.textContent;
+          btn.disabled = true;
+          btn.textContent = 'Sending…';
+          status.textContent = '';
+          status.className = 'trial-status';
+          window.cbTrack('trial_requested', { plan: form.getAttribute('data-trial'), page: 'home' });
+          fetch('https://cutbridge.fly.dev/trial', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+          }).then(function (res) {
+            btn.disabled = false;
+            btn.textContent = label;
+            if (res.status === 409) {
+              status.textContent = 'This e-mail already has a trial.';
+              status.classList.add('is-error');
+            } else if (res.status === 429) {
+              status.textContent = 'Too many requests, please try again in a few minutes.';
+              status.classList.add('is-error');
+            } else if (!res.ok) {
+              status.textContent = 'Something went wrong. Please try again.';
+              status.classList.add('is-error');
+            } else {
+              status.textContent = '✓ Check your inbox, your trial key is on its way.';
+              status.classList.add('is-ok');
+              window.cbTrack('trial_requested_ok', { page: 'home' });
+            }
+          }).catch(function () {
+            btn.disabled = false;
+            btn.textContent = label;
+            status.textContent = 'Something went wrong. Please try again.';
+            status.classList.add('is-error');
+          });
+        });
+      });
       document.querySelectorAll('[data-cta]').forEach(function (el) {
         el.addEventListener('click', function () {
           window.cbTrack('homepage_cutbridge_cta_click', { position: el.getAttribute('data-cta') });
