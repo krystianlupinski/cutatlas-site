@@ -1709,3 +1709,4 @@ html, body{ overflow-x: clip; }
   .hero-trial-row{ flex-direction: column; }
   .hero-trial-row .btn{ width: 100%; justify-content: center; padding-block: 14px; }
 }
+.trial-hint a{ color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
