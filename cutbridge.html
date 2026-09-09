@@ -97,13 +97,18 @@
             <p class="lead reveal" style="transition-delay:.22s">
               CutBridge prepares your locked edit for color, online and sound — directly inside Premiere Pro. XML, AAF, EDL, references and delivery structure in one guided workflow.
             </p>
-            <div class="hero-actions reveal" style="transition-delay:.32s">
-              <a class="btn btn-primary" href="#pricing" data-cta="hero">Get CutBridge →</a>
-              <a class="btn btn-ghost" href="#demo">See it in action ↓</a>
-            </div>
-            <p class="hero-note reveal" style="transition-delay:.42s">
+            <form class="trial-form hero-trial" data-trial="annual" aria-label="Start a CutBridge free trial">
+              <label class="sr-only" for="trial-email-h">Email address</label>
+              <div class="hero-trial-row">
+                <input type="email" id="trial-email-h" name="email" placeholder="you@studio.com" required autocomplete="email" inputmode="email" />
+                <button type="submit" class="btn btn-primary" data-cta="hero">Start 7-day free trial</button>
+              </div>
+              <p class="trial-hint">No card. Your key arrives by e-mail within a minute. $149/year founding price after the trial.</p>
+              <p class="trial-status" role="status" aria-live="polite"></p>
+            </form>
+            <p class="hero-note">
               <span class="dot" aria-hidden="true"></span>
-              Available now · $149/year founding · 7-day free trial · Premiere Pro · Apple Silicon Mac
+              <span>Premiere Pro 26.3+ · Apple Silicon Mac · <a href="#demo">See it in action ↓</a></span>
             </p>
           </div>
 
@@ -740,6 +745,10 @@
       }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
       document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
     })();
+    // safety net: never leave hero content invisible if the observer misfires
+    setTimeout(function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.hero-copy .reveal'), function(el){ el.classList.add('in'); });
+    }, 1500);
 
     // scroll-driven panel rotation + cursor parallax
     (function(){
