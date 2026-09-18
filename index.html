@@ -107,14 +107,13 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="/cutbridge">CutBridge</a></li>
         <li><a href="/cutmap">CutMap</a></li>
-        <li><a href="/cutcompose">CutCompose</a></li>
-        <li><a href="/cutsync">CutSync</a></li>
         <li><a href="/guides">Guides</a></li>
+        <li><a href="/faq">FAQ</a></li>
         <li><a href="/about">About</a></li>
       </ul>
 
       <div class="nav-cta">
-        <a class="btn btn-primary" href="/cutbridge#pricing" data-cta="nav">Get CutBridge</a>
+        <a class="btn btn-primary" href="/cutbridge" data-cta="nav">Try CutBridge free</a>
       </div>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
@@ -149,31 +148,44 @@
               Adobe Premiere Pro plugins that automate the repetitive, error-prone handoff
               work editors still do by hand.
             </p>
-            <form class="trial-form hero-trial" data-trial="annual" aria-label="Start a CutBridge free trial">
+            <div class="hero-actions reveal" id="heroActions" style="transition-delay:.3s">
+              <a class="btn btn-primary" href="/cutbridge" data-cta="hero">Try CutBridge free</a>
+              <a class="btn btn-ghost" href="#products" data-cta="hero-tools">All tools ↓</a>
+            </div>
+            <form class="trial-form hero-trial" id="heroTrial" data-trial="annual" aria-label="Start a CutBridge free trial" hidden>
               <label class="sr-only" for="trial-email-h">Email address</label>
               <div class="hero-trial-row">
                 <input type="email" id="trial-email-h" name="email" placeholder="you@studio.com" required autocomplete="email" inputmode="email" />
-                <button type="submit" class="btn btn-primary" data-cta="hero">Start CutBridge free trial</button>
+                <button type="submit" class="btn btn-primary">Try CutBridge free</button>
               </div>
-              <p class="trial-hint">7 days, no card. Your key arrives by e-mail within a minute. Pricing comes after the trial. <a href="/cutbridge#pricing">See plans →</a></p>
+              <p class="trial-hint">7-day trial, no card. Your key arrives by e-mail within a minute. Then $29/month or $149/year. <a href="/cutbridge#pricing">Plans →</a></p>
               <p class="trial-status" role="status" aria-live="polite"></p>
             </form>
             <p class="hero-note">
               <span class="dot" aria-hidden="true"></span>
-              <span>Premiere Pro 26.3+ · Apple Silicon Mac · <a href="/cutbridge" data-cta="hero-learn">About CutBridge →</a> · <a href="#products">All tools ↓</a></span>
+              <span id="heroNote">CutBridge available now · 7-day free trial · Premiere Pro 26.3+ · Apple Silicon Mac</span>
             </p>
           </div>
           <script>
-            // Paid (utm-tagged) visitors clicked an ad about CutBridge — greet them with CutBridge,
-            // not the company. Runs before first paint of the hero; organic visitors and crawlers
-            // keep the CutAtlas headline.
+            // Paid (utm-tagged) visitors clicked an ad about CutBridge. Until the ad destination moves to
+            // /cutbridge, greet them with CutBridge copy and the trial form here, before first paint.
+            // Organic visitors and crawlers keep the CutAtlas headline and the "Try CutBridge free" button.
             (function () {
               if (!/[?&]utm_/.test(window.location.search)) return;
               var e = document.getElementById('heroEyebrow'), t = document.getElementById('heroTitle'), l = document.getElementById('heroLead');
-              if (!e || !t || !l) return;
-              e.innerHTML = '<span class="num">01</span> CutBridge by CutAtlas';
-              t.innerHTML = 'Stop building turnovers <em class="serif-italic">by hand.</em>';
-              l.textContent = 'CutBridge prepares your locked edit for color, online and sound, directly inside Premiere Pro. XML, AAF, references and delivery structure in one guided workflow.';
+              var a = document.getElementById('heroActions'), f = document.getElementById('heroTrial'), n = document.getElementById('heroNote');
+              if (!e || !t || !l || !a || !f) return;
+              e.innerHTML = '<span class="num">01</span> CutBridge by CutAtlas · Premiere Pro plugin';
+              t.innerHTML = 'From locked edit to complete turnover, <em class="serif-italic">in a few clicks.</em>';
+              l.textContent = 'CutBridge prepares your locked Premiere Pro edit for color, online and sound: FCP XML, AAF, burn-in references and delivery folders, generated inside Premiere in one guided workflow.';
+              a.hidden = true; f.hidden = false;
+              if (n) n.innerHTML = 'Premiere Pro 26.3+ · Apple Silicon Mac · <a href="/cutbridge" data-cta="hero-learn">Full details and demo →</a>';
+              // the featured block right below would repeat the headline for these visitors: make it the demo
+              document.addEventListener('DOMContentLoaded', function () {
+                var fe = document.querySelector('#cutbridge-featured .eyebrow'), fh = document.querySelector('#cutbridge-featured h2');
+                if (fe) fe.innerHTML = '<span class="num">02</span> Demo · 79 seconds';
+                if (fh) fh.innerHTML = 'Watch CutBridge prepare <em class="serif-italic">a real turnover.</em>';
+              });
             })();
           </script>
 
@@ -279,14 +291,14 @@
     <section class="section section--sunk" id="cutbridge-featured">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow"><span class="num">02</span> Featured: CutBridge by CutAtlas</span>
-          <h2>Stop building turnovers <em class="serif-italic">by hand.</em></h2>
-          <p>CutBridge prepares your locked Premiere Pro edit for color, online and sound: XML, AAF, references and delivery structure in one guided workflow.</p>
+          <span class="eyebrow"><span class="num">02</span> Available now: CutBridge by CutAtlas</span>
+          <h2>From locked edit to complete turnover, <em class="serif-italic">in a few clicks.</em></h2>
+          <p>CutBridge prepares your locked Premiere Pro edit for color, online and sound: FCP XML, AAF, burn-in references and delivery folders, generated inside Premiere in one guided workflow.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="/cutbridge#pricing" data-cta="featured">Get CutBridge →</a>
-            <a class="btn btn-ghost" href="/cutbridge" data-cta="featured-learn">Learn more</a>
+            <a class="btn btn-primary" href="/cutbridge" data-cta="featured">Try CutBridge free →</a>
+            <a class="btn btn-ghost" href="/cutbridge#pricing" data-cta="featured-pricing">Pricing</a>
           </div>
-          <p class="hero-note"><span class="dot" aria-hidden="true"></span> Available now · $149/year founding · 7-day free trial · Premiere Pro · Apple Silicon Mac</p>
+          <p class="hero-note"><span class="dot" aria-hidden="true"></span> 7-day free trial, no card · $29/month or $149/year · Premiere Pro 26.3+ · Apple Silicon Mac</p>
         </div>
         <figure class="media">
           <div class="media-frame">
@@ -333,7 +345,7 @@
             <span class="eyebrow"><span class="num">04</span> Products</span>
             <h2 style="margin-top:12px;">Four tools, <em class="serif-italic">one pipeline.</em></h2>
           </div>
-          <span class="eyebrow" style="text-align:right;">Four plugins · One Premiere project</span>
+          <span class="eyebrow" style="text-align:right;">Two available · Two in development</span>
         </div>
 
         <div class="cards">
@@ -349,11 +361,11 @@
                   <text x="39" y="62" font-family="Georgia, serif" font-size="25" font-style="italic" font-weight="500" fill="#F5F2EB" text-anchor="middle">CB</text>
                 </svg>
               </span>
-              <span class="tag">Flagship · Beta</span>
+              <span class="tag">Available now</span>
             </div>
             <span class="tagline">CutBridge by CutAtlas</span>
-            <h3>Finishing-ready handoff <em class="serif-italic">from Premiere Pro.</em></h3>
-            <p class="descriptor">Automates the handoff to grade, online, and sound: FCP XML, AAF, burn-in references, organized exactly as downstream teams expect.</p>
+            <h3>Premiere Pro turnovers, <em class="serif-italic">automated.</em></h3>
+            <p class="descriptor">Turns a locked edit into the package color, online and sound expect: FCP XML, AAF, burn-in references, folders and manifest, validated before release.</p>
             <div class="card-viz">
               <div class="viz-flow">
                 <div class="viz-block">
@@ -369,7 +381,7 @@
                 </div>
               </div>
             </div>
-            <span class="arrow">Explore CutBridge <span class="a">→</span></span>
+            <span class="arrow">Try CutBridge free <span class="a">→</span></span>
           </a>
 
           <!-- CutMap -->
@@ -400,6 +412,8 @@
             </div>
             <span class="arrow">Explore CutMap <span class="a">→</span></span>
           </a>
+
+          <div class="cards-divider" aria-hidden="true">In development</div>
 
           <!-- CutCompose -->
           <a class="card sm" href="/cutcompose">
@@ -476,8 +490,8 @@
     <section class="section section--tight">
       <div class="container">
         <div class="cta-mid">
-          <a class="btn btn-primary" href="/cutbridge#pricing" data-cta="final">Get CutBridge →</a>
-          <p class="hero-note"><span class="dot" aria-hidden="true"></span> CutBridge available now · 7-day free trial, no card</p>
+          <a class="btn btn-primary" href="/cutbridge" data-cta="final">Try CutBridge free →</a>
+          <p class="hero-note"><span class="dot" aria-hidden="true"></span> 7-day free trial, no card · Premiere Pro 26.3+ · Apple Silicon Mac</p>
         </div>
       </div>
     </section>
@@ -639,6 +653,7 @@
         var params = new URLSearchParams(window.location.search);
         UTM_KEYS.forEach(function (k) { var v = params.get(k); if (v) utm[k] = v; });
         if (Object.keys(utm).length) {
+          utm.landing_page = window.location.pathname;
           sessionStorage.setItem('cb_utm', JSON.stringify(utm));
         } else {
           utm = JSON.parse(sessionStorage.getItem('cb_utm') || '{}');
@@ -653,10 +668,21 @@
         if (typeof window.fbq === 'function') {
           try { window.fbq('trackCustom', name, data); } catch (e) {}
         }
+        try {
+          if (typeof window.plausible === 'function') {
+            var p = {}; Object.keys(data).forEach(function (k) { if (k !== 'event') p[k] = data[k]; });
+            window.plausible(name, { props: p });
+          }
+        } catch (e) {}
       };
       window.cbTrack('homepage_page_view');
       // hero trial form — same endpoint and behaviour as the pricing cards on /cutbridge
       Array.prototype.forEach.call(document.querySelectorAll('form[data-trial]'), function (form) {
+        var started = false;
+        form.querySelector('input[type="email"]').addEventListener('focus', function () {
+          if (started) return; started = true;
+          window.cbTrack('cutbridge_trial_start', { plan: form.getAttribute('data-trial'), page: 'home', position: 'home-hero' });
+        });
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           var input = form.querySelector('input[type="email"]');
@@ -669,7 +695,7 @@
           btn.textContent = 'Sending…';
           status.textContent = '';
           status.className = 'trial-status';
-          window.cbTrack('trial_requested', { plan: form.getAttribute('data-trial'), page: 'home' });
+          window.cbTrack('cutbridge_trial_click', { plan: form.getAttribute('data-trial'), page: 'home', position: 'home-hero' });
           fetch('https://cutbridge.fly.dev/trial', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -678,7 +704,7 @@
             btn.disabled = false;
             btn.textContent = label;
             if (res.status === 409) {
-              status.textContent = 'This e-mail already has a trial.';
+              status.innerHTML = 'This e-mail already has a trial. Need the key again? <a href="mailto:contact@cutatlas.io?subject=CutBridge%20trial%20key">Write to us</a>.';
               status.classList.add('is-error');
             } else if (res.status === 429) {
               status.textContent = 'Too many requests, please try again in a few minutes.';
@@ -687,9 +713,10 @@
               status.textContent = 'Something went wrong. Please try again.';
               status.classList.add('is-error');
             } else {
-              status.textContent = '✓ Check your inbox, your trial key is on its way.';
+              status.innerHTML = '✓ Your trial key is on its way. Meanwhile, <a href="https://github.com/krystianlupinski/cutbridge-releases/releases/latest" target="_blank" rel="noopener">download the installer</a> (.pkg) and open the panel under Window → UXP Plugins.';
               status.classList.add('is-ok');
-              window.cbTrack('trial_requested_ok', { page: 'home' });
+              form.classList.add('is-done');
+              window.cbTrack('cutbridge_trial_complete', { plan: form.getAttribute('data-trial'), page: 'home', position: 'home-hero' });
             }
           }).catch(function () {
             btn.disabled = false;
@@ -705,7 +732,7 @@
         });
       });
       // carry UTM parameters over to /cutbridge links
-      var qs = Object.keys(utm).map(function (k) { return k + '=' + encodeURIComponent(utm[k]); }).join('&');
+      var qs = Object.keys(utm).filter(function (k) { return k.indexOf('utm_') === 0; }).map(function (k) { return k + '=' + encodeURIComponent(utm[k]); }).join('&');
       if (qs) {
         document.querySelectorAll('a[href^="/cutbridge"]').forEach(function (a) {
           var href = a.getAttribute('href');

@@ -1710,3 +1710,184 @@ html, body{ overflow-x: clip; }
   .hero-trial-row .btn{ width: 100%; justify-content: center; padding-block: 14px; }
 }
 .trial-hint a{ color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ============================================================
+   CutBridge conversion pass (2026-09-18)
+   Additive, scoped classes only.
+   ============================================================ */
+
+/* hero: secondary action + compatibility line under the trial form */
+.hero-sub{
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  margin-top: 4px;
+}
+.hero-sub .hero-note{ margin: 0; }
+.hero-sub .btn-ghost{ padding-block: 9px; }
+.home-hero .hero-trial{ margin-top: 30px; }
+.trial-hint a{ white-space: nowrap; }
+/* after a successful trial request the status line carries the installer link */
+.trial-form .trial-status a{ color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.trial-form.is-done .hero-trial-row{ opacity: .55; }
+.trial-status{ line-height: 1.5; }
+
+/* demo head: tighter, demo sits right under the hero */
+.section-head--demo{ margin-bottom: clamp(22px, 3vw, 36px); }
+.section-head--demo h2{ margin-bottom: 0; }
+
+/* what you get: three scannable output columns */
+.outputs-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 36px);
+}
+.outputs-col{
+  background: var(--cream-raised);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--navy);
+  border-radius: 3px;
+  padding: 22px 24px 18px;
+}
+.outputs-head{
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 12px;
+}
+.outputs-col ul{ list-style: none; }
+.outputs-col li{
+  position: relative;
+  padding: 8px 0 8px 22px;
+  border-top: 1px solid var(--line);
+  font-size: 0.97rem;
+  color: var(--ink);
+  line-height: 1.45;
+}
+.outputs-col li::before{
+  content: "✓";
+  position: absolute; left: 0; top: 8px;
+  color: var(--burgundy);
+  font-size: 0.85rem;
+}
+@media (max-width: 880px){
+  .outputs-grid{ grid-template-columns: 1fr; gap: 14px; }
+  .outputs-col{ padding: 18px 20px 12px; }
+}
+
+/* before/after: the CutBridge column lists the real four steps */
+.xform-list--cb{ max-width: 340px; }
+.xform-list--cb li{
+  color: var(--ink);
+  padding: 9px 14px;
+  line-height: 1.45;
+}
+.xform-list--cb li b{
+  display: block;
+  font-weight: 600;
+  color: var(--burgundy);
+  letter-spacing: 0.10em;
+  font-size: 0.68rem;
+  margin-bottom: 2px;
+}
+.xform-col--cb .xform-node.xform-cb{ display: none; }
+
+/* trust row: three short factual statements, no cards */
+.trust-row{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 56px);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.trust-item .eyebrow{ margin-bottom: 10px; }
+.trust-item p{ color: var(--ink); font-size: 0.97rem; line-height: 1.6; }
+.trust-item p a{ color: var(--navy); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 880px){
+  .trust-row{ grid-template-columns: 1fr; gap: 22px; }
+}
+
+/* sticky mobile CTA (only ≤760px, only after the hero form scrolls away) */
+.sticky-cta{
+  position: fixed; left: 0; right: 0; bottom: 0;
+  z-index: 60;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(245,242,235,0.94);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-top: 1px solid var(--line-2);
+  box-shadow: 0 -12px 30px -18px rgba(27,40,67,0.35);
+}
+.sticky-cta-note{
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  line-height: 1.3;
+}
+.sticky-cta .btn{ flex: 0 0 auto; padding: 12px 18px; }
+@media (min-width: 761px){ .sticky-cta{ display: none !important; } }
+@media (max-width: 760px){
+  body.has-sticky{ padding-bottom: 72px; }
+}
+
+/* homepage products: available tools first, in-development tools demoted */
+.cards-divider{
+  grid-column: span 12;
+  display: flex; align-items: center; gap: 16px;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--light-gray);
+}
+.cards-divider::after{ content: ""; flex: 1; height: 1px; background: var(--line); }
+.card.lg.flagship{ grid-column: span 7; }
+.card.md{ grid-column: span 5; }
+.card.sm{
+  min-height: 0;
+  padding: 22px 22px 20px;
+  background: transparent;
+  box-shadow: none;
+}
+.card.sm .card-viz{ display: none; }
+.card.sm h3{ font-size: 1.25rem; }
+.card.sm .descriptor{ font-size: 0.9rem; margin-bottom: 14px; }
+.card.sm .card-mark{ width: 30px; height: 38px; }
+.card.sm .arrow{ padding-top: 12px; font-size: 0.84rem; }
+@media (max-width: 760px){
+  .card.lg.flagship, .card.md{ grid-column: span 12; }
+}
+
+/* mobile hero: the panel mockup's nowrap content must not widen the 1fr column (copy/form ran under the right edge) */
+.home-hero .grid > *{ min-width: 0; }
+@media (max-width: 980px){
+  .home-hero .grid{ grid-template-columns: minmax(0, 1fr); }
+  .hero-visual{ overflow: visible; }
+  .tabs{ overflow: hidden; }
+  .ruler-marks{ overflow: hidden; }
+}
+
+/* mobile: tighter vertical rhythm, and the decorative panel mockup gives way to the real demo */
+@media (max-width: 760px){
+  .section{ padding-block: 3.25rem; }
+  .section--tight{ padding-block: 2.5rem; }
+  .section-head{ margin-bottom: 28px; }
+  .home-hero{ padding-block: 48px 40px; }
+  .home-hero .grid{ gap: 0; }
+  .home-hero .hero-visual{ display: none; }
+  .home-hero .lead{ margin-bottom: 22px; }
+  .burnin{ margin-top: 28px; }
+}
+.hero-sub .hero-note{ flex: 1 1 300px; }
+.nav-cta .btn{ white-space: nowrap; }
+@media (max-width: 1040px){ .brand-tag{ display: none; } }
+
+/* pricing: two individual plans; Studio lives in a line below + the FAQ (2026-09-18) */
+.pricing-grid--two{ grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 860px; margin-inline: auto; }
+@media (max-width: 760px){ .pricing-grid--two{ grid-template-columns: 1fr; max-width: 560px; } }
+.pricing-note--team{ margin-top: 0.6rem; }
